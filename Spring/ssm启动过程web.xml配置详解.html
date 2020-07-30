@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>本篇主要在基于SSM的框架，深入讲解web.xml的配置 | 合抱之木生于毫末</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/onedocs/logo.png">
+    <meta name="description" content="合抱之木生于毫末，九层之台起于累土，千里之行始于足下">
+    <link rel="preload" href="/onedocs/assets/css/0.styles.de272f6a.css" as="style"><link rel="preload" href="/onedocs/assets/js/app.c472f6cd.js" as="script"><link rel="preload" href="/onedocs/assets/js/2.2038ef08.js" as="script"><link rel="preload" href="/onedocs/assets/js/28.b7897787.js" as="script"><link rel="prefetch" href="/onedocs/assets/js/10.94072072.js"><link rel="prefetch" href="/onedocs/assets/js/11.2ca72f8e.js"><link rel="prefetch" href="/onedocs/assets/js/12.5da38df8.js"><link rel="prefetch" href="/onedocs/assets/js/13.7d306676.js"><link rel="prefetch" href="/onedocs/assets/js/14.4478bc93.js"><link rel="prefetch" href="/onedocs/assets/js/15.5a0e4c78.js"><link rel="prefetch" href="/onedocs/assets/js/16.fb0afbde.js"><link rel="prefetch" href="/onedocs/assets/js/17.4ad36fd6.js"><link rel="prefetch" href="/onedocs/assets/js/18.fdae6f4f.js"><link rel="prefetch" href="/onedocs/assets/js/19.a1a1f69e.js"><link rel="prefetch" href="/onedocs/assets/js/20.7fbaef10.js"><link rel="prefetch" href="/onedocs/assets/js/21.f78fd091.js"><link rel="prefetch" href="/onedocs/assets/js/22.ff6c1a77.js"><link rel="prefetch" href="/onedocs/assets/js/23.382a82d1.js"><link rel="prefetch" href="/onedocs/assets/js/24.2d1f6c0d.js"><link rel="prefetch" href="/onedocs/assets/js/25.b065b49e.js"><link rel="prefetch" href="/onedocs/assets/js/26.f7c9c67e.js"><link rel="prefetch" href="/onedocs/assets/js/27.fe57866d.js"><link rel="prefetch" href="/onedocs/assets/js/29.422ad882.js"><link rel="prefetch" href="/onedocs/assets/js/3.d80eaeda.js"><link rel="prefetch" href="/onedocs/assets/js/30.bc15280d.js"><link rel="prefetch" href="/onedocs/assets/js/31.4cf2c5ac.js"><link rel="prefetch" href="/onedocs/assets/js/32.a8ee01dd.js"><link rel="prefetch" href="/onedocs/assets/js/33.9e201c03.js"><link rel="prefetch" href="/onedocs/assets/js/34.9cc2721d.js"><link rel="prefetch" href="/onedocs/assets/js/35.f9aa5b83.js"><link rel="prefetch" href="/onedocs/assets/js/36.f963ce0a.js"><link rel="prefetch" href="/onedocs/assets/js/37.18a42f55.js"><link rel="prefetch" href="/onedocs/assets/js/38.83fd8fbd.js"><link rel="prefetch" href="/onedocs/assets/js/39.59f67624.js"><link rel="prefetch" href="/onedocs/assets/js/4.7d5f245c.js"><link rel="prefetch" href="/onedocs/assets/js/40.7bf2071d.js"><link rel="prefetch" href="/onedocs/assets/js/41.7278349d.js"><link rel="prefetch" href="/onedocs/assets/js/42.f7289a2d.js"><link rel="prefetch" href="/onedocs/assets/js/43.eb41d011.js"><link rel="prefetch" href="/onedocs/assets/js/44.faeacd48.js"><link rel="prefetch" href="/onedocs/assets/js/45.e77341bd.js"><link rel="prefetch" href="/onedocs/assets/js/46.fee0faeb.js"><link rel="prefetch" href="/onedocs/assets/js/47.323e7467.js"><link rel="prefetch" href="/onedocs/assets/js/48.ea62e109.js"><link rel="prefetch" href="/onedocs/assets/js/49.872bc423.js"><link rel="prefetch" href="/onedocs/assets/js/5.db07d21b.js"><link rel="prefetch" href="/onedocs/assets/js/50.ac3fd6c6.js"><link rel="prefetch" href="/onedocs/assets/js/6.9a4262b7.js"><link rel="prefetch" href="/onedocs/assets/js/7.b97f6879.js"><link rel="prefetch" href="/onedocs/assets/js/8.75d03345.js"><link rel="prefetch" href="/onedocs/assets/js/9.d8072e1d.js">
+    <link rel="stylesheet" href="/onedocs/assets/css/0.styles.de272f6a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/onedocs/" class="home-link router-link-active"><img src="/onedocs/logo.png" alt="合抱之木生于毫末" class="logo"> <span class="site-name can-hide">合抱之木生于毫末</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/onedocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="导航" class="dropdown-title"><span class="title">导航</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/SpringBoot/" class="nav-link">
+  spring-boot
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/SpringCloud/" class="nav-link">
+  spring-cloud
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/Spring/" class="nav-link router-link-active">
+  spring
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/SpringMVC/" class="nav-link">
+  spring-mvc
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/web/" class="nav-link">
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/maven/" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/github/" class="nav-link">
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/shihe110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/onedocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="导航" class="dropdown-title"><span class="title">导航</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/SpringBoot/" class="nav-link">
+  spring-boot
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/SpringCloud/" class="nav-link">
+  spring-cloud
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/Spring/" class="nav-link router-link-active">
+  spring
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/SpringMVC/" class="nav-link">
+  spring-mvc
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/web/" class="nav-link">
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/maven/" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/github/" class="nav-link">
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/shihe110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Spring</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/onedocs/Spring/IOC.html" class="sidebar-link">IOC原理</a></li><li><a href="/onedocs/Spring/" aria-current="page" class="sidebar-link">首页</a></li><li><a href="/onedocs/Spring/Spring-AOP.html" class="sidebar-link">AOP</a></li><li><a href="/onedocs/Spring/Spring中的Aware.html" class="sidebar-link">Spring中的Aware</a></li><li><a href="/onedocs/Spring/Spring动态代理.html" class="sidebar-link">静态代理</a></li><li><a href="/onedocs/Spring/Spring注解注入组件扫描.html" class="sidebar-link">spring中注解注入context:component-scan使用总结</a></li><li><a href="/onedocs/Spring/spring配置文件加载.html" class="sidebar-link">配置文件加载</a></li><li><a href="/onedocs/Spring/ssm启动过程web.xml配置详解.html" class="active sidebar-link">本篇主要在基于SSM的框架，深入讲解web.xml的配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/onedocs/Spring/ssm启动过程web.xml配置详解.html#本篇主要在基于ssm的框架，深入讲解web-xml的配置" class="sidebar-link">本篇主要在基于SSM的框架，深入讲解web.xml的配置</a></li></ul></li><li><a href="/onedocs/Spring/拦截器和过滤器使用场景及区别.html" class="sidebar-link">拦截器和过滤器的区别总结</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="本篇主要在基于ssm的框架，深入讲解web-xml的配置"><a href="#本篇主要在基于ssm的框架，深入讲解web-xml的配置" class="header-anchor">#</a> 本篇主要在基于SSM的框架，深入讲解web.xml的配置</h2> <p>web.xml
+每个javaEE项目中都会有，web.xml文件是用来初始化配置信息：比如Welcome页面、servlet、servlet-mapping、filter、listener、启动加载级别等。</p> <div class="language- extra-class"><pre><code> web.xml配置文件内容如下：
+</code></pre></div> &lt;!DOCTYPE web-app PUBLIC
+ &quot;-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN&quot;
+ &quot;http://java.sun.com/dtd/web-app_2_3.dtd&quot; &gt;
+<web-app><display-name>Archetype Created Web Application</display-name> <welcome-file-list><div class="language- extra-class"><pre><code>&lt;welcome-file&gt;index.jsp&lt;/welcome-file&gt;
+</code></pre></div></welcome-file-list> <context-param><div class="language- extra-class"><pre><code>&lt;description&gt;配置Spring配置文件路径&lt;/description&gt;
+&lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+
+&lt;param-value&gt;classpath:spring/applicationContext.xml&lt;/param-value&gt;
+</code></pre></div></context-param> <listener><listener-class>
+      org.springframework.web.context.request.RequestContextListener
+    </listener-class></listener> <listener><listener-class>org.springframework.web.context.ContextLoaderListener</listener-class></listener> <context-param><div class="language- extra-class"><pre><code>&lt;param-name&gt;log4jConfigLocation&lt;/param-name&gt;
+&lt;param-value&gt;classpath:log4j.properties&lt;/param-value&gt;
+</code></pre></div></context-param> <context-param><param-name>log4jRefreshInterval</param-name> <param-value>1800000</param-value></context-param> <context-param><param-name></param-name> <param-value></param-value></context-param> <filter><filter-name>encodingFilter</filter-name> <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class> <init-param><param-name>encoding</param-name> <param-value>UTF-8</param-value></init-param> <init-param><param-name>forceEncoding</param-name> <param-value>true</param-value></init-param></filter> <filter-mapping><filter-name>encodingFilter</filter-name> <url-pattern>/*</url-pattern></filter-mapping> <servlet><servlet-name>springMVC</servlet-name> <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class> <init-param><param-name>contextConfigLocation</param-name> <param-value>classpath:spring/spring-mvc.xml</param-value></init-param> <load-on-startup>1</load-on-startup> <async-supported>true</async-supported></servlet> <servlet-mapping><div class="language- extra-class"><pre><code>&lt;servlet-name&gt;springMVC&lt;/servlet-name&gt;
+&lt;!-- 此处可以可以配置成*.do，对应struts的后缀习惯 --&gt;
+&lt;url-pattern&gt;/&lt;/url-pattern&gt;
+</code></pre></div></servlet-mapping> <servlet-mapping><div class="language- extra-class"><pre><code>&lt;servlet-name&gt;default&lt;/servlet-name&gt;
+&lt;url-pattern&gt;/static/*&lt;/url-pattern&gt;
+</code></pre></div></servlet-mapping> <session-config><div class="language- extra-class"><pre><code>&lt;session-timeout&gt;30&lt;/session-timeout&gt;
+</code></pre></div></session-config></web-app>
+首先介绍一下启动一个项目的整体流程：
+ tomcat启动一个WEB项目的时候，WEB容器会去读取它的配置文件web.xml，读取<listener>和<context-param>两个结点。
+  紧接着，容器创建一个ServletContext（servlet上下文，全局的），这个web项目的所有部分都将共享这个上下文。可以把ServletContext看成是一个Web应用的服务器端组件的共享内存，在ServletContext中可以存放共享数据。ServletContext对象是真正的一个全局对象，凡是web容器中的Servlet都可以访问
+容器将<context-param>转换为键值对，并交给servletContext。
+ 容器创建<listener>中的类实例，创建监听器。 
+<div class="language- extra-class"><pre><code>   以上步骤，都是基于web.xml的配置文件进行操作的，现在简单说一下，web.xml文件主要的工作包括两部分：1、web.xml启动spring容器；2、DispathcheServlet的声明；3、其余工作是session过期，字符串编码等
+   web.xml中标签的加载顺序：&lt;context-param&gt;  &gt;  &lt;listener&gt; (spring的相关工作)  &gt;  filter &gt;servlet（springmvc的相关工作）
+</code></pre></div><p>A、web.xml启动spring容器的加载过程：
+读取web.xml中两个节点，<context-param>  &gt;  <listener>，创建ServletContext对象，listener中ContextLoaderListener监听器的作用就是启动Web容器时，监听servletContext对象的变化，获取servletContext对象的<context-param>，来自动装配ApplicationContext的配置信息。</context-param></listener></context-param></p> <div class="language- extra-class"><pre><code> 1） 当我们启动一个WEB项目容器时，容器包括(JBoss,Tomcat等)。首先会去读取web.xml配置文件里的配置，当这一步骤没有出错并且完成之后，项目才能正常的被启动起来。
+
+ 2） 启动WEB项目的时候：
+
+   容器首先会去读取web.xml配置文件中的两个节点：
+
+           第一个节点：&lt;context-param&gt; &lt;/context-param&gt; ，&lt;context-param&gt;是web应用的资源配置，是wen应用的上下文参数，如数据库连接方式，spring的配置文件路径（application.xml）等，这些键值对都会加入到servletContext对象。
+
+           第二个节点：&lt;listener&gt; &lt;/listener&gt;，&lt;listener&gt;可以获取当前该web应用对象，即servletContext对象，获取context-param值，进而获取资源，在web应用启动前操作）  ,listener中ContextLoaderListener监听器的作用就是启动Web容器时，监听servletContext对象的变化，获取servletContext对象的&lt;context-param&gt;，来自动装配ApplicationContext的配置信息。因为它实现了ServletContextListener这个接口，在web.xml配置这个监听器，启动容器时，就会默认执行它实现的方法。
+</code></pre></div><context-param>元素含有一对参数名和参数值，用作应用的Servlet上下文初始化参数，参数名在整个Web应用中必须是惟一的，在web应用的整个生命周期中上下文初始化参数都存在，任意的Servlet和jsp都可以随时随地访问它。<context-param>用于向 ServletContext 提供键值对。
+<div class="language- extra-class"><pre><code>   监听器&lt;Listener&gt;，它是实现了javax.servlet.ServletContextListener 接口的服务器端程序，它也是随web应用的启动而启动，只初始化一次，随web应用的停止而销毁。主要作用是： listener中ContextLoaderListener监听器的作用就是启动Web容器时，监听servletContext对象的变化，获取servletContext对象的&lt;context-param&gt;，来自动装配ApplicationContext的配置信息。
+
+ 3）紧接着，容器创建一个ServletContext(application),这个web项目的所有部分都将共享这个上下文。容器以&lt;context-param&gt;&lt;/context-param&gt;的name作为键，value作为值，将其转化为键值对，存入ServletContext。ServletContext即代表当前web应用。
+
+ 4）容器创建&lt;listener&gt;&lt;/listener&gt;中的类实例,即创建监听.，listener中ContextLoaderListener监听器的作用就是启动Web容器时，监听servletContext对象的变化，获取servletContext对象的&lt;context-param&gt;，来自动装配ApplicationContext的配置信息。
+
+ 5） 监听器中通过contextInitialized(ServletContextEvent args)初始化方法，来获得ServletContext 对象以及context-param值。
+
+              ServletContext = ServletContextEvent.getServletContext();
+
+              context-param的值 = ServletContext.getInitParameter(&quot;context-param的键&quot;);
+
+    6）  拿到这个context-param的值之后,可以在WEB项目还没有完全启动时，进行一些初始化工作，但是最主要的还是自动装配ApplicationContext的配置信息。
+
+    7）   .举例.你可能想在项目启动之前就打开数据库.
+       那么这里就可以在&lt;context-param&gt;中设置数据库的连接方式,在监听类中初始化数据库的连接.。这个监听是自己写的一个类,除了初始化方法,它还有销毁方法.用于关闭应用前释放资源.比如说数据库连接的关闭.
+</code></pre></div><p>B、DispathcheServlet的声明（主要是servlet标签的配置,，主要配置springmvc）
+DispatcherServlet是前端控制器设计模式的实现，提供Spring Web MVC的集中访问点（也就是把前端请求分发到目标controller），而且与Spring IoC容器无缝集成，从而可以获得Spring的所有好处。</p> <div class="language- extra-class"><pre><code>DispatcherServlet主要用作职责调度工作，本身主要用于控制流程，主要职责如下：
+</code></pre></div><p>文件上传解析，如果请求类型是multipart将通过MultipartResolver进行文件上传解析；
+通过HandlerMapping，将请求映射到处理器（返回一个HandlerExecutionChain，它包括一个处理器、多个HandlerInterceptor拦截器）；
+通过HandlerAdapter支持多种类型的处理器(HandlerExecutionChain中的处理器)；
+通过ViewResolver解析逻辑视图名到具体视图实现；
+本地化解析；
+渲染具体的视图等；
+如果执行过程中遇到异常将交给HandlerExceptionResolver来解析。
+从以上我们可以看出DispatcherServlet主要负责流程的控制（而且在流程中的每个关键点都是很容易扩展的）。</p> <div class="language- extra-class"><pre><code> web.xml中spring的核心ContextLoaderListener初始化的上下文和springmvc的核心DispatcherServlet初始化的上下文关系：
+</code></pre></div><p>从图中可以看出：</p> <div class="language- extra-class"><pre><code>  ContextLoaderListener初始化的上下文加载的Bean是对于整个应用程序共享的，不管是使用什么表现层技术，一般如DAO层、Service层Bean；
+
+ DispatcherServlet初始化的上下文加载的Bean是只对Spring Web MVC有效的Bean，如Controller、HandlerMapping、HandlerAdapter等等，该初始化上下文应该只加载Web相关组件。
+</code></pre></div><p>小结：
+1、javaEE项目启动过程：首先加载Spring上下文环境配置文件，然后加载SpringMVC配置文件。
+Spring配置加载过程：
+tomcat服务器启动一个WEB项目的时候，WEB容器会去读取它的配置文件web.xml，然后会读取它的listener和context-param节点，然后紧接着会创建一个ServletContext（servlet上下文，全局的），这个web项目的所有部分都将共享这个上下文，容器将<context-param>转换为键值对，并交给servletContext，<listener>可以获取当前该web应用对象，即servletContext对象，获取context-param值，进而获取资源，在web应用启动前操作）  ,listener中ContextLoaderListener监听器的作用就是启动Web容器时，监听servletContext对象的变化，获取servletContext对象的<context-param>，来自动装配ApplicationContext的配置信息。这样spring的加载过程就完成了。</context-param></listener></context-param></p> <p>SpringMVC配置加载过程：
+springMVC其实和spring是一样的，但是它不用在程序开始时访问。springMVC的加载过程是通过Servlet节点 。</p> <div class="language- extra-class"><pre><code>  Servlet介绍：
+
+    Servlet通常称为服务端小程序，是服务端的程序，用于处理及响应客户的请求。Servlet是一个特殊的Java类，创建Servlet类自动继承HttpServlet。客户端通常只有GET和POST两种请求方式，Servlet为了响应这两种请求，必须重写doGet()和doPost()方法。大部分时候，Servlet对于所有的请求响应都是完全一样的，此时只需要重写service()方法即可响应客户端的所有请求。
+
+   创建Servlet实例有两个时机：
+</code></pre></div><p>客户端第一次请求某个Servlet时，系统创建该Servlet的实例，大部分Servlet都是这种Servlet；
+web应用启动时立即创建Servlet实例，即<load-on-start>1
+2、监听器如何进行项目的初始化
+监听器中通过contextInitialized(ServletContextEvent args)初始化方法，来获得ServletContext 对象以及context-param值。</load-on-start></p> <div class="language- extra-class"><pre><code>                          ServletContext = ServletContextEvent.getServletContext();
+
+                          context-param的值 = ServletContext.getInitParameter(&quot;context-param的键&quot;);
+
+   拿到这个context-param的值之后,可以在WEB项目还没有完全启动时，进行一些初始化工作，但是最主要的还是自动装配ApplicationContext的配置信息。
+</code></pre></div><p>3、spring和springMVC整合后，可以取消掉web.xml中spring的listener配置吗？
+如果只有 Spring mvc 的一个 Servlet，listener 可以不用。
+但是如果用了Shiro 等，Shiro 用到的 Spring 的配置必须在 listener 里加载。
+一般 Dao, Service 的 Spring 配置都会在 listener 里加载，因为可能会在多个 Servlet 里用到，因为父子 Context 的可见性问题，防止重复加载所以在 listener 里加载。
+4、web.xml中spring的核心ContextLoaderListener初始化的上下文和springmvc的核心DispatcherServlet初始化的上下文关系</p> <div class="language- extra-class"><pre><code> ContextLoaderListener初始化的上下文加载的Bean是对于整个应用程序共享的   ：一般如DAO层、Service层Bean；
+ DispatcherServlet初始化的上下文加载的Bean是只对Spring Web MVC有效的Bean，如Controller，该初始化上下文应该只加载Web相关组件。
+</code></pre></div><p><a href="https://blog.csdn.net/qq_35571554/article/details/82385838" target="_blank" rel="noopener noreferrer">文章出处<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></context-param></context-param></listener></context-param></context-param></listener></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/onedocs/Spring/spring配置文件加载.html" class="prev">
+        配置文件加载
+      </a></span> <span class="next"><a href="/onedocs/Spring/拦截器和过滤器使用场景及区别.html">
+        拦截器和过滤器的区别总结
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/onedocs/assets/js/app.c472f6cd.js" defer></script><script src="/onedocs/assets/js/2.2038ef08.js" defer></script><script src="/onedocs/assets/js/28.b7897787.js" defer></script>
+  </body>
+</html>
