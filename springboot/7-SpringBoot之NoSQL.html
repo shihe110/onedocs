@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>NoSQL数据库 | 毫末之木</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/onedocs/logo.png">
+    <meta name="description" content="合抱之木生于毫末，九层之台起于累土，千里之行始于足下">
+    <link rel="preload" href="/onedocs/assets/css/0.styles.de272f6a.css" as="style"><link rel="preload" href="/onedocs/assets/js/app.a5cec01a.js" as="script"><link rel="preload" href="/onedocs/assets/js/2.2038ef08.js" as="script"><link rel="preload" href="/onedocs/assets/js/49.4c4af3ce.js" as="script"><link rel="prefetch" href="/onedocs/assets/js/10.f6a37571.js"><link rel="prefetch" href="/onedocs/assets/js/11.8748e5dc.js"><link rel="prefetch" href="/onedocs/assets/js/12.aa37326f.js"><link rel="prefetch" href="/onedocs/assets/js/13.c47565b1.js"><link rel="prefetch" href="/onedocs/assets/js/14.84475633.js"><link rel="prefetch" href="/onedocs/assets/js/15.0503a365.js"><link rel="prefetch" href="/onedocs/assets/js/16.de8cdbe2.js"><link rel="prefetch" href="/onedocs/assets/js/17.c3819ca1.js"><link rel="prefetch" href="/onedocs/assets/js/18.1e7ade88.js"><link rel="prefetch" href="/onedocs/assets/js/19.cd4460aa.js"><link rel="prefetch" href="/onedocs/assets/js/20.fde4d430.js"><link rel="prefetch" href="/onedocs/assets/js/21.b4bb2dcb.js"><link rel="prefetch" href="/onedocs/assets/js/22.ba351a03.js"><link rel="prefetch" href="/onedocs/assets/js/23.5e1ab7ae.js"><link rel="prefetch" href="/onedocs/assets/js/24.3beb379d.js"><link rel="prefetch" href="/onedocs/assets/js/25.f594b461.js"><link rel="prefetch" href="/onedocs/assets/js/26.719c8483.js"><link rel="prefetch" href="/onedocs/assets/js/27.d44b2f08.js"><link rel="prefetch" href="/onedocs/assets/js/28.7c32bf68.js"><link rel="prefetch" href="/onedocs/assets/js/29.e11f46cb.js"><link rel="prefetch" href="/onedocs/assets/js/3.f9e48b55.js"><link rel="prefetch" href="/onedocs/assets/js/30.896cab2d.js"><link rel="prefetch" href="/onedocs/assets/js/31.705bc0ab.js"><link rel="prefetch" href="/onedocs/assets/js/32.519dec63.js"><link rel="prefetch" href="/onedocs/assets/js/33.0cf267c2.js"><link rel="prefetch" href="/onedocs/assets/js/34.34618ce0.js"><link rel="prefetch" href="/onedocs/assets/js/35.065426f5.js"><link rel="prefetch" href="/onedocs/assets/js/36.9b3684a1.js"><link rel="prefetch" href="/onedocs/assets/js/37.08ddc61c.js"><link rel="prefetch" href="/onedocs/assets/js/38.f863b1e9.js"><link rel="prefetch" href="/onedocs/assets/js/39.ef61b41c.js"><link rel="prefetch" href="/onedocs/assets/js/4.7d5f245c.js"><link rel="prefetch" href="/onedocs/assets/js/40.2ef57d2d.js"><link rel="prefetch" href="/onedocs/assets/js/41.a17ae1e5.js"><link rel="prefetch" href="/onedocs/assets/js/42.71a38447.js"><link rel="prefetch" href="/onedocs/assets/js/43.2781650f.js"><link rel="prefetch" href="/onedocs/assets/js/44.1344137f.js"><link rel="prefetch" href="/onedocs/assets/js/45.71348c3a.js"><link rel="prefetch" href="/onedocs/assets/js/46.667b2abb.js"><link rel="prefetch" href="/onedocs/assets/js/47.5e7e7635.js"><link rel="prefetch" href="/onedocs/assets/js/48.65000712.js"><link rel="prefetch" href="/onedocs/assets/js/5.f8be39f3.js"><link rel="prefetch" href="/onedocs/assets/js/50.b9381bfb.js"><link rel="prefetch" href="/onedocs/assets/js/51.ecf3a926.js"><link rel="prefetch" href="/onedocs/assets/js/52.c0b8859c.js"><link rel="prefetch" href="/onedocs/assets/js/53.28cd5993.js"><link rel="prefetch" href="/onedocs/assets/js/54.55374335.js"><link rel="prefetch" href="/onedocs/assets/js/55.0e8310ac.js"><link rel="prefetch" href="/onedocs/assets/js/56.cfced9c2.js"><link rel="prefetch" href="/onedocs/assets/js/57.c2164860.js"><link rel="prefetch" href="/onedocs/assets/js/58.04d255fb.js"><link rel="prefetch" href="/onedocs/assets/js/59.5f7bf528.js"><link rel="prefetch" href="/onedocs/assets/js/6.adb9b803.js"><link rel="prefetch" href="/onedocs/assets/js/60.6dce2f0e.js"><link rel="prefetch" href="/onedocs/assets/js/61.4db00ff8.js"><link rel="prefetch" href="/onedocs/assets/js/62.b52c709c.js"><link rel="prefetch" href="/onedocs/assets/js/63.d5b022f8.js"><link rel="prefetch" href="/onedocs/assets/js/64.714e2aa5.js"><link rel="prefetch" href="/onedocs/assets/js/65.f69711ea.js"><link rel="prefetch" href="/onedocs/assets/js/66.fddd4ea6.js"><link rel="prefetch" href="/onedocs/assets/js/67.487ef32c.js"><link rel="prefetch" href="/onedocs/assets/js/68.eeda7447.js"><link rel="prefetch" href="/onedocs/assets/js/69.3db7102a.js"><link rel="prefetch" href="/onedocs/assets/js/7.5872621b.js"><link rel="prefetch" href="/onedocs/assets/js/70.a4103ddc.js"><link rel="prefetch" href="/onedocs/assets/js/71.209c9b73.js"><link rel="prefetch" href="/onedocs/assets/js/72.16653690.js"><link rel="prefetch" href="/onedocs/assets/js/8.5766d378.js"><link rel="prefetch" href="/onedocs/assets/js/9.fdbd8ce3.js">
+    <link rel="stylesheet" href="/onedocs/assets/css/0.styles.de272f6a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/onedocs/" class="home-link router-link-active"><img src="/onedocs/logo.png" alt="毫末之木" class="logo"> <span class="site-name can-hide">毫末之木</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/onedocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/javaapi/" class="nav-link">
+  javaapi
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Spring系列" class="dropdown-title"><span class="title">Spring系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/spring/" class="nav-link">
+  spring
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springmvc/" class="nav-link">
+  spring-mvc
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springboot/" class="nav-link router-link-active">
+  spring-boot
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springcloud/" class="nav-link">
+  spring-cloud
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Database" class="dropdown-title"><span class="title">Database</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/db/" class="nav-link">
+  db
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具集" class="dropdown-title"><span class="title">工具集</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/web/" class="nav-link">
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/maven/" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/github/" class="nav-link">
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/browser/" class="nav-link">
+  browser
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/idea/" class="nav-link">
+  idea
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/shihe110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/onedocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/javaapi/" class="nav-link">
+  javaapi
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Spring系列" class="dropdown-title"><span class="title">Spring系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/spring/" class="nav-link">
+  spring
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springmvc/" class="nav-link">
+  spring-mvc
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springboot/" class="nav-link router-link-active">
+  spring-boot
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springcloud/" class="nav-link">
+  spring-cloud
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Database" class="dropdown-title"><span class="title">Database</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/db/" class="nav-link">
+  db
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具集" class="dropdown-title"><span class="title">工具集</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/web/" class="nav-link">
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/maven/" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/github/" class="nav-link">
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/browser/" class="nav-link">
+  browser
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/idea/" class="nav-link">
+  idea
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/shihe110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>springboot</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/onedocs/springboot/1-SpringBoot之常用配置.html" class="sidebar-link">SpringBoot之关闭特定自动配置</a></li><li><a href="/onedocs/springboot/2-SpringBoot之运行原理.html" class="sidebar-link">自动配置原理</a></li><li><a href="/onedocs/springboot/3-SpringBoot之对事务的支持.html" class="sidebar-link">声明式事务</a></li><li><a href="/onedocs/springboot/4-SpringBoot之对缓存的支持.html" class="sidebar-link">/springboot/4-SpringBoot之对缓存的支持.html</a></li><li><a href="/onedocs/springboot/5-SpringBoot之应用打包.html" class="sidebar-link">SpringBoot应用打包</a></li><li><a href="/onedocs/springboot/6-SpringBoot之应用监控.html" class="sidebar-link">SpringBoot监控和管理端点</a></li><li><a href="/onedocs/springboot/7-SpringBoot之NoSQL.html" class="active sidebar-link">NoSQL数据库</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/onedocs/springboot/7-SpringBoot之NoSQL.html#nosql数据库" class="sidebar-link">NoSQL数据库</a></li></ul></li><li><a href="/onedocs/springboot/" aria-current="page" class="sidebar-link">首页</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="nosql数据库"><a href="#nosql数据库" class="header-anchor">#</a> NoSQL数据库</h2> <h3 id="spring对mongdb的支持"><a href="#spring对mongdb的支持" class="header-anchor">#</a> spring对mongdb的支持</h3> <p>spring对mongdb的支持通过：spring data MongoDB来实现。</p> <ul><li>1.Object和mongo文档对象Document的映射注解支持</li></ul> <table><thead><tr><th>注解</th> <th>说明</th></tr></thead> <tbody><tr><td>@Document</td> <td>映射领域对象与MongoDB的一个文档</td></tr> <tr><td>@Id</td> <td>映射当前属性是ID</td></tr> <tr><td>@DbRef</td> <td>当前属性将参考其他的文档</td></tr> <tr><td>@Field</td> <td>为文档的属性定义名称</td></tr> <tr><td>@Version</td> <td>将当前属性作为版本</td></tr></tbody></table> <ul><li>2.MongoTemplate</li></ul> <p>像JdbcTemplate一样，mongoTemplate提供了数据访问的方法。
+我们还需为：MongoClient以及MongoDbFactory来配置数据库连接属性。</p> <ul><li>3.同时提供对Repository的支持。</li></ul> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">PersonRepository</span> <span class="token keyword">extends</span> <span class="token class-name">MongoRepository</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Person</span><span class="token punctuation">,</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre></div><p>配置类：@EnableMongoRepositories</p> <h3 id="springboot对mongo的支持"><a href="#springboot对mongo的支持" class="header-anchor">#</a> springboot对mongo的支持</h3> <p>自动化配置：org.springframework.boot.autoconfigure.mongo
+自动化配置主要配置了：数据库连接、MongoTemplate
+使用前缀：spring.data.mongodb</p> <div class="language-java extra-class"><pre class="language-java"><code>spring<span class="token punctuation">.</span>data<span class="token punctuation">.</span>mongodb<span class="token punctuation">.</span>host<span class="token operator">=</span> # 数据库主机地址 默认localhost
+spring<span class="token punctuation">.</span>data<span class="token punctuation">.</span>mongodb<span class="token punctuation">.</span>port<span class="token operator">=</span><span class="token number">27017</span> # 默认端口<span class="token number">27017</span>
+spring<span class="token punctuation">.</span>data<span class="token punctuation">.</span>mongodb<span class="token punctuation">.</span>uri<span class="token operator">=</span>mongodb<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>localhost<span class="token operator">/</span>test #connection URL
+spring<span class="token punctuation">.</span>data<span class="token punctuation">.</span>mongodb<span class="token punctuation">.</span>repositories<span class="token punctuation">.</span>enabled<span class="token operator">=</span><span class="token boolean">true</span> # reposity支持是否开启，默认为开启
+</code></pre></div><h3 id="spring对redis的支持"><a href="#spring对redis的支持" class="header-anchor">#</a> spring对redis的支持</h3> <ul><li>配置
+spring通过Spring Data Redis来实现（只针对redis2.6 2.8版本做过测试）。spring data jpa提供了</li></ul> <p>连接:ConnectionFactory</p> <p>数据库操作：RedisTemplate</p> <div class="language- extra-class"><pre class="language-text"><code>ConnectionFactory实现redis客户端：
+    - JedisConnectionFactory
+    - JredisConnectionFactory
+    - LettuceConnectionFactory
+    - SrpConnectionFactory
+</code></pre></div><ul><li>使用</li></ul> <p>数据操作模板：</p> <div class="language- extra-class"><pre><code>- RedisTemplate
+
+- StringRedisTemplate
+</code></pre></div><p>访问方法</p> <table><thead><tr><th>方法</th> <th>说明</th></tr></thead> <tbody><tr><td>opsForValue()</td> <td>操作只有简单属性的数据</td></tr> <tr><td>opsForList()</td> <td>操作含有list的数据</td></tr> <tr><td>opsForSet()</td> <td>操作含有set的数据</td></tr> <tr><td>opsForZSet()</td> <td>操作含有有序set的数据</td></tr> <tr><td>opsForHash()</td> <td>操作含有hash的数据</td></tr></tbody></table> <ul><li>定义Serializer</li></ul> <p>当数据存储到redis时，键和值都是通过spring提供的serializer序列化到数据库。
+RedisTemplate默认使用的是JdkSerializationRedisSerializer,
+StringRedisTempalte默认使用StringRedisSerializer。</p> <p>spring data jpa提供了一些Serializer：</p> <p>GenericToStringSerializer、Jackson2JsonRedisSerializer、
+JacksonJsonRedisSerializer、JDKSerializerRedisSerializer、
+OxmSerializer、StringRedisSerializer</p> <h3 id="springboot对redis的支持"><a href="#springboot对redis的支持" class="header-anchor">#</a> springboot对redis的支持</h3> <p>包位置：org.springframework.boot.autoconfigure.redis</p> <p>配置类：RedisAutoConfiguration 默认配置JedisConnectionFactory、RedisTemplate、StringRedisTemplate</p> <p>RedisProperties配置前缀：spring.redis</p> <div class="language-js extra-class"><pre class="language-js"><code>spring<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>database<span class="token operator">=</span><span class="token number">0</span> # 数据库名称，默认为db0
+spring<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>host<span class="token operator">=</span>localhost # 服务器地址，默认为localhost
+spring<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>password<span class="token operator">=</span> # 数据库密码
+spring<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>port<span class="token operator">=</span><span class="token number">6379</span> # 默认端口<span class="token number">6379</span>
+spring<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>pool<span class="token punctuation">.</span>max<span class="token operator">-</span>idle<span class="token operator">=</span><span class="token number">8</span> # 连接池设置
+spring<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>pool<span class="token punctuation">.</span>min<span class="token operator">-</span>idle<span class="token operator">=</span>
+spring<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>pool<span class="token punctuation">.</span>max<span class="token operator">-</span>active<span class="token operator">=</span><span class="token number">8</span>
+spring<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>pool<span class="token punctuation">.</span>max<span class="token operator">-</span>wait<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span>
+spring<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>sentinel<span class="token punctuation">.</span>master<span class="token operator">=</span>
+spring<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>sentinel<span class="token punctuation">.</span>modes<span class="token operator">=</span>
+spring<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>timeout<span class="token operator">=</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/onedocs/springboot/6-SpringBoot之应用监控.html" class="prev">
+        SpringBoot监控和管理端点
+      </a></span> <span class="next"><a href="/onedocs/springboot/" class="router-link-active">
+        首页
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/onedocs/assets/js/app.a5cec01a.js" defer></script><script src="/onedocs/assets/js/2.2038ef08.js" defer></script><script src="/onedocs/assets/js/49.4c4af3ce.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Oracle实现列转行函数-两种自定义实现 | 毫末之木</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/onedocs/logo.png">
+    <meta name="description" content="合抱之木生于毫末，九层之台起于累土，千里之行始于足下">
+    <link rel="preload" href="/onedocs/assets/css/0.styles.de272f6a.css" as="style"><link rel="preload" href="/onedocs/assets/js/app.a5cec01a.js" as="script"><link rel="preload" href="/onedocs/assets/js/2.2038ef08.js" as="script"><link rel="preload" href="/onedocs/assets/js/10.f6a37571.js" as="script"><link rel="prefetch" href="/onedocs/assets/js/11.8748e5dc.js"><link rel="prefetch" href="/onedocs/assets/js/12.aa37326f.js"><link rel="prefetch" href="/onedocs/assets/js/13.c47565b1.js"><link rel="prefetch" href="/onedocs/assets/js/14.84475633.js"><link rel="prefetch" href="/onedocs/assets/js/15.0503a365.js"><link rel="prefetch" href="/onedocs/assets/js/16.de8cdbe2.js"><link rel="prefetch" href="/onedocs/assets/js/17.c3819ca1.js"><link rel="prefetch" href="/onedocs/assets/js/18.1e7ade88.js"><link rel="prefetch" href="/onedocs/assets/js/19.cd4460aa.js"><link rel="prefetch" href="/onedocs/assets/js/20.fde4d430.js"><link rel="prefetch" href="/onedocs/assets/js/21.b4bb2dcb.js"><link rel="prefetch" href="/onedocs/assets/js/22.ba351a03.js"><link rel="prefetch" href="/onedocs/assets/js/23.5e1ab7ae.js"><link rel="prefetch" href="/onedocs/assets/js/24.3beb379d.js"><link rel="prefetch" href="/onedocs/assets/js/25.f594b461.js"><link rel="prefetch" href="/onedocs/assets/js/26.719c8483.js"><link rel="prefetch" href="/onedocs/assets/js/27.d44b2f08.js"><link rel="prefetch" href="/onedocs/assets/js/28.7c32bf68.js"><link rel="prefetch" href="/onedocs/assets/js/29.e11f46cb.js"><link rel="prefetch" href="/onedocs/assets/js/3.f9e48b55.js"><link rel="prefetch" href="/onedocs/assets/js/30.896cab2d.js"><link rel="prefetch" href="/onedocs/assets/js/31.705bc0ab.js"><link rel="prefetch" href="/onedocs/assets/js/32.519dec63.js"><link rel="prefetch" href="/onedocs/assets/js/33.0cf267c2.js"><link rel="prefetch" href="/onedocs/assets/js/34.34618ce0.js"><link rel="prefetch" href="/onedocs/assets/js/35.065426f5.js"><link rel="prefetch" href="/onedocs/assets/js/36.9b3684a1.js"><link rel="prefetch" href="/onedocs/assets/js/37.08ddc61c.js"><link rel="prefetch" href="/onedocs/assets/js/38.f863b1e9.js"><link rel="prefetch" href="/onedocs/assets/js/39.ef61b41c.js"><link rel="prefetch" href="/onedocs/assets/js/4.7d5f245c.js"><link rel="prefetch" href="/onedocs/assets/js/40.2ef57d2d.js"><link rel="prefetch" href="/onedocs/assets/js/41.a17ae1e5.js"><link rel="prefetch" href="/onedocs/assets/js/42.71a38447.js"><link rel="prefetch" href="/onedocs/assets/js/43.2781650f.js"><link rel="prefetch" href="/onedocs/assets/js/44.1344137f.js"><link rel="prefetch" href="/onedocs/assets/js/45.71348c3a.js"><link rel="prefetch" href="/onedocs/assets/js/46.667b2abb.js"><link rel="prefetch" href="/onedocs/assets/js/47.5e7e7635.js"><link rel="prefetch" href="/onedocs/assets/js/48.65000712.js"><link rel="prefetch" href="/onedocs/assets/js/49.4c4af3ce.js"><link rel="prefetch" href="/onedocs/assets/js/5.f8be39f3.js"><link rel="prefetch" href="/onedocs/assets/js/50.b9381bfb.js"><link rel="prefetch" href="/onedocs/assets/js/51.ecf3a926.js"><link rel="prefetch" href="/onedocs/assets/js/52.c0b8859c.js"><link rel="prefetch" href="/onedocs/assets/js/53.28cd5993.js"><link rel="prefetch" href="/onedocs/assets/js/54.55374335.js"><link rel="prefetch" href="/onedocs/assets/js/55.0e8310ac.js"><link rel="prefetch" href="/onedocs/assets/js/56.cfced9c2.js"><link rel="prefetch" href="/onedocs/assets/js/57.c2164860.js"><link rel="prefetch" href="/onedocs/assets/js/58.04d255fb.js"><link rel="prefetch" href="/onedocs/assets/js/59.5f7bf528.js"><link rel="prefetch" href="/onedocs/assets/js/6.adb9b803.js"><link rel="prefetch" href="/onedocs/assets/js/60.6dce2f0e.js"><link rel="prefetch" href="/onedocs/assets/js/61.4db00ff8.js"><link rel="prefetch" href="/onedocs/assets/js/62.b52c709c.js"><link rel="prefetch" href="/onedocs/assets/js/63.d5b022f8.js"><link rel="prefetch" href="/onedocs/assets/js/64.714e2aa5.js"><link rel="prefetch" href="/onedocs/assets/js/65.f69711ea.js"><link rel="prefetch" href="/onedocs/assets/js/66.fddd4ea6.js"><link rel="prefetch" href="/onedocs/assets/js/67.487ef32c.js"><link rel="prefetch" href="/onedocs/assets/js/68.eeda7447.js"><link rel="prefetch" href="/onedocs/assets/js/69.3db7102a.js"><link rel="prefetch" href="/onedocs/assets/js/7.5872621b.js"><link rel="prefetch" href="/onedocs/assets/js/70.a4103ddc.js"><link rel="prefetch" href="/onedocs/assets/js/71.209c9b73.js"><link rel="prefetch" href="/onedocs/assets/js/72.16653690.js"><link rel="prefetch" href="/onedocs/assets/js/8.5766d378.js"><link rel="prefetch" href="/onedocs/assets/js/9.fdbd8ce3.js">
+    <link rel="stylesheet" href="/onedocs/assets/css/0.styles.de272f6a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/onedocs/" class="home-link router-link-active"><img src="/onedocs/logo.png" alt="毫末之木" class="logo"> <span class="site-name can-hide">毫末之木</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/onedocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/javaapi/" class="nav-link">
+  javaapi
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Spring系列" class="dropdown-title"><span class="title">Spring系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/spring/" class="nav-link">
+  spring
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springmvc/" class="nav-link">
+  spring-mvc
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springboot/" class="nav-link">
+  spring-boot
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springcloud/" class="nav-link">
+  spring-cloud
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Database" class="dropdown-title"><span class="title">Database</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/db/" class="nav-link router-link-active">
+  db
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具集" class="dropdown-title"><span class="title">工具集</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/web/" class="nav-link">
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/maven/" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/github/" class="nav-link">
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/browser/" class="nav-link">
+  browser
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/idea/" class="nav-link">
+  idea
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/shihe110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/onedocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/javaapi/" class="nav-link">
+  javaapi
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Spring系列" class="dropdown-title"><span class="title">Spring系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/spring/" class="nav-link">
+  spring
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springmvc/" class="nav-link">
+  spring-mvc
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springboot/" class="nav-link">
+  spring-boot
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springcloud/" class="nav-link">
+  spring-cloud
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Database" class="dropdown-title"><span class="title">Database</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/db/" class="nav-link router-link-active">
+  db
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具集" class="dropdown-title"><span class="title">工具集</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/web/" class="nav-link">
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/maven/" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/github/" class="nav-link">
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/browser/" class="nav-link">
+  browser
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/idea/" class="nav-link">
+  idea
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/shihe110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>db</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/onedocs/db/100-Oracle自定义函数.html" class="sidebar-link">Oracle自定义无参函数</a></li><li><a href="/onedocs/db/101-Oracle自定义类型.html" class="sidebar-link">oracle 自定义类型 type / create type</a></li><li><a href="/onedocs/db/102-Oracle自定义列转行函数替换wm_concat.html" class="active sidebar-link">Oracle实现列转行函数-两种自定义实现</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/onedocs/db/102-Oracle自定义列转行函数替换wm_concat.html#oracle实现列转行函数-两种自定义实现" class="sidebar-link">Oracle实现列转行函数-两种自定义实现</a></li><li class="sidebar-sub-header"><a href="/onedocs/db/102-Oracle自定义列转行函数替换wm_concat.html#版本一" class="sidebar-link">版本一</a></li><li class="sidebar-sub-header"><a href="/onedocs/db/102-Oracle自定义列转行函数替换wm_concat.html#版本二（参考zh-concat）" class="sidebar-link">版本二（参考zh_concat）</a></li></ul></li><li><a href="/onedocs/db/201-MongoDB安装.html" class="sidebar-link">MongoDB安装</a></li><li><a href="/onedocs/db/" aria-current="page" class="sidebar-link">介绍</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="oracle实现列转行函数-两种自定义实现"><a href="#oracle实现列转行函数-两种自定义实现" class="header-anchor">#</a> Oracle实现列转行函数-两种自定义实现</h2> <p>在 Oracle 领域，我相信一说到列转行大部分人都会立马想到 WM_CONCAT 函数，我觉得主要是因为该函数比较实用。但事实上 WM_CONCAT 并非官方公开函数，使用会存在一定的风险；函数返回值的格式比较单一（只能用逗号分割）；返回值的长度也限制。本文接下来会介绍两个自定义函数分别来实现列转行的聚合效果。</p> <h2 id="版本一"><a href="#版本一" class="header-anchor">#</a> 版本一</h2> <ul><li>第 1 步（创建类型 type_table_string，用于转换 COLLECT 函数的返回值）：</li></ul> <div class="language-sql extra-class"><pre class="language-sql"><code><span class="token keyword">CREATE</span> <span class="token operator">OR</span> <span class="token keyword">REPLACE</span> <span class="token keyword">TYPE</span> type_table_string <span class="token operator">IS</span> <span class="token keyword">TABLE</span> <span class="token keyword">OF</span> VARCHAR2<span class="token punctuation">(</span><span class="token number">4000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><ul><li>第 2 步（创建函数 fn_to_string，用于将 type_table_string 类型转换成普通字符串）：</li></ul> <div class="language-sql extra-class"><pre class="language-sql"><code><span class="token keyword">CREATE</span> <span class="token operator">OR</span> <span class="token keyword">REPLACE</span> <span class="token keyword">FUNCTION</span> fn_to_string<span class="token punctuation">(</span>
+  p_str_tab <span class="token operator">IN</span> type_table_string<span class="token punctuation">,</span>
+  p_separator <span class="token operator">IN</span> VARCHAR2 <span class="token keyword">DEFAULT</span> <span class="token string">','</span>
+<span class="token punctuation">)</span>
+<span class="token keyword">RETURN</span> VARCHAR2 <span class="token operator">IS</span>
+  v_ret_str VARCHAR2<span class="token punctuation">(</span><span class="token number">4000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">BEGIN</span>
+  <span class="token keyword">FOR</span> i <span class="token operator">IN</span> <span class="token number">1.</span><span class="token punctuation">.</span>p_str_tab<span class="token punctuation">.</span>COUNT <span class="token keyword">LOOP</span>
+    v_ret_str:<span class="token operator">=</span>v_ret_str<span class="token operator">||</span>p_separator<span class="token operator">||</span>p_str_tab<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">END</span> <span class="token keyword">LOOP</span><span class="token punctuation">;</span>
+  <span class="token keyword">RETURN</span> LTRIM<span class="token punctuation">(</span>v_ret_str<span class="token punctuation">,</span>p_separator<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">END</span><span class="token punctuation">;</span>
+</code></pre></div><ul><li>调用方法：</li></ul> <div class="language-sql extra-class"><pre class="language-sql"><code><span class="token keyword">SELECT</span> t<span class="token punctuation">.</span>dept_code<span class="token punctuation">,</span>fn_to_string<span class="token punctuation">(</span>CAST<span class="token punctuation">(</span>COLLECT<span class="token punctuation">(</span>t<span class="token punctuation">.</span>staff_name<span class="token punctuation">)</span> <span class="token keyword">AS</span> type_table_string<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">'|'</span><span class="token punctuation">)</span> staff_names
+<span class="token keyword">FROM</span> demo<span class="token punctuation">.</span>t_staff t <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> t<span class="token punctuation">.</span>dept_code<span class="token punctuation">;</span>
+</code></pre></div><h2 id="版本二（参考zh-concat）"><a href="#版本二（参考zh-concat）" class="header-anchor">#</a> 版本二（参考zh_concat）</h2> <ul><li>第 1 步（创建类型 type_concat 的定义）：</li></ul> <div class="language-sql extra-class"><pre class="language-sql"><code><span class="token keyword">CREATE</span> <span class="token operator">OR</span> <span class="token keyword">REPLACE</span> <span class="token keyword">TYPE</span> type_concat
+AUTHID <span class="token keyword">CURRENT_USER</span> <span class="token keyword">AS</span> OBJECT<span class="token punctuation">(</span>
+  v_result_string VARCHAR2<span class="token punctuation">(</span><span class="token number">4000</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  STATIC <span class="token keyword">FUNCTION</span> odciAggregateInitialize<span class="token punctuation">(</span>
+    concat <span class="token operator">IN</span> <span class="token keyword">OUT</span> type_concat<span class="token punctuation">)</span> <span class="token keyword">RETURN</span> NUMBER<span class="token punctuation">,</span>
+  MEMBER <span class="token keyword">FUNCTION</span> odciAggregateIterate<span class="token punctuation">(</span>
+    SELF <span class="token operator">IN</span> <span class="token keyword">OUT</span> type_concat<span class="token punctuation">,</span>str <span class="token operator">IN</span> VARCHAR2<span class="token punctuation">)</span> <span class="token keyword">RETURN</span> NUMBER<span class="token punctuation">,</span>
+  MEMBER <span class="token keyword">FUNCTION</span> odciAggregateTerminate<span class="token punctuation">(</span>
+    SELF <span class="token operator">IN</span> type_concat<span class="token punctuation">,</span>return_value <span class="token keyword">OUT</span> VARCHAR2<span class="token punctuation">,</span>flags <span class="token operator">IN</span> NUMBER<span class="token punctuation">)</span> <span class="token keyword">RETURN</span> NUMBER<span class="token punctuation">,</span>
+  MEMBER <span class="token keyword">FUNCTION</span> odciAggregateMerge<span class="token punctuation">(</span>
+    SELF <span class="token operator">IN</span> <span class="token keyword">OUT</span> type_concat<span class="token punctuation">,</span>concat <span class="token operator">IN</span> type_concat<span class="token punctuation">)</span> <span class="token keyword">RETURN</span> NUMBER
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><ul><li>第 2 步（创建类型 type_concat 的 body）：</li></ul> <div class="language-sql extra-class"><pre class="language-sql"><code><span class="token keyword">CREATE</span> <span class="token operator">OR</span> <span class="token keyword">REPLACE</span> <span class="token keyword">TYPE</span> BODY type_concat
+<span class="token operator">IS</span>
+  STATIC <span class="token keyword">FUNCTION</span> odciAggregateInitialize<span class="token punctuation">(</span>concat <span class="token operator">IN</span> <span class="token keyword">OUT</span> type_concat<span class="token punctuation">)</span>
+  <span class="token keyword">RETURN</span> NUMBER <span class="token operator">IS</span>
+  <span class="token keyword">BEGIN</span>
+    concat :<span class="token operator">=</span> type_concat<span class="token punctuation">(</span><span class="token boolean">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">RETURN</span> ODCICONST<span class="token punctuation">.</span>SUCCESS<span class="token punctuation">;</span>
+  <span class="token keyword">END</span><span class="token punctuation">;</span>
+  
+  MEMBER <span class="token keyword">FUNCTION</span> odciAggregateIterate<span class="token punctuation">(</span>SELF <span class="token operator">IN</span> <span class="token keyword">OUT</span> type_concat<span class="token punctuation">,</span>str <span class="token operator">IN</span> VARCHAR2<span class="token punctuation">)</span>
+  <span class="token keyword">RETURN</span> NUMBER <span class="token operator">IS</span>
+  <span class="token keyword">BEGIN</span>
+    <span class="token keyword">IF</span> SELF<span class="token punctuation">.</span>v_result_string <span class="token operator">IS</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">THEN</span>
+      SELF<span class="token punctuation">.</span>v_result_string :<span class="token operator">=</span> SELF<span class="token punctuation">.</span>v_result_string<span class="token operator">||</span><span class="token string">','</span><span class="token operator">||</span>str<span class="token punctuation">;</span>
+    <span class="token keyword">ELSE</span>
+      SELF<span class="token punctuation">.</span>v_result_string :<span class="token operator">=</span> str<span class="token punctuation">;</span>
+    <span class="token keyword">END</span> <span class="token keyword">IF</span><span class="token punctuation">;</span>
+    <span class="token keyword">RETURN</span> ODCICONST<span class="token punctuation">.</span>SUCCESS<span class="token punctuation">;</span>
+  <span class="token keyword">END</span><span class="token punctuation">;</span>
+  
+  MEMBER <span class="token keyword">FUNCTION</span> odciAggregateTerminate<span class="token punctuation">(</span>SELF <span class="token operator">IN</span> type_concat<span class="token punctuation">,</span>return_value <span class="token keyword">OUT</span> VARCHAR2<span class="token punctuation">,</span>flags <span class="token operator">IN</span> NUMBER<span class="token punctuation">)</span>
+  <span class="token keyword">RETURN</span> NUMBER <span class="token operator">IS</span>
+  <span class="token keyword">BEGIN</span>
+    return_value :<span class="token operator">=</span> SELF<span class="token punctuation">.</span>v_result_string<span class="token punctuation">;</span>
+    <span class="token keyword">RETURN</span> ODCICONST<span class="token punctuation">.</span>SUCCESS<span class="token punctuation">;</span>
+  <span class="token keyword">END</span><span class="token punctuation">;</span>
+  
+  MEMBER <span class="token keyword">FUNCTION</span> odciAggregateMerge<span class="token punctuation">(</span>SELF <span class="token operator">IN</span> <span class="token keyword">OUT</span> type_concat<span class="token punctuation">,</span>concat <span class="token operator">IN</span> type_concat<span class="token punctuation">)</span>
+  <span class="token keyword">RETURN</span> NUMBER <span class="token operator">IS</span>
+  <span class="token keyword">BEGIN</span>
+    <span class="token keyword">IF</span> concat<span class="token punctuation">.</span>v_result_string <span class="token operator">IS</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">THEN</span>
+      SELF<span class="token punctuation">.</span>v_result_string :<span class="token operator">=</span> SELF<span class="token punctuation">.</span>v_result_string<span class="token operator">||</span><span class="token string">','</span><span class="token operator">||</span>concat<span class="token punctuation">.</span>v_result_string<span class="token punctuation">;</span>
+    <span class="token keyword">END</span> <span class="token keyword">IF</span><span class="token punctuation">;</span>
+    <span class="token keyword">RETURN</span> ODCICONST<span class="token punctuation">.</span>SUCCESS<span class="token punctuation">;</span>
+  <span class="token keyword">END</span><span class="token punctuation">;</span>
+<span class="token keyword">END</span><span class="token punctuation">;</span>
+</code></pre></div><ul><li>第 3 步（创建函数 fn_concat，可替代 WM_CONCAT）：</li></ul> <div class="language-sql extra-class"><pre class="language-sql"><code><span class="token keyword">CREATE</span> <span class="token operator">OR</span> <span class="token keyword">REPLACE</span> <span class="token keyword">FUNCTION</span> fn_concat<span class="token punctuation">(</span>str VARCHAR2<span class="token punctuation">)</span>
+<span class="token keyword">RETURN</span> VARCHAR2 AGGREGATE <span class="token keyword">USING</span> type_concat<span class="token punctuation">;</span>
+</code></pre></div><ul><li>调用方法：</li></ul> <div class="language-sql extra-class"><pre class="language-sql"><code><span class="token keyword">SELECT</span> t<span class="token punctuation">.</span>dept_code<span class="token punctuation">,</span>fn_concat<span class="token punctuation">(</span>t<span class="token punctuation">.</span>staff_name<span class="token punctuation">)</span> staff_names <span class="token keyword">FROM</span> demo<span class="token punctuation">.</span>t_staff t <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> t<span class="token punctuation">.</span>dept_code<span class="token punctuation">;</span>
+</code></pre></div><ul><li><p>** 说明一：** 上例中的 AUTHID CURRENT_USER 是权限控制的关键字，表示调用者权限，即当前用户。默认为 AUTHID DEFINER，表示定义者权限，即模式拥有者。</p></li> <li><p><strong>说明二：</strong> 将 type_concat 中 v_result_string 和 return_value 的类型改为 CLOB 类型，并将 fn_concat 的返回值类型也改为 CLOB，就成了 CLOB 版的 fn_concat 了。</p> <p><a href="https://www.cnblogs.com/hanzongze/p/oracle-wm_concat.html" target="_blank" rel="noopener noreferrer"><strong>文章出处</strong><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/onedocs/db/101-Oracle自定义类型.html" class="prev">
+        oracle 自定义类型 type / create type
+      </a></span> <span class="next"><a href="/onedocs/db/201-MongoDB安装.html">
+        MongoDB安装
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/onedocs/assets/js/app.a5cec01a.js" defer></script><script src="/onedocs/assets/js/2.2038ef08.js" defer></script><script src="/onedocs/assets/js/10.f6a37571.js" defer></script>
+  </body>
+</html>

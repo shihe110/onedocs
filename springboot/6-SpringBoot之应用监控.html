@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SpringBoot监控和管理端点 | 毫末之木</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/onedocs/logo.png">
+    <meta name="description" content="合抱之木生于毫末，九层之台起于累土，千里之行始于足下">
+    <link rel="preload" href="/onedocs/assets/css/0.styles.de272f6a.css" as="style"><link rel="preload" href="/onedocs/assets/js/app.a5cec01a.js" as="script"><link rel="preload" href="/onedocs/assets/js/2.2038ef08.js" as="script"><link rel="preload" href="/onedocs/assets/js/48.65000712.js" as="script"><link rel="prefetch" href="/onedocs/assets/js/10.f6a37571.js"><link rel="prefetch" href="/onedocs/assets/js/11.8748e5dc.js"><link rel="prefetch" href="/onedocs/assets/js/12.aa37326f.js"><link rel="prefetch" href="/onedocs/assets/js/13.c47565b1.js"><link rel="prefetch" href="/onedocs/assets/js/14.84475633.js"><link rel="prefetch" href="/onedocs/assets/js/15.0503a365.js"><link rel="prefetch" href="/onedocs/assets/js/16.de8cdbe2.js"><link rel="prefetch" href="/onedocs/assets/js/17.c3819ca1.js"><link rel="prefetch" href="/onedocs/assets/js/18.1e7ade88.js"><link rel="prefetch" href="/onedocs/assets/js/19.cd4460aa.js"><link rel="prefetch" href="/onedocs/assets/js/20.fde4d430.js"><link rel="prefetch" href="/onedocs/assets/js/21.b4bb2dcb.js"><link rel="prefetch" href="/onedocs/assets/js/22.ba351a03.js"><link rel="prefetch" href="/onedocs/assets/js/23.5e1ab7ae.js"><link rel="prefetch" href="/onedocs/assets/js/24.3beb379d.js"><link rel="prefetch" href="/onedocs/assets/js/25.f594b461.js"><link rel="prefetch" href="/onedocs/assets/js/26.719c8483.js"><link rel="prefetch" href="/onedocs/assets/js/27.d44b2f08.js"><link rel="prefetch" href="/onedocs/assets/js/28.7c32bf68.js"><link rel="prefetch" href="/onedocs/assets/js/29.e11f46cb.js"><link rel="prefetch" href="/onedocs/assets/js/3.f9e48b55.js"><link rel="prefetch" href="/onedocs/assets/js/30.896cab2d.js"><link rel="prefetch" href="/onedocs/assets/js/31.705bc0ab.js"><link rel="prefetch" href="/onedocs/assets/js/32.519dec63.js"><link rel="prefetch" href="/onedocs/assets/js/33.0cf267c2.js"><link rel="prefetch" href="/onedocs/assets/js/34.34618ce0.js"><link rel="prefetch" href="/onedocs/assets/js/35.065426f5.js"><link rel="prefetch" href="/onedocs/assets/js/36.9b3684a1.js"><link rel="prefetch" href="/onedocs/assets/js/37.08ddc61c.js"><link rel="prefetch" href="/onedocs/assets/js/38.f863b1e9.js"><link rel="prefetch" href="/onedocs/assets/js/39.ef61b41c.js"><link rel="prefetch" href="/onedocs/assets/js/4.7d5f245c.js"><link rel="prefetch" href="/onedocs/assets/js/40.2ef57d2d.js"><link rel="prefetch" href="/onedocs/assets/js/41.a17ae1e5.js"><link rel="prefetch" href="/onedocs/assets/js/42.71a38447.js"><link rel="prefetch" href="/onedocs/assets/js/43.2781650f.js"><link rel="prefetch" href="/onedocs/assets/js/44.1344137f.js"><link rel="prefetch" href="/onedocs/assets/js/45.71348c3a.js"><link rel="prefetch" href="/onedocs/assets/js/46.667b2abb.js"><link rel="prefetch" href="/onedocs/assets/js/47.5e7e7635.js"><link rel="prefetch" href="/onedocs/assets/js/49.4c4af3ce.js"><link rel="prefetch" href="/onedocs/assets/js/5.f8be39f3.js"><link rel="prefetch" href="/onedocs/assets/js/50.b9381bfb.js"><link rel="prefetch" href="/onedocs/assets/js/51.ecf3a926.js"><link rel="prefetch" href="/onedocs/assets/js/52.c0b8859c.js"><link rel="prefetch" href="/onedocs/assets/js/53.28cd5993.js"><link rel="prefetch" href="/onedocs/assets/js/54.55374335.js"><link rel="prefetch" href="/onedocs/assets/js/55.0e8310ac.js"><link rel="prefetch" href="/onedocs/assets/js/56.cfced9c2.js"><link rel="prefetch" href="/onedocs/assets/js/57.c2164860.js"><link rel="prefetch" href="/onedocs/assets/js/58.04d255fb.js"><link rel="prefetch" href="/onedocs/assets/js/59.5f7bf528.js"><link rel="prefetch" href="/onedocs/assets/js/6.adb9b803.js"><link rel="prefetch" href="/onedocs/assets/js/60.6dce2f0e.js"><link rel="prefetch" href="/onedocs/assets/js/61.4db00ff8.js"><link rel="prefetch" href="/onedocs/assets/js/62.b52c709c.js"><link rel="prefetch" href="/onedocs/assets/js/63.d5b022f8.js"><link rel="prefetch" href="/onedocs/assets/js/64.714e2aa5.js"><link rel="prefetch" href="/onedocs/assets/js/65.f69711ea.js"><link rel="prefetch" href="/onedocs/assets/js/66.fddd4ea6.js"><link rel="prefetch" href="/onedocs/assets/js/67.487ef32c.js"><link rel="prefetch" href="/onedocs/assets/js/68.eeda7447.js"><link rel="prefetch" href="/onedocs/assets/js/69.3db7102a.js"><link rel="prefetch" href="/onedocs/assets/js/7.5872621b.js"><link rel="prefetch" href="/onedocs/assets/js/70.a4103ddc.js"><link rel="prefetch" href="/onedocs/assets/js/71.209c9b73.js"><link rel="prefetch" href="/onedocs/assets/js/72.16653690.js"><link rel="prefetch" href="/onedocs/assets/js/8.5766d378.js"><link rel="prefetch" href="/onedocs/assets/js/9.fdbd8ce3.js">
+    <link rel="stylesheet" href="/onedocs/assets/css/0.styles.de272f6a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/onedocs/" class="home-link router-link-active"><img src="/onedocs/logo.png" alt="毫末之木" class="logo"> <span class="site-name can-hide">毫末之木</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/onedocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/javaapi/" class="nav-link">
+  javaapi
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Spring系列" class="dropdown-title"><span class="title">Spring系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/spring/" class="nav-link">
+  spring
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springmvc/" class="nav-link">
+  spring-mvc
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springboot/" class="nav-link router-link-active">
+  spring-boot
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springcloud/" class="nav-link">
+  spring-cloud
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Database" class="dropdown-title"><span class="title">Database</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/db/" class="nav-link">
+  db
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具集" class="dropdown-title"><span class="title">工具集</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/web/" class="nav-link">
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/maven/" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/github/" class="nav-link">
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/browser/" class="nav-link">
+  browser
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/idea/" class="nav-link">
+  idea
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/shihe110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/onedocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/javaapi/" class="nav-link">
+  javaapi
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Spring系列" class="dropdown-title"><span class="title">Spring系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/spring/" class="nav-link">
+  spring
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springmvc/" class="nav-link">
+  spring-mvc
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springboot/" class="nav-link router-link-active">
+  spring-boot
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springcloud/" class="nav-link">
+  spring-cloud
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Database" class="dropdown-title"><span class="title">Database</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/db/" class="nav-link">
+  db
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具集" class="dropdown-title"><span class="title">工具集</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/web/" class="nav-link">
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/maven/" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/github/" class="nav-link">
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/browser/" class="nav-link">
+  browser
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/idea/" class="nav-link">
+  idea
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/shihe110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>springboot</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/onedocs/springboot/1-SpringBoot之常用配置.html" class="sidebar-link">SpringBoot之关闭特定自动配置</a></li><li><a href="/onedocs/springboot/2-SpringBoot之运行原理.html" class="sidebar-link">自动配置原理</a></li><li><a href="/onedocs/springboot/3-SpringBoot之对事务的支持.html" class="sidebar-link">声明式事务</a></li><li><a href="/onedocs/springboot/4-SpringBoot之对缓存的支持.html" class="sidebar-link">/springboot/4-SpringBoot之对缓存的支持.html</a></li><li><a href="/onedocs/springboot/5-SpringBoot之应用打包.html" class="sidebar-link">SpringBoot应用打包</a></li><li><a href="/onedocs/springboot/6-SpringBoot之应用监控.html" class="active sidebar-link">SpringBoot监控和管理端点</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/onedocs/springboot/6-SpringBoot之应用监控.html#springboot监控和管理端点" class="sidebar-link">SpringBoot监控和管理端点</a></li><li class="sidebar-sub-header"><a href="/onedocs/springboot/6-SpringBoot之应用监控.html#actuator" class="sidebar-link">Actuator</a></li></ul></li><li><a href="/onedocs/springboot/7-SpringBoot之NoSQL.html" class="sidebar-link">NoSQL数据库</a></li><li><a href="/onedocs/springboot/" aria-current="page" class="sidebar-link">首页</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="springboot监控和管理端点"><a href="#springboot监控和管理端点" class="header-anchor">#</a> SpringBoot监控和管理端点</h2> <table><thead><tr><th>端点名</th> <th>描述</th></tr></thead> <tbody><tr><td>actuator</td> <td>所有EndPoint的列表，需加入spring HATEOAS支持</td></tr> <tr><td>autoconfig</td> <td>当前应用的所有自动配置信息</td></tr> <tr><td>auditevents</td> <td>审计事件</td></tr> <tr><td>beans</td> <td>所有Bean的信息</td></tr> <tr><td>configprops</td> <td>所有配置属性</td></tr> <tr><td>dump</td> <td>线程状态信息</td></tr> <tr><td>env</td> <td>当前环境信息</td></tr> <tr><td>health</td> <td>应用健康状况</td></tr> <tr><td>info</td> <td>当前应用信息</td></tr> <tr><td>metrics</td> <td>应用的各项指标</td></tr> <tr><td>mappings</td> <td>应用@RequestMapping映射路径</td></tr> <tr><td>shutdown</td> <td>关闭当前应用（默认关闭）</td></tr> <tr><td>trace</td> <td>追踪信息（最新的http请求）</td></tr></tbody></table> <h2 id="actuator"><a href="#actuator" class="header-anchor">#</a> Actuator</h2> <p>在生产环境中，需要对应用程序的状态进行监控。前面我们已经介绍了使用JMX对Java应用程序包括JVM进行监控，使用JMX需要把一些监控信息以MBean的形式暴露给JMX Server，而Spring Boot已经内置了一个监控功能，它叫Actuator。</p> <p>使用非常简单，只需添加如下依赖：</p> <div class="language-xml extra-class"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-actuator<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>然后正常启动应用程序，Actuator会把它能收集到的所有信息都暴露给JMX。此外，Actuator还可以通过URL/actuator/挂载一些监控点，例如，输入http://localhost:8080/actuator/health，我们可以查看应用程序当前状态：</p> <div class="language-xml extra-class"><pre class="language-xml"><code>{
+    &quot;status&quot;: &quot;UP&quot;
+}
+</code></pre></div><p>许多网关作为反向代理需要一个URL来探测后端集群应用是否存活，这个URL就可以提供给网关使用。</p> <p>Actuator默认把所有访问点暴露给JMX，但处于安全原因，只有health和info会暴露给Web。Actuator提供的所有访问点均在官方文档列出，要暴露更多的访问点给Web，需要在application.yml中加上配置：</p> <div class="language-xml extra-class"><pre class="language-xml"><code>management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, beans, env, metrics
+</code></pre></div><p>要特别注意暴露的URL的安全性，例如，/actuator/env可以获取当前机器的所有环境变量，不可暴露给公网。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/onedocs/springboot/5-SpringBoot之应用打包.html" class="prev">
+        SpringBoot应用打包
+      </a></span> <span class="next"><a href="/onedocs/springboot/7-SpringBoot之NoSQL.html">
+        NoSQL数据库
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/onedocs/assets/js/app.a5cec01a.js" defer></script><script src="/onedocs/assets/js/2.2038ef08.js" defer></script><script src="/onedocs/assets/js/48.65000712.js" defer></script>
+  </body>
+</html>
