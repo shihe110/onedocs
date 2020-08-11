@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Spring Bean配置 | 毫末之木</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/onedocs/logo.png">
+    <meta name="description" content="合抱之木生于毫末，九层之台起于累土，千里之行始于足下">
+    <link rel="preload" href="/onedocs/assets/css/0.styles.de272f6a.css" as="style"><link rel="preload" href="/onedocs/assets/js/app.06f58df0.js" as="script"><link rel="preload" href="/onedocs/assets/js/2.2038ef08.js" as="script"><link rel="preload" href="/onedocs/assets/js/53.ce7309fe.js" as="script"><link rel="prefetch" href="/onedocs/assets/js/10.f6a37571.js"><link rel="prefetch" href="/onedocs/assets/js/11.3b5c6ae8.js"><link rel="prefetch" href="/onedocs/assets/js/12.6f7fa9a2.js"><link rel="prefetch" href="/onedocs/assets/js/13.b71a14a8.js"><link rel="prefetch" href="/onedocs/assets/js/14.82bd9f90.js"><link rel="prefetch" href="/onedocs/assets/js/15.55c82003.js"><link rel="prefetch" href="/onedocs/assets/js/16.5e197faa.js"><link rel="prefetch" href="/onedocs/assets/js/17.80f1aada.js"><link rel="prefetch" href="/onedocs/assets/js/18.2d137102.js"><link rel="prefetch" href="/onedocs/assets/js/19.cd4460aa.js"><link rel="prefetch" href="/onedocs/assets/js/20.b6282650.js"><link rel="prefetch" href="/onedocs/assets/js/21.f757534e.js"><link rel="prefetch" href="/onedocs/assets/js/22.ba351a03.js"><link rel="prefetch" href="/onedocs/assets/js/23.7dd5f4d9.js"><link rel="prefetch" href="/onedocs/assets/js/24.d486e173.js"><link rel="prefetch" href="/onedocs/assets/js/25.ba894fdd.js"><link rel="prefetch" href="/onedocs/assets/js/26.4757d432.js"><link rel="prefetch" href="/onedocs/assets/js/27.a278ca3f.js"><link rel="prefetch" href="/onedocs/assets/js/28.dba8baf8.js"><link rel="prefetch" href="/onedocs/assets/js/29.f8780eb1.js"><link rel="prefetch" href="/onedocs/assets/js/3.5f3631b4.js"><link rel="prefetch" href="/onedocs/assets/js/30.6f08543e.js"><link rel="prefetch" href="/onedocs/assets/js/31.2c41be9e.js"><link rel="prefetch" href="/onedocs/assets/js/32.1169a700.js"><link rel="prefetch" href="/onedocs/assets/js/33.c0b7b4a0.js"><link rel="prefetch" href="/onedocs/assets/js/34.3a45065f.js"><link rel="prefetch" href="/onedocs/assets/js/35.f17ebd69.js"><link rel="prefetch" href="/onedocs/assets/js/36.1f60c253.js"><link rel="prefetch" href="/onedocs/assets/js/37.8b543464.js"><link rel="prefetch" href="/onedocs/assets/js/38.05829e1c.js"><link rel="prefetch" href="/onedocs/assets/js/39.575f907d.js"><link rel="prefetch" href="/onedocs/assets/js/4.7d5f245c.js"><link rel="prefetch" href="/onedocs/assets/js/40.cffcf211.js"><link rel="prefetch" href="/onedocs/assets/js/41.15f41dbe.js"><link rel="prefetch" href="/onedocs/assets/js/42.87c71c4c.js"><link rel="prefetch" href="/onedocs/assets/js/43.2c900617.js"><link rel="prefetch" href="/onedocs/assets/js/44.ad4cd227.js"><link rel="prefetch" href="/onedocs/assets/js/45.f133aa43.js"><link rel="prefetch" href="/onedocs/assets/js/46.f5eff9e5.js"><link rel="prefetch" href="/onedocs/assets/js/47.47b9ce0b.js"><link rel="prefetch" href="/onedocs/assets/js/48.91fa7ee1.js"><link rel="prefetch" href="/onedocs/assets/js/49.8f36f688.js"><link rel="prefetch" href="/onedocs/assets/js/5.629fe7cb.js"><link rel="prefetch" href="/onedocs/assets/js/50.18e5bd8b.js"><link rel="prefetch" href="/onedocs/assets/js/51.b442dc1b.js"><link rel="prefetch" href="/onedocs/assets/js/52.f8b41a29.js"><link rel="prefetch" href="/onedocs/assets/js/54.3ed61e8b.js"><link rel="prefetch" href="/onedocs/assets/js/55.4170fe4f.js"><link rel="prefetch" href="/onedocs/assets/js/56.edf1a4c2.js"><link rel="prefetch" href="/onedocs/assets/js/57.a8dd34a4.js"><link rel="prefetch" href="/onedocs/assets/js/58.86275ead.js"><link rel="prefetch" href="/onedocs/assets/js/59.4d74a04d.js"><link rel="prefetch" href="/onedocs/assets/js/6.a8b2a12d.js"><link rel="prefetch" href="/onedocs/assets/js/60.c163cf21.js"><link rel="prefetch" href="/onedocs/assets/js/61.db6c77ed.js"><link rel="prefetch" href="/onedocs/assets/js/62.12140528.js"><link rel="prefetch" href="/onedocs/assets/js/63.b547adb1.js"><link rel="prefetch" href="/onedocs/assets/js/64.0019cc0c.js"><link rel="prefetch" href="/onedocs/assets/js/65.19f3e03a.js"><link rel="prefetch" href="/onedocs/assets/js/66.06bbdbb5.js"><link rel="prefetch" href="/onedocs/assets/js/67.47394c6e.js"><link rel="prefetch" href="/onedocs/assets/js/68.6f22ca8e.js"><link rel="prefetch" href="/onedocs/assets/js/69.18b75495.js"><link rel="prefetch" href="/onedocs/assets/js/7.248b22fd.js"><link rel="prefetch" href="/onedocs/assets/js/70.4bf99fb5.js"><link rel="prefetch" href="/onedocs/assets/js/71.0324cf5b.js"><link rel="prefetch" href="/onedocs/assets/js/72.9f7a0293.js"><link rel="prefetch" href="/onedocs/assets/js/73.9785336a.js"><link rel="prefetch" href="/onedocs/assets/js/74.f6752e7c.js"><link rel="prefetch" href="/onedocs/assets/js/75.7940e69a.js"><link rel="prefetch" href="/onedocs/assets/js/76.e05434f3.js"><link rel="prefetch" href="/onedocs/assets/js/8.e64d4d9e.js"><link rel="prefetch" href="/onedocs/assets/js/9.f3cfc937.js">
+    <link rel="stylesheet" href="/onedocs/assets/css/0.styles.de272f6a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/onedocs/" class="home-link router-link-active"><img src="/onedocs/logo.png" alt="毫末之木" class="logo"> <span class="site-name can-hide">毫末之木</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/onedocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/javaapi/" class="nav-link">
+  javaapi
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Spring系列" class="dropdown-title"><span class="title">Spring系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/spring/" class="nav-link">
+  spring
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springmvc/" class="nav-link">
+  spring-mvc
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springboot/" class="nav-link router-link-active">
+  spring-boot
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springcloud/" class="nav-link">
+  spring-cloud
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Database" class="dropdown-title"><span class="title">Database</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/db/" class="nav-link">
+  db
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具集" class="dropdown-title"><span class="title">工具集</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/web/" class="nav-link">
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/maven/" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/github/" class="nav-link">
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/browser/" class="nav-link">
+  browser
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/idea/" class="nav-link">
+  idea
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/shihe110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/onedocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/javaapi/" class="nav-link">
+  javaapi
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Spring系列" class="dropdown-title"><span class="title">Spring系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/spring/" class="nav-link">
+  spring
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springmvc/" class="nav-link">
+  spring-mvc
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springboot/" class="nav-link router-link-active">
+  spring-boot
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springcloud/" class="nav-link">
+  spring-cloud
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Database" class="dropdown-title"><span class="title">Database</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/db/" class="nav-link">
+  db
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具集" class="dropdown-title"><span class="title">工具集</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/web/" class="nav-link">
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/maven/" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/github/" class="nav-link">
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/browser/" class="nav-link">
+  browser
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/idea/" class="nav-link">
+  idea
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/shihe110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>springboot</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/onedocs/springboot/1-SpringBoot之常用配置.html" class="sidebar-link">SpringBoot之关闭特定自动配置</a></li><li><a href="/onedocs/springboot/10-SpringBoot之Bean的生命周期.html" class="sidebar-link">Bean的生命周期</a></li><li><a href="/onedocs/springboot/2-SpringBoot之运行原理.html" class="sidebar-link">自动配置原理</a></li><li><a href="/onedocs/springboot/3-SpringBoot之对事务的支持.html" class="sidebar-link">声明式事务</a></li><li><a href="/onedocs/springboot/4-SpringBoot之对缓存的支持.html" class="sidebar-link">/springboot/4-SpringBoot之对缓存的支持.html</a></li><li><a href="/onedocs/springboot/5-SpringBoot之应用打包.html" class="sidebar-link">SpringBoot应用打包</a></li><li><a href="/onedocs/springboot/6-SpringBoot之应用监控.html" class="sidebar-link">SpringBoot监控和管理端点</a></li><li><a href="/onedocs/springboot/7-SpringBoot之NoSQL.html" class="sidebar-link">NoSQL数据库</a></li><li><a href="/onedocs/springboot/8-SpringBoot之响应式编程学习路径.html" class="sidebar-link">/springboot/8-SpringBoot之响应式编程学习路径.html</a></li><li><a href="/onedocs/springboot/9-SpringBoot之Bean配置.html" class="active sidebar-link">Spring Bean配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/onedocs/springboot/9-SpringBoot之Bean配置.html#spring-bean配置" class="sidebar-link">Spring Bean配置</a></li></ul></li><li><a href="/onedocs/springboot/" aria-current="page" class="sidebar-link">首页</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="spring-bean配置"><a href="#spring-bean配置" class="header-anchor">#</a> Spring Bean配置</h2> <h3 id="注解配置"><a href="#注解配置" class="header-anchor">#</a> 注解配置</h3> <div class="language-js extra-class"><pre class="language-js"><code>@Service、@Repository、@Controller这三个注解组合了@Component注解，都是@Component语义上的特例。
+
+@Component：被注解类是“组件”；
+@Controller：被注解类是“控制器”；
+@Service：被注解类是“服务”；
+@Repository：被注解类是“数据仓库”。
+</code></pre></div><p>spring容器通过@ComponentScan自动扫描注册成受容器管理的bean</p> <h3 id="java配置-configuration和-bean"><a href="#java配置-configuration和-bean" class="header-anchor">#</a> java配置 @Configuration和@Bean</h3> <div class="language-js extra-class"><pre class="language-js"><code>@Configuration
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JavaConfig</span> <span class="token punctuation">{</span>
+
+    @Bean
+    <span class="token keyword">public</span> AnotherService <span class="token function">anotherService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">AnotherService</span><span class="token punctuation">(</span><span class="token string">&quot;shihe&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="依赖注入注解注入-autowired"><a href="#依赖注入注解注入-autowired" class="header-anchor">#</a> 依赖注入注解注入@AutoWired</h3> <ul><li>可注解在构造函数上</li></ul> <div class="language-js extra-class"><pre class="language-js"><code>@Service
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AnnotationInjectionService</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> SomeService someService<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> SomeService2 someService2<span class="token punctuation">;</span>
+
+    @Autowired
+    <span class="token keyword">public</span> <span class="token function">AnnotationInjectionService</span><span class="token punctuation">(</span><span class="token parameter">SomeService someService<span class="token punctuation">,</span>SomeService2 someService2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>someService <span class="token operator">=</span> someService<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>someService2 <span class="token operator">=</span> someService2<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doMyThing</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        someService<span class="token punctuation">.</span><span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        someService2<span class="token punctuation">.</span><span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>注解在属性上</li></ul> <div class="language-js extra-class"><pre class="language-js"><code>@Service
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AnnotationPropertyInjectionService</span> <span class="token punctuation">{</span>
+    @Autowired
+    <span class="token keyword">private</span> SomeService someService<span class="token punctuation">;</span>
+
+    @Autowired
+    <span class="token keyword">private</span> SomeService2 someService2<span class="token punctuation">;</span>
+
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doMyThing</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        someService<span class="token punctuation">.</span><span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        someService2<span class="token punctuation">.</span><span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>注解在set方法上</li></ul> <div class="language-js extra-class"><pre class="language-js"><code>@Service
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AnnotationSetterInjectionService</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> SomeService someService<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> SomeService2 someService2<span class="token punctuation">;</span>
+
+    @Autowired
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setSomeService</span><span class="token punctuation">(</span><span class="token parameter">SomeService someService</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>someService <span class="token operator">=</span> someService<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    @Autowired
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setSomeService2</span><span class="token punctuation">(</span><span class="token parameter">SomeService2 someService2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>someService2 <span class="token operator">=</span> someService2<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doMyThing</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        someService<span class="token punctuation">.</span><span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        someService2<span class="token punctuation">.</span><span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>注：如果Bean只有一个构造器的话，我们可以直接省略@Autowired注解；若有多个构造器，需注解一个构造器用来注入如：</p> <div class="language-js extra-class"><pre class="language-js"><code>
+@Service
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AnnotationOneInjectionService</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> SomeService someService<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">AnnotationOneInjectionService</span><span class="token punctuation">(</span><span class="token parameter">SomeService someService</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>someService <span class="token operator">=</span> someService<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doMyThing</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        someService<span class="token punctuation">.</span><span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h3 id="依赖注入之-配置注入"><a href="#依赖注入之-配置注入" class="header-anchor">#</a> 依赖注入之-配置注入</h3> <ul><li>参数注入</li> <li>构造注入</li></ul> <p>AnotherService已经注册成@Bean只需在参数里注入该bean即可。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JavaConfigInjectService</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> AnotherService anotherService<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">JavaConfigInjectService</span><span class="token punctuation">(</span><span class="token parameter">AnotherService anotherService</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>anotherService <span class="token operator">=</span> anotherService<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doMyThing</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        anotherService<span class="token punctuation">.</span><span class="token function">doAnotherThing</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="依赖注入之-类型注入-primary"><a href="#依赖注入之-类型注入-primary" class="header-anchor">#</a> 依赖注入之-类型注入@Primary</h3> <p>优先注入bean</p> <div class="language-js extra-class"><pre class="language-js"><code>@Bean
+<span class="token keyword">public</span> AnotherService <span class="token function">anotherService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">AnotherService</span><span class="token punctuation">(</span><span class="token string">&quot;wyf&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+@Bean
+@Primary
+<span class="token keyword">public</span> AnotherService <span class="token function">primaryAnotherService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">AnotherService</span><span class="token punctuation">(</span><span class="token string">&quot;foo&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="依赖注入之指定注入bean-qualifier"><a href="#依赖注入之指定注入bean-qualifier" class="header-anchor">#</a> 依赖注入之指定注入bean @Qualifier</h3> <div class="language-js extra-class"><pre class="language-js"><code>@Component
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UseQualifierService</span> <span class="token punctuation">{</span>
+    @Autowired
+    @<span class="token function">Qualifier</span><span class="token punctuation">(</span><span class="token string">&quot;anotherService&quot;</span><span class="token punctuation">)</span> <span class="token comment">//通过@Qualifier(&quot;anotherService&quot;)指定使用anotherService</span>
+    <span class="token keyword">private</span> AnotherService service<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;wyf&quot;</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>service<span class="token punctuation">.</span><span class="token function">getPerson</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//2</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+@Component
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UseQualifierService2</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> AnotherService service<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">UseQualifierService2</span><span class="token punctuation">(</span>@<span class="token function">Qualifier</span><span class="token punctuation">(</span><span class="token string">&quot;primaryAnotherService&quot;</span><span class="token punctuation">)</span> AnotherService service<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>service <span class="token operator">=</span> service<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;foo&quot;</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>service<span class="token punctuation">.</span><span class="token function">getPerson</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/onedocs/springboot/8-SpringBoot之响应式编程学习路径.html" class="prev">
+        /springboot/8-SpringBoot之响应式编程学习路径.html
+      </a></span> <span class="next"><a href="/onedocs/springboot/" class="router-link-active">
+        首页
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/onedocs/assets/js/app.06f58df0.js" defer></script><script src="/onedocs/assets/js/2.2038ef08.js" defer></script><script src="/onedocs/assets/js/53.ce7309fe.js" defer></script>
+  </body>
+</html>
