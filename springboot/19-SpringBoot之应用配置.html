@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SpringBoot之应用配置（定制配置） | 毫末之木</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/onedocs/logo.png">
+    <meta name="description" content="合抱之木生于毫末，九层之台起于累土，千里之行始于足下">
+    <link rel="preload" href="/onedocs/assets/css/0.styles.de272f6a.css" as="style"><link rel="preload" href="/onedocs/assets/js/app.6c8f1d00.js" as="script"><link rel="preload" href="/onedocs/assets/js/2.2038ef08.js" as="script"><link rel="preload" href="/onedocs/assets/js/56.5514203e.js" as="script"><link rel="prefetch" href="/onedocs/assets/js/10.53982525.js"><link rel="prefetch" href="/onedocs/assets/js/11.a5072298.js"><link rel="prefetch" href="/onedocs/assets/js/12.aa37326f.js"><link rel="prefetch" href="/onedocs/assets/js/13.c47565b1.js"><link rel="prefetch" href="/onedocs/assets/js/14.84475633.js"><link rel="prefetch" href="/onedocs/assets/js/15.e31de7f1.js"><link rel="prefetch" href="/onedocs/assets/js/16.2bcd835e.js"><link rel="prefetch" href="/onedocs/assets/js/17.c3819ca1.js"><link rel="prefetch" href="/onedocs/assets/js/18.1e7ade88.js"><link rel="prefetch" href="/onedocs/assets/js/19.adc8a61b.js"><link rel="prefetch" href="/onedocs/assets/js/20.fde4d430.js"><link rel="prefetch" href="/onedocs/assets/js/21.b670f076.js"><link rel="prefetch" href="/onedocs/assets/js/22.b5c72858.js"><link rel="prefetch" href="/onedocs/assets/js/23.4fbe054a.js"><link rel="prefetch" href="/onedocs/assets/js/24.9ab6e836.js"><link rel="prefetch" href="/onedocs/assets/js/25.96b4a2e4.js"><link rel="prefetch" href="/onedocs/assets/js/26.1a713731.js"><link rel="prefetch" href="/onedocs/assets/js/27.620d1b0d.js"><link rel="prefetch" href="/onedocs/assets/js/28.c7da5f5d.js"><link rel="prefetch" href="/onedocs/assets/js/29.422d0302.js"><link rel="prefetch" href="/onedocs/assets/js/3.be64ea0a.js"><link rel="prefetch" href="/onedocs/assets/js/30.4e7d553b.js"><link rel="prefetch" href="/onedocs/assets/js/31.f13b83f0.js"><link rel="prefetch" href="/onedocs/assets/js/32.0697e4ac.js"><link rel="prefetch" href="/onedocs/assets/js/33.674f60ae.js"><link rel="prefetch" href="/onedocs/assets/js/34.69761c76.js"><link rel="prefetch" href="/onedocs/assets/js/35.31a67e2c.js"><link rel="prefetch" href="/onedocs/assets/js/36.e33dc8c9.js"><link rel="prefetch" href="/onedocs/assets/js/37.aaf1ae3d.js"><link rel="prefetch" href="/onedocs/assets/js/38.0cee70ca.js"><link rel="prefetch" href="/onedocs/assets/js/39.2c202f7f.js"><link rel="prefetch" href="/onedocs/assets/js/4.7d5f245c.js"><link rel="prefetch" href="/onedocs/assets/js/40.6336c4e1.js"><link rel="prefetch" href="/onedocs/assets/js/41.c256b27b.js"><link rel="prefetch" href="/onedocs/assets/js/42.ef5a6370.js"><link rel="prefetch" href="/onedocs/assets/js/43.6aab544f.js"><link rel="prefetch" href="/onedocs/assets/js/44.83573646.js"><link rel="prefetch" href="/onedocs/assets/js/45.7fe0cef8.js"><link rel="prefetch" href="/onedocs/assets/js/46.f2d142bd.js"><link rel="prefetch" href="/onedocs/assets/js/47.39b4f8c2.js"><link rel="prefetch" href="/onedocs/assets/js/48.70245ca8.js"><link rel="prefetch" href="/onedocs/assets/js/49.3623d614.js"><link rel="prefetch" href="/onedocs/assets/js/5.f8be39f3.js"><link rel="prefetch" href="/onedocs/assets/js/50.4b745d0e.js"><link rel="prefetch" href="/onedocs/assets/js/51.46f850ab.js"><link rel="prefetch" href="/onedocs/assets/js/52.f2c042fe.js"><link rel="prefetch" href="/onedocs/assets/js/53.449f0a74.js"><link rel="prefetch" href="/onedocs/assets/js/54.24ba0a1d.js"><link rel="prefetch" href="/onedocs/assets/js/55.0afa81f9.js"><link rel="prefetch" href="/onedocs/assets/js/57.3d1da31b.js"><link rel="prefetch" href="/onedocs/assets/js/58.63cf34a9.js"><link rel="prefetch" href="/onedocs/assets/js/59.12734a2c.js"><link rel="prefetch" href="/onedocs/assets/js/6.adb9b803.js"><link rel="prefetch" href="/onedocs/assets/js/60.09b05506.js"><link rel="prefetch" href="/onedocs/assets/js/61.faafc435.js"><link rel="prefetch" href="/onedocs/assets/js/62.18a48a93.js"><link rel="prefetch" href="/onedocs/assets/js/63.3e9a21f1.js"><link rel="prefetch" href="/onedocs/assets/js/64.828e2971.js"><link rel="prefetch" href="/onedocs/assets/js/65.a80b5138.js"><link rel="prefetch" href="/onedocs/assets/js/66.16efc176.js"><link rel="prefetch" href="/onedocs/assets/js/67.dee84010.js"><link rel="prefetch" href="/onedocs/assets/js/68.2a7d384a.js"><link rel="prefetch" href="/onedocs/assets/js/69.79b6c940.js"><link rel="prefetch" href="/onedocs/assets/js/7.5872621b.js"><link rel="prefetch" href="/onedocs/assets/js/70.1312c921.js"><link rel="prefetch" href="/onedocs/assets/js/71.3b544407.js"><link rel="prefetch" href="/onedocs/assets/js/72.8731552c.js"><link rel="prefetch" href="/onedocs/assets/js/73.572971aa.js"><link rel="prefetch" href="/onedocs/assets/js/74.6073b915.js"><link rel="prefetch" href="/onedocs/assets/js/75.9e9924ee.js"><link rel="prefetch" href="/onedocs/assets/js/76.55bd48ca.js"><link rel="prefetch" href="/onedocs/assets/js/77.7b04ceaf.js"><link rel="prefetch" href="/onedocs/assets/js/78.2bd47793.js"><link rel="prefetch" href="/onedocs/assets/js/79.1b6fdcde.js"><link rel="prefetch" href="/onedocs/assets/js/8.5766d378.js"><link rel="prefetch" href="/onedocs/assets/js/80.b36eff34.js"><link rel="prefetch" href="/onedocs/assets/js/81.ab3308f1.js"><link rel="prefetch" href="/onedocs/assets/js/82.27f75f09.js"><link rel="prefetch" href="/onedocs/assets/js/83.ef5a507d.js"><link rel="prefetch" href="/onedocs/assets/js/84.5ada9b59.js"><link rel="prefetch" href="/onedocs/assets/js/85.f0454585.js"><link rel="prefetch" href="/onedocs/assets/js/86.7ad3c228.js"><link rel="prefetch" href="/onedocs/assets/js/87.12372f6c.js"><link rel="prefetch" href="/onedocs/assets/js/88.1e84725e.js"><link rel="prefetch" href="/onedocs/assets/js/89.6212ac2b.js"><link rel="prefetch" href="/onedocs/assets/js/9.b4c04a84.js"><link rel="prefetch" href="/onedocs/assets/js/90.5e67e0be.js"><link rel="prefetch" href="/onedocs/assets/js/91.1aaceef5.js"><link rel="prefetch" href="/onedocs/assets/js/92.aa79d0b6.js"><link rel="prefetch" href="/onedocs/assets/js/93.f6189d62.js">
+    <link rel="stylesheet" href="/onedocs/assets/css/0.styles.de272f6a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/onedocs/" class="home-link router-link-active"><img src="/onedocs/logo.png" alt="毫末之木" class="logo"> <span class="site-name can-hide">毫末之木</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/onedocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/javaapi/" class="nav-link">
+  javaapi
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Spring系列" class="dropdown-title"><span class="title">Spring系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/spring/" class="nav-link">
+  spring
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springmvc/" class="nav-link">
+  spring-mvc
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springboot/" class="nav-link router-link-active">
+  spring-boot
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springcloud/" class="nav-link">
+  spring-cloud
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Database" class="dropdown-title"><span class="title">Database</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/db/" class="nav-link">
+  db
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="互联网" class="dropdown-title"><span class="title">互联网</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/internet/" class="nav-link">
+  互联网
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具集" class="dropdown-title"><span class="title">工具集</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/web/" class="nav-link">
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/maven/" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/github/" class="nav-link">
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/browser/" class="nav-link">
+  browser
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/idea/" class="nav-link">
+  idea
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/shihe110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/onedocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/javaapi/" class="nav-link">
+  javaapi
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Spring系列" class="dropdown-title"><span class="title">Spring系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/spring/" class="nav-link">
+  spring
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springmvc/" class="nav-link">
+  spring-mvc
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springboot/" class="nav-link router-link-active">
+  spring-boot
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springcloud/" class="nav-link">
+  spring-cloud
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Database" class="dropdown-title"><span class="title">Database</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/db/" class="nav-link">
+  db
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="互联网" class="dropdown-title"><span class="title">互联网</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/internet/" class="nav-link">
+  互联网
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具集" class="dropdown-title"><span class="title">工具集</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/web/" class="nav-link">
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/maven/" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/github/" class="nav-link">
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/browser/" class="nav-link">
+  browser
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/idea/" class="nav-link">
+  idea
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/shihe110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>springboot</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/onedocs/springboot/1-SpringBoot之常用配置.html" class="sidebar-link">SpringBoot常用配置</a></li><li><a href="/onedocs/springboot/10-SpringBoot之Bean的生命周期.html" class="sidebar-link">SpringBoot Bean的生命周期</a></li><li><a href="/onedocs/springboot/11-SpringBoot之Env.html" class="sidebar-link">SpringBoot之应用环境</a></li><li><a href="/onedocs/springboot/12-SpringBoot之条件注解.html" class="sidebar-link">SpringBoot之条件注解</a></li><li><a href="/onedocs/springboot/13-SpringBoot之开启配置注解.html" class="sidebar-link">SpringBoot之@Enable*</a></li><li><a href="/onedocs/springboot/14-SpringBoot之Bean处理.html" class="sidebar-link">SpringBoot之BeanPostProcessor</a></li><li><a href="/onedocs/springboot/15-SpringBoot之容器Aware.html" class="sidebar-link">SpringBoot之意识Spring容器Aware</a></li><li><a href="/onedocs/springboot/16-SpringBoot之注解工作原理.html" class="sidebar-link">SpringBoot之Spring注解的工作原理</a></li><li><a href="/onedocs/springboot/17-SpringBoot之自动化配置原理.html" class="sidebar-link">SpringBoot之自动化配置原理</a></li><li><a href="/onedocs/springboot/18-SpringBoot之starter.html" class="sidebar-link">SpringBoot之Starter</a></li><li><a href="/onedocs/springboot/19-SpringBoot之应用配置.html" class="active sidebar-link">SpringBoot之应用配置（定制配置）</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/onedocs/springboot/19-SpringBoot之应用配置.html#springboot之应用配置（定制配置）" class="sidebar-link">SpringBoot之应用配置（定制配置）</a></li></ul></li><li><a href="/onedocs/springboot/2-SpringBoot之运行原理.html" class="sidebar-link">SpringBoot运行原理</a></li><li><a href="/onedocs/springboot/3-SpringBoot之对事务的支持.html" class="sidebar-link">SpringBoot事务</a></li><li><a href="/onedocs/springboot/4-SpringBoot之对缓存的支持.html" class="sidebar-link">SpringBoot缓存</a></li><li><a href="/onedocs/springboot/5-SpringBoot之应用打包.html" class="sidebar-link">SpringBoot应用打包</a></li><li><a href="/onedocs/springboot/6-SpringBoot之应用监控.html" class="sidebar-link">SpringBoot应用监控</a></li><li><a href="/onedocs/springboot/7-SpringBoot之NoSQL.html" class="sidebar-link">SpringBoot-NoSQL数据库</a></li><li><a href="/onedocs/springboot/8-SpringBoot之响应式编程学习路径.html" class="sidebar-link">Spring Boot响应式编程</a></li><li><a href="/onedocs/springboot/9-SpringBoot之Bean配置.html" class="sidebar-link">SpringBoot Bean配置</a></li><li><a href="/onedocs/springboot/" aria-current="page" class="sidebar-link">首页</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="springboot之应用配置（定制配置）"><a href="#springboot之应用配置（定制配置）" class="header-anchor">#</a> SpringBoot之应用配置（定制配置）</h2> <h3 id="springapplication配置"><a href="#springapplication配置" class="header-anchor">#</a> SpringApplication配置</h3> <p>SpringBoot自动化配置提供了大批的配置，我们还是可以通过SpringApplication类对应用启动进行配置。如下所示：</p> <p>增加一个监听器</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyListener</span> <span class="token keyword">implements</span> <span class="token class-name">ApplicationListener</span><span class="token operator">&lt;</span>ApplicationStartingEvent<span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    @Override
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onApplicationEvent</span><span class="token punctuation">(</span><span class="token parameter">ApplicationStartingEvent event</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;监听到应用启动事件&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>配置</p> <div class="language-js extra-class"><pre class="language-js"><code>SpringApplication app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SpringApplication</span><span class="token punctuation">(</span>App<span class="token punctuation">.</span>class<span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">setBannerMode</span><span class="token punctuation">(</span>Banner<span class="token punctuation">.</span>Mode<span class="token punctuation">.</span><span class="token constant">OFF</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//设置关闭Banner</span>
+app<span class="token punctuation">.</span><span class="token function">addListeners</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MyListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//增加监听器</span>
+app<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>SpringApplication还支持很多和容器相关的配置，可以通过在SpringApplication的API中查找以set和add开头的方法。</p> <h3 id="springapplicationbuilder配置"><a href="#springapplicationbuilder配置" class="header-anchor">#</a> SpringApplicationBuilder配置</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">new</span> <span class="token class-name">SpringApplicationBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">bannerMode</span><span class="token punctuation">(</span>Banner<span class="token punctuation">.</span>Mode<span class="token punctuation">.</span><span class="token constant">OFF</span><span class="token punctuation">)</span>
+  	  <span class="token punctuation">.</span><span class="token function">listeners</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MyListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">sources</span><span class="token punctuation">(</span>SpringBootInDepthApplication<span class="token punctuation">.</span>class<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>SpringApplication配置与SpringApplicationBuilder配置是等同的，前者的方法名去掉前缀（set和add）即后者的方法名，符合建造者模式的命名规则，如：setBannerMode()变为bannerMode()。具体有特殊情况请参照API文档。</p> <h3 id="外部配置"><a href="#外部配置" class="header-anchor">#</a> 外部配置</h3> <p>外部配置包括：application.properties/命令行/系统环境变量/yaml</p> <p>这个能力是Environment（Profile、Property）提供的，我们可以通过三种方式来访问Environment中的属性：</p> <ul><li>1.使用@Value注解</li> <li>2.注入Environment的bean</li> <li>3.通过@ConfigurationProperties注解来访问</li></ul> <h4 id="外部配置源与environment"><a href="#外部配置源与environment" class="header-anchor">#</a> 外部配置源与Environment</h4> <p>Environment包含两部分的内容：Profile和Property</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Environment</span> <span class="token keyword">extends</span> <span class="token class-name">PropertyResolver</span> <span class="token punctuation">{</span>
+   String<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">getActiveProfiles</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   String<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">getDefaultProfiles</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   boolean <span class="token function">acceptsProfiles</span><span class="token punctuation">(</span>Profiles profiles<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Environment的三个接口方法负责Profile相关内容，而它继承的PropertyResolver接口负责的是对Property的查询。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">PropertyResolver</span> <span class="token punctuation">{</span>
+   boolean <span class="token function">containsProperty</span><span class="token punctuation">(</span>String key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   @Nullable
+   String <span class="token function">getProperty</span><span class="token punctuation">(</span>String key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   String <span class="token function">getProperty</span><span class="token punctuation">(</span>String key<span class="token punctuation">,</span> String defaultValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   @Nullable
+   <span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span> <span class="token constant">T</span> <span class="token function">getProperty</span><span class="token punctuation">(</span>String key<span class="token punctuation">,</span> Class<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span> targetType<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span> <span class="token constant">T</span> <span class="token function">getProperty</span><span class="token punctuation">(</span>String key<span class="token punctuation">,</span> Class<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span> targetType<span class="token punctuation">,</span> <span class="token constant">T</span> defaultValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   String <span class="token function">getRequiredProperty</span><span class="token punctuation">(</span>String key<span class="token punctuation">)</span> throws IllegalStateException<span class="token punctuation">;</span>
+   <span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span> <span class="token constant">T</span> <span class="token function">getRequiredProperty</span><span class="token punctuation">(</span>String key<span class="token punctuation">,</span> Class<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span> targetType<span class="token punctuation">)</span> throws IllegalStateException<span class="token punctuation">;</span>
+   String <span class="token function">resolvePlaceholders</span><span class="token punctuation">(</span>String text<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   String <span class="token function">resolveRequiredPlaceholders</span><span class="token punctuation">(</span>String text<span class="token punctuation">)</span> throws IllegalArgumentException<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>在Environment中每一个配置属性都是PropertySource，多个PropertySource可聚集成PropertySources。</p> <p>PropertyResolver的实现类PropertySourcesPropertyResolver负责对PropertySources进行查询操作，即Environment可对PropertySources进行查询操作。</p> <p>Spring不支持YAML文件作为PropertySource，Spring Boot使用YamlPropertySourceLoader来读取YAML文件并获得PropertySource。</p> <p>在Spring Boot下外部配置属性的加载顺序优先级如下，先列的属性配置优先级高，先列的配置属性可覆盖后列的配置属性。</p> <div class="language-js extra-class"><pre class="language-js"><code>命令行参数
+
+<span class="token constant">SPRING_APPLICATION_JSON</span>
+
+ServletConfig 初始化参数
+
+ServletContext 初始化参数
+
+<span class="token constant">JNDI</span> （java<span class="token operator">:</span>comp<span class="token operator">/</span>env）
+
+Java系统属性（System<span class="token punctuation">.</span><span class="token function">getProperties</span><span class="token punctuation">(</span><span class="token punctuation">)</span> ）
+
+操作系统变量
+
+RandomValuePropertySource 随机值
+
+应用部署jar包外部的application<span class="token operator">-</span><span class="token punctuation">{</span>profile<span class="token punctuation">}</span><span class="token punctuation">.</span>properties<span class="token operator">/</span>yml
+
+应用部署jar包内部的application<span class="token operator">-</span><span class="token punctuation">{</span>profile<span class="token punctuation">}</span><span class="token punctuation">.</span>properties<span class="token operator">/</span>yml
+
+应用部署jar包外部的application<span class="token punctuation">.</span>properties<span class="token operator">/</span>yml
+
+应用部署jar包内部的application<span class="token punctuation">.</span>properties<span class="token operator">/</span>yml
+
+@PropertySource
+
+SpringApplication<span class="token punctuation">.</span>setDefaultProperties
+</code></pre></div><h3 id="容器其他的默认配置"><a href="#容器其他的默认配置" class="header-anchor">#</a> 容器其他的默认配置</h3> <p>Spring Boot除了给我们做了大量的自动配置以外，还给我们提供了一些默认的容器配置，如：</p> <ul><li>应用监听</li></ul> <div class="language-js extra-class"><pre class="language-js"><code>上面给我们一个提示：我们也可以通过相同的方法来注册监听器。在当前应用新建resources<span class="token operator">/</span><span class="token constant">META</span><span class="token operator">-</span><span class="token constant">INF</span><span class="token operator">/</span>spring<span class="token punctuation">.</span>factories文件，内容加上：
+</code></pre></div><ul><li>容器配置</li> <li>Environment和应用配置</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/onedocs/springboot/18-SpringBoot之starter.html" class="prev">
+        SpringBoot之Starter
+      </a></span> <span class="next"><a href="/onedocs/springboot/2-SpringBoot之运行原理.html">
+        SpringBoot运行原理
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/onedocs/assets/js/app.6c8f1d00.js" defer></script><script src="/onedocs/assets/js/2.2038ef08.js" defer></script><script src="/onedocs/assets/js/56.5514203e.js" defer></script>
+  </body>
+</html>

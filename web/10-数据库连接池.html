@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>数据库连接池 | 毫末之木</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/onedocs/logo.png">
+    <meta name="description" content="合抱之木生于毫末，九层之台起于累土，千里之行始于足下">
+    <link rel="preload" href="/onedocs/assets/css/0.styles.de272f6a.css" as="style"><link rel="preload" href="/onedocs/assets/js/app.6c8f1d00.js" as="script"><link rel="preload" href="/onedocs/assets/js/2.2038ef08.js" as="script"><link rel="preload" href="/onedocs/assets/js/84.5ada9b59.js" as="script"><link rel="prefetch" href="/onedocs/assets/js/10.53982525.js"><link rel="prefetch" href="/onedocs/assets/js/11.a5072298.js"><link rel="prefetch" href="/onedocs/assets/js/12.aa37326f.js"><link rel="prefetch" href="/onedocs/assets/js/13.c47565b1.js"><link rel="prefetch" href="/onedocs/assets/js/14.84475633.js"><link rel="prefetch" href="/onedocs/assets/js/15.e31de7f1.js"><link rel="prefetch" href="/onedocs/assets/js/16.2bcd835e.js"><link rel="prefetch" href="/onedocs/assets/js/17.c3819ca1.js"><link rel="prefetch" href="/onedocs/assets/js/18.1e7ade88.js"><link rel="prefetch" href="/onedocs/assets/js/19.adc8a61b.js"><link rel="prefetch" href="/onedocs/assets/js/20.fde4d430.js"><link rel="prefetch" href="/onedocs/assets/js/21.b670f076.js"><link rel="prefetch" href="/onedocs/assets/js/22.b5c72858.js"><link rel="prefetch" href="/onedocs/assets/js/23.4fbe054a.js"><link rel="prefetch" href="/onedocs/assets/js/24.9ab6e836.js"><link rel="prefetch" href="/onedocs/assets/js/25.96b4a2e4.js"><link rel="prefetch" href="/onedocs/assets/js/26.1a713731.js"><link rel="prefetch" href="/onedocs/assets/js/27.620d1b0d.js"><link rel="prefetch" href="/onedocs/assets/js/28.c7da5f5d.js"><link rel="prefetch" href="/onedocs/assets/js/29.422d0302.js"><link rel="prefetch" href="/onedocs/assets/js/3.be64ea0a.js"><link rel="prefetch" href="/onedocs/assets/js/30.4e7d553b.js"><link rel="prefetch" href="/onedocs/assets/js/31.f13b83f0.js"><link rel="prefetch" href="/onedocs/assets/js/32.0697e4ac.js"><link rel="prefetch" href="/onedocs/assets/js/33.674f60ae.js"><link rel="prefetch" href="/onedocs/assets/js/34.69761c76.js"><link rel="prefetch" href="/onedocs/assets/js/35.31a67e2c.js"><link rel="prefetch" href="/onedocs/assets/js/36.e33dc8c9.js"><link rel="prefetch" href="/onedocs/assets/js/37.aaf1ae3d.js"><link rel="prefetch" href="/onedocs/assets/js/38.0cee70ca.js"><link rel="prefetch" href="/onedocs/assets/js/39.2c202f7f.js"><link rel="prefetch" href="/onedocs/assets/js/4.7d5f245c.js"><link rel="prefetch" href="/onedocs/assets/js/40.6336c4e1.js"><link rel="prefetch" href="/onedocs/assets/js/41.c256b27b.js"><link rel="prefetch" href="/onedocs/assets/js/42.ef5a6370.js"><link rel="prefetch" href="/onedocs/assets/js/43.6aab544f.js"><link rel="prefetch" href="/onedocs/assets/js/44.83573646.js"><link rel="prefetch" href="/onedocs/assets/js/45.7fe0cef8.js"><link rel="prefetch" href="/onedocs/assets/js/46.f2d142bd.js"><link rel="prefetch" href="/onedocs/assets/js/47.39b4f8c2.js"><link rel="prefetch" href="/onedocs/assets/js/48.70245ca8.js"><link rel="prefetch" href="/onedocs/assets/js/49.3623d614.js"><link rel="prefetch" href="/onedocs/assets/js/5.f8be39f3.js"><link rel="prefetch" href="/onedocs/assets/js/50.4b745d0e.js"><link rel="prefetch" href="/onedocs/assets/js/51.46f850ab.js"><link rel="prefetch" href="/onedocs/assets/js/52.f2c042fe.js"><link rel="prefetch" href="/onedocs/assets/js/53.449f0a74.js"><link rel="prefetch" href="/onedocs/assets/js/54.24ba0a1d.js"><link rel="prefetch" href="/onedocs/assets/js/55.0afa81f9.js"><link rel="prefetch" href="/onedocs/assets/js/56.5514203e.js"><link rel="prefetch" href="/onedocs/assets/js/57.3d1da31b.js"><link rel="prefetch" href="/onedocs/assets/js/58.63cf34a9.js"><link rel="prefetch" href="/onedocs/assets/js/59.12734a2c.js"><link rel="prefetch" href="/onedocs/assets/js/6.adb9b803.js"><link rel="prefetch" href="/onedocs/assets/js/60.09b05506.js"><link rel="prefetch" href="/onedocs/assets/js/61.faafc435.js"><link rel="prefetch" href="/onedocs/assets/js/62.18a48a93.js"><link rel="prefetch" href="/onedocs/assets/js/63.3e9a21f1.js"><link rel="prefetch" href="/onedocs/assets/js/64.828e2971.js"><link rel="prefetch" href="/onedocs/assets/js/65.a80b5138.js"><link rel="prefetch" href="/onedocs/assets/js/66.16efc176.js"><link rel="prefetch" href="/onedocs/assets/js/67.dee84010.js"><link rel="prefetch" href="/onedocs/assets/js/68.2a7d384a.js"><link rel="prefetch" href="/onedocs/assets/js/69.79b6c940.js"><link rel="prefetch" href="/onedocs/assets/js/7.5872621b.js"><link rel="prefetch" href="/onedocs/assets/js/70.1312c921.js"><link rel="prefetch" href="/onedocs/assets/js/71.3b544407.js"><link rel="prefetch" href="/onedocs/assets/js/72.8731552c.js"><link rel="prefetch" href="/onedocs/assets/js/73.572971aa.js"><link rel="prefetch" href="/onedocs/assets/js/74.6073b915.js"><link rel="prefetch" href="/onedocs/assets/js/75.9e9924ee.js"><link rel="prefetch" href="/onedocs/assets/js/76.55bd48ca.js"><link rel="prefetch" href="/onedocs/assets/js/77.7b04ceaf.js"><link rel="prefetch" href="/onedocs/assets/js/78.2bd47793.js"><link rel="prefetch" href="/onedocs/assets/js/79.1b6fdcde.js"><link rel="prefetch" href="/onedocs/assets/js/8.5766d378.js"><link rel="prefetch" href="/onedocs/assets/js/80.b36eff34.js"><link rel="prefetch" href="/onedocs/assets/js/81.ab3308f1.js"><link rel="prefetch" href="/onedocs/assets/js/82.27f75f09.js"><link rel="prefetch" href="/onedocs/assets/js/83.ef5a507d.js"><link rel="prefetch" href="/onedocs/assets/js/85.f0454585.js"><link rel="prefetch" href="/onedocs/assets/js/86.7ad3c228.js"><link rel="prefetch" href="/onedocs/assets/js/87.12372f6c.js"><link rel="prefetch" href="/onedocs/assets/js/88.1e84725e.js"><link rel="prefetch" href="/onedocs/assets/js/89.6212ac2b.js"><link rel="prefetch" href="/onedocs/assets/js/9.b4c04a84.js"><link rel="prefetch" href="/onedocs/assets/js/90.5e67e0be.js"><link rel="prefetch" href="/onedocs/assets/js/91.1aaceef5.js"><link rel="prefetch" href="/onedocs/assets/js/92.aa79d0b6.js"><link rel="prefetch" href="/onedocs/assets/js/93.f6189d62.js">
+    <link rel="stylesheet" href="/onedocs/assets/css/0.styles.de272f6a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/onedocs/" class="home-link router-link-active"><img src="/onedocs/logo.png" alt="毫末之木" class="logo"> <span class="site-name can-hide">毫末之木</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/onedocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/javaapi/" class="nav-link">
+  javaapi
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Spring系列" class="dropdown-title"><span class="title">Spring系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/spring/" class="nav-link">
+  spring
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springmvc/" class="nav-link">
+  spring-mvc
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springboot/" class="nav-link">
+  spring-boot
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springcloud/" class="nav-link">
+  spring-cloud
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Database" class="dropdown-title"><span class="title">Database</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/db/" class="nav-link">
+  db
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="互联网" class="dropdown-title"><span class="title">互联网</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/internet/" class="nav-link">
+  互联网
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具集" class="dropdown-title"><span class="title">工具集</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/web/" class="nav-link router-link-active">
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/maven/" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/github/" class="nav-link">
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/browser/" class="nav-link">
+  browser
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/idea/" class="nav-link">
+  idea
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/shihe110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/onedocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/javaapi/" class="nav-link">
+  javaapi
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Spring系列" class="dropdown-title"><span class="title">Spring系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/spring/" class="nav-link">
+  spring
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springmvc/" class="nav-link">
+  spring-mvc
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springboot/" class="nav-link">
+  spring-boot
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springcloud/" class="nav-link">
+  spring-cloud
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Database" class="dropdown-title"><span class="title">Database</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/db/" class="nav-link">
+  db
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="互联网" class="dropdown-title"><span class="title">互联网</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/internet/" class="nav-link">
+  互联网
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具集" class="dropdown-title"><span class="title">工具集</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/web/" class="nav-link router-link-active">
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/maven/" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/github/" class="nav-link">
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/browser/" class="nav-link">
+  browser
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/idea/" class="nav-link">
+  idea
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/shihe110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>web</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/onedocs/web/1-tomcat部署web项目的两种方式.html" class="sidebar-link">tomcat部署web的两种方式</a></li><li><a href="/onedocs/web/10-数据库连接池.html" class="active sidebar-link">数据库连接池</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/onedocs/web/10-数据库连接池.html#数据库连接池" class="sidebar-link">数据库连接池</a></li></ul></li><li><a href="/onedocs/web/2-新建svn项目并上传.html" class="sidebar-link">svn新建项目并上传</a></li><li><a href="/onedocs/web/3-Windows安装配置RabbitMQ.html" class="sidebar-link">Windows下载安装配置RabbitMQ</a></li><li><a href="/onedocs/web/4-OAuth2.html" class="sidebar-link">OAuth2入门使用</a></li><li><a href="/onedocs/web/5-log4j设置日志级别.html" class="sidebar-link">log4j设置日志级别</a></li><li><a href="/onedocs/web/6-进程和线程的关系.html" class="sidebar-link">进程和线程的关系</a></li><li><a href="/onedocs/web/7-tomcat的并发能力.html" class="sidebar-link">Tomcat的并发能力</a></li><li><a href="/onedocs/web/8-mysql的并发能力.html" class="sidebar-link">MySQL的并发能力</a></li><li><a href="/onedocs/web/9-Oracle的并发能力.html" class="sidebar-link">Oracle的并发能力</a></li><li><a href="/onedocs/web/" aria-current="page" class="sidebar-link">介绍</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="数据库连接池"><a href="#数据库连接池" class="header-anchor">#</a> 数据库连接池</h2> <p>数据库连接是一件费时的操作，连接池可以使多个操作共享一个连接。
+数据库连接池的基本思想就是为数据库连接建立一个“缓冲池”。预先在缓冲池中放入一定数量的连接，当需要建立数据库连接时，只需从“缓冲池”中取出一个，使用完毕之后再放回去。我们可以通过设定连接池最大连接数来防止系统无尽的与数据库连接。更为重要的是我们可以通过连接池的管理机制监视数据库的连接的数量、使用情况，为系统开发，测试及性能调整提供依据。
+使用连接池是为了提高对数据库连接资源的管理</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/onedocs/web/1-tomcat部署web项目的两种方式.html" class="prev">
+        tomcat部署web的两种方式
+      </a></span> <span class="next"><a href="/onedocs/web/2-新建svn项目并上传.html">
+        svn新建项目并上传
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/onedocs/assets/js/app.6c8f1d00.js" defer></script><script src="/onedocs/assets/js/2.2038ef08.js" defer></script><script src="/onedocs/assets/js/84.5ada9b59.js" defer></script>
+  </body>
+</html>
