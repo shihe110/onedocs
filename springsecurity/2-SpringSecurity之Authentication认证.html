@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SpringSecurity认证 | 毫末之木</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/onedocs/logo.png">
+    <meta name="description" content="合抱之木生于毫末，九层之台起于累土，千里之行始于足下">
+    <link rel="preload" href="/onedocs/assets/css/0.styles.de272f6a.css" as="style"><link rel="preload" href="/onedocs/assets/js/app.3be0d719.js" as="script"><link rel="preload" href="/onedocs/assets/js/2.2038ef08.js" as="script"><link rel="preload" href="/onedocs/assets/js/90.17c03b64.js" as="script"><link rel="prefetch" href="/onedocs/assets/js/10.d589e3c8.js"><link rel="prefetch" href="/onedocs/assets/js/100.a4b54a9a.js"><link rel="prefetch" href="/onedocs/assets/js/101.82f7e301.js"><link rel="prefetch" href="/onedocs/assets/js/102.8e8a4b27.js"><link rel="prefetch" href="/onedocs/assets/js/103.10cbc3f3.js"><link rel="prefetch" href="/onedocs/assets/js/104.cbb63bc2.js"><link rel="prefetch" href="/onedocs/assets/js/105.81de74bf.js"><link rel="prefetch" href="/onedocs/assets/js/106.a9947dff.js"><link rel="prefetch" href="/onedocs/assets/js/107.3d2c045a.js"><link rel="prefetch" href="/onedocs/assets/js/108.54ef8066.js"><link rel="prefetch" href="/onedocs/assets/js/109.b6201373.js"><link rel="prefetch" href="/onedocs/assets/js/11.10f38d97.js"><link rel="prefetch" href="/onedocs/assets/js/110.a8a3835d.js"><link rel="prefetch" href="/onedocs/assets/js/111.b78a323a.js"><link rel="prefetch" href="/onedocs/assets/js/112.489fd91c.js"><link rel="prefetch" href="/onedocs/assets/js/12.3ce2100d.js"><link rel="prefetch" href="/onedocs/assets/js/13.0e9843e7.js"><link rel="prefetch" href="/onedocs/assets/js/14.ddb00f4b.js"><link rel="prefetch" href="/onedocs/assets/js/15.d81c56f7.js"><link rel="prefetch" href="/onedocs/assets/js/16.e157f7ad.js"><link rel="prefetch" href="/onedocs/assets/js/17.e533c777.js"><link rel="prefetch" href="/onedocs/assets/js/18.e76152b5.js"><link rel="prefetch" href="/onedocs/assets/js/19.8b5d9f9f.js"><link rel="prefetch" href="/onedocs/assets/js/20.73c37aa3.js"><link rel="prefetch" href="/onedocs/assets/js/21.bf0fc6a6.js"><link rel="prefetch" href="/onedocs/assets/js/22.0b2b9eb0.js"><link rel="prefetch" href="/onedocs/assets/js/23.0cac7f63.js"><link rel="prefetch" href="/onedocs/assets/js/24.e443c95c.js"><link rel="prefetch" href="/onedocs/assets/js/25.b21c1f02.js"><link rel="prefetch" href="/onedocs/assets/js/26.d3778da5.js"><link rel="prefetch" href="/onedocs/assets/js/27.8ce97899.js"><link rel="prefetch" href="/onedocs/assets/js/28.5013b06c.js"><link rel="prefetch" href="/onedocs/assets/js/29.39f6bf89.js"><link rel="prefetch" href="/onedocs/assets/js/3.217a2187.js"><link rel="prefetch" href="/onedocs/assets/js/30.a9e1f737.js"><link rel="prefetch" href="/onedocs/assets/js/31.1746becd.js"><link rel="prefetch" href="/onedocs/assets/js/32.85b59393.js"><link rel="prefetch" href="/onedocs/assets/js/33.aaf80082.js"><link rel="prefetch" href="/onedocs/assets/js/34.9d3a57ba.js"><link rel="prefetch" href="/onedocs/assets/js/35.3ad763e4.js"><link rel="prefetch" href="/onedocs/assets/js/36.555ad5d5.js"><link rel="prefetch" href="/onedocs/assets/js/37.7bbdff6c.js"><link rel="prefetch" href="/onedocs/assets/js/38.40866a4a.js"><link rel="prefetch" href="/onedocs/assets/js/39.e9c63021.js"><link rel="prefetch" href="/onedocs/assets/js/4.7d5f245c.js"><link rel="prefetch" href="/onedocs/assets/js/40.eb0637ad.js"><link rel="prefetch" href="/onedocs/assets/js/41.496f6f8f.js"><link rel="prefetch" href="/onedocs/assets/js/42.ac7b9dbc.js"><link rel="prefetch" href="/onedocs/assets/js/43.fb9e10d3.js"><link rel="prefetch" href="/onedocs/assets/js/44.faad4f5d.js"><link rel="prefetch" href="/onedocs/assets/js/45.e13814a4.js"><link rel="prefetch" href="/onedocs/assets/js/46.6cd4d8f5.js"><link rel="prefetch" href="/onedocs/assets/js/47.abb42063.js"><link rel="prefetch" href="/onedocs/assets/js/48.ff114350.js"><link rel="prefetch" href="/onedocs/assets/js/49.f3321bc5.js"><link rel="prefetch" href="/onedocs/assets/js/5.f8be39f3.js"><link rel="prefetch" href="/onedocs/assets/js/50.e776d7ba.js"><link rel="prefetch" href="/onedocs/assets/js/51.682a1c1f.js"><link rel="prefetch" href="/onedocs/assets/js/52.c4908888.js"><link rel="prefetch" href="/onedocs/assets/js/53.2bcbc1cf.js"><link rel="prefetch" href="/onedocs/assets/js/54.90797114.js"><link rel="prefetch" href="/onedocs/assets/js/55.6ea915ae.js"><link rel="prefetch" href="/onedocs/assets/js/56.d6837edf.js"><link rel="prefetch" href="/onedocs/assets/js/57.01091517.js"><link rel="prefetch" href="/onedocs/assets/js/58.7b91d6b3.js"><link rel="prefetch" href="/onedocs/assets/js/59.837abebf.js"><link rel="prefetch" href="/onedocs/assets/js/6.adb9b803.js"><link rel="prefetch" href="/onedocs/assets/js/60.63e2e9c8.js"><link rel="prefetch" href="/onedocs/assets/js/61.eb464d0d.js"><link rel="prefetch" href="/onedocs/assets/js/62.8a390e2e.js"><link rel="prefetch" href="/onedocs/assets/js/63.cf4807cf.js"><link rel="prefetch" href="/onedocs/assets/js/64.1b35b23b.js"><link rel="prefetch" href="/onedocs/assets/js/65.c9c8e513.js"><link rel="prefetch" href="/onedocs/assets/js/66.745c4119.js"><link rel="prefetch" href="/onedocs/assets/js/67.bd7d66ec.js"><link rel="prefetch" href="/onedocs/assets/js/68.92a141b4.js"><link rel="prefetch" href="/onedocs/assets/js/69.80f04514.js"><link rel="prefetch" href="/onedocs/assets/js/7.5872621b.js"><link rel="prefetch" href="/onedocs/assets/js/70.932f509f.js"><link rel="prefetch" href="/onedocs/assets/js/71.425bd289.js"><link rel="prefetch" href="/onedocs/assets/js/72.7bcc9e52.js"><link rel="prefetch" href="/onedocs/assets/js/73.0aaa4c7d.js"><link rel="prefetch" href="/onedocs/assets/js/74.b7b2bccc.js"><link rel="prefetch" href="/onedocs/assets/js/75.c4de7351.js"><link rel="prefetch" href="/onedocs/assets/js/76.c05c3a14.js"><link rel="prefetch" href="/onedocs/assets/js/77.4cf77de6.js"><link rel="prefetch" href="/onedocs/assets/js/78.1993f8b4.js"><link rel="prefetch" href="/onedocs/assets/js/79.67e3f0fb.js"><link rel="prefetch" href="/onedocs/assets/js/8.7b25a8c9.js"><link rel="prefetch" href="/onedocs/assets/js/80.77729648.js"><link rel="prefetch" href="/onedocs/assets/js/81.e1fc6e51.js"><link rel="prefetch" href="/onedocs/assets/js/82.cdb0bc64.js"><link rel="prefetch" href="/onedocs/assets/js/83.a86ddb41.js"><link rel="prefetch" href="/onedocs/assets/js/84.f0659c1f.js"><link rel="prefetch" href="/onedocs/assets/js/85.3036f9a8.js"><link rel="prefetch" href="/onedocs/assets/js/86.ce5c497e.js"><link rel="prefetch" href="/onedocs/assets/js/87.37564f88.js"><link rel="prefetch" href="/onedocs/assets/js/88.8fb3cd10.js"><link rel="prefetch" href="/onedocs/assets/js/89.9b3eb0be.js"><link rel="prefetch" href="/onedocs/assets/js/9.b4c04a84.js"><link rel="prefetch" href="/onedocs/assets/js/91.879f8ca7.js"><link rel="prefetch" href="/onedocs/assets/js/92.6fb612c4.js"><link rel="prefetch" href="/onedocs/assets/js/93.6e4676b3.js"><link rel="prefetch" href="/onedocs/assets/js/94.cf0e9118.js"><link rel="prefetch" href="/onedocs/assets/js/95.3e45810b.js"><link rel="prefetch" href="/onedocs/assets/js/96.9a967691.js"><link rel="prefetch" href="/onedocs/assets/js/97.59ec7c25.js"><link rel="prefetch" href="/onedocs/assets/js/98.09f687e3.js"><link rel="prefetch" href="/onedocs/assets/js/99.17c55f83.js">
+    <link rel="stylesheet" href="/onedocs/assets/css/0.styles.de272f6a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/onedocs/" class="home-link router-link-active"><img src="/onedocs/logo.png" alt="毫末之木" class="logo"> <span class="site-name can-hide">毫末之木</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/onedocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/javaapi/" class="nav-link">
+  javaapi
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Spring系列" class="dropdown-title"><span class="title">Spring系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/spring/" class="nav-link">
+  spring
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springmvc/" class="nav-link">
+  spring-mvc
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springboot/" class="nav-link">
+  spring-boot
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springcloud/" class="nav-link">
+  spring-cloud
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Database" class="dropdown-title"><span class="title">Database</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/db/" class="nav-link">
+  db
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="互联网" class="dropdown-title"><span class="title">互联网</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/internet/" class="nav-link">
+  互联网
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具集" class="dropdown-title"><span class="title">工具集</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/web/" class="nav-link">
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/maven/" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/github/" class="nav-link">
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/browser/" class="nav-link">
+  browser
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/idea/" class="nav-link">
+  idea
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/shihe110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/onedocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/javaapi/" class="nav-link">
+  javaapi
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Spring系列" class="dropdown-title"><span class="title">Spring系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/spring/" class="nav-link">
+  spring
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springmvc/" class="nav-link">
+  spring-mvc
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springboot/" class="nav-link">
+  spring-boot
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springcloud/" class="nav-link">
+  spring-cloud
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Database" class="dropdown-title"><span class="title">Database</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/db/" class="nav-link">
+  db
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="互联网" class="dropdown-title"><span class="title">互联网</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/internet/" class="nav-link">
+  互联网
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具集" class="dropdown-title"><span class="title">工具集</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/web/" class="nav-link">
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/maven/" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/github/" class="nav-link">
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/browser/" class="nav-link">
+  browser
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/idea/" class="nav-link">
+  idea
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/shihe110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>springsecurity</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/onedocs/springsecurity/1-SpringSecurity自动配置和web安全配置.html" class="sidebar-link">springsecurity</a></li><li><a href="/onedocs/springsecurity/2-SpringSecurity之Authentication认证.html" class="active sidebar-link">SpringSecurity认证</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/onedocs/springsecurity/2-SpringSecurity之Authentication认证.html#springsecurity认证" class="sidebar-link">SpringSecurity认证</a></li><li class="sidebar-sub-header"><a href="/onedocs/springsecurity/2-SpringSecurity之Authentication认证.html#配置认证管理器authenticationmanager" class="sidebar-link">配置认证管理器AuthenticationManager</a></li></ul></li><li><a href="/onedocs/springsecurity/3-SpringSecurity之Authoriaztion授权.html" class="sidebar-link">SpringSecurity授权</a></li><li><a href="/onedocs/springsecurity/4-SpringSecurity之和springboot整合.html" class="sidebar-link">SpringBoot整合springsecurity</a></li><li><a href="/onedocs/springsecurity/5-SpringSecurity之java配置.html" class="sidebar-link">SpringSecurity的java配置</a></li><li><a href="/onedocs/springsecurity/6-SpringSecurity之无状态登陆.html" class="sidebar-link">SpringSecurity之无状态登陆</a></li><li><a href="/onedocs/springsecurity/" aria-current="page" class="sidebar-link">/springsecurity/</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="springsecurity认证"><a href="#springsecurity认证" class="header-anchor">#</a> SpringSecurity认证</h2> <h3 id="authentication"><a href="#authentication" class="header-anchor">#</a> Authentication</h3> <p>SpringSecurity提供了专门的认证接口：org.springframework.security.core.Authentication</p> <p>并提供了一些认证实现类，一旦认证成功后，Authentication对象就会自动存储在用SecurityContextHolder管理的SecurityContext上下文中。</p> <h3 id="认证原理"><a href="#认证原理" class="header-anchor">#</a> 认证原理</h3> <p>1.通过过滤器链（FilterChainProxy）来处理请求认证信息。将认证信息构造成认证对象（Authentication）交给由认证管理器（AuthenticationManager）的authenticate方法去处理。</p> <p>过滤器链中的主要过滤器有：
+- UsernamePasswordAuthenticationFilter：构造的认证对象类型为UsernamePasswordAuthenticationToken；并交由认证管理器的认证方法来进行认证操作。
+- BasicAuthenticationFilter：构造对象UsernamePasswordAuthenticationToken；并交由认证管理器的认证方法来进行认证操作。
+- ExceptionTranslationFilter:处理链中异常，即认证异常AuthenticationException返回代码401认证失败代码。AccessDeniedException：授权异常，返回403状态码。
+- FilterSecurityInterceptor：它是AbstractSecurityInterceptor的子类，当认证成功后，再使用AccessDecisionManager对Web路径资源（web URI）进行授权操作。</p> <p>2.认证管理器AuthenticationManager接口。
+实现类ProviderManager，使用AuthenticationManagerBuilder来定制构建认证管理器。</p> <p>3.ProviderManager（认证管理器类）：ProviderManager通过它authenticate方法将认证交给了一组顺序的AuthenticationProvider来完成认证。</p> <p>4.AuthenticationProvider（认证者）：AuthenticationProvider接口包含两个方法：
+- 1.supports：是否支持认证安全过滤器缓解构造的Authentication；
+- 2.authenticate：对Authentication进行认证，若认证通过返回Authentication，若不通过则抛出异常。</p> <p>5.DaoAuthenticationProvider：DaoAuthenticationProvider是AuthenticationProvider接口的实现，他支持认证的Authentication类型为UsernamePasswordAuthenticationToken。它在认证中主要用到了下面三个部分：
+- UserDetailsService：从指定的位置（如数据库）获得用户信息；通过比较用户信息和Authentication（UsernamePasswordAuthenticationToken）中的用户名和密码信息
+- 若认证通过则构建新的Authentication（UsernamePasswordAuthenticationToken），包含用户的权限信息。
+- PasswordEncoder：使用PasswordEncoder将请求传来的明文密码和存储的编码后的密码进行匹配比较。</p> <h2 id="配置认证管理器authenticationmanager"><a href="#配置认证管理器authenticationmanager" class="header-anchor">#</a> 配置认证管理器AuthenticationManager</h2> <p>新建配置类继承WebSecurityConfigurerAdapter类，并实现configure方法，使用AuthenticationManagerBuilder来构建配置认证管理器AuthenticationManager</p> <div class="language-xml extra-class"><pre class="language-xml"><code>@Configuration
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        //auth.
+    }
+
+}
+</code></pre></div><p>通过配置userDetailServive或AuthenticationProvider定制认证。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/onedocs/springsecurity/1-SpringSecurity自动配置和web安全配置.html" class="prev">
+        springsecurity
+      </a></span> <span class="next"><a href="/onedocs/springsecurity/3-SpringSecurity之Authoriaztion授权.html">
+        SpringSecurity授权
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/onedocs/assets/js/app.3be0d719.js" defer></script><script src="/onedocs/assets/js/2.2038ef08.js" defer></script><script src="/onedocs/assets/js/90.17c03b64.js" defer></script>
+  </body>
+</html>
