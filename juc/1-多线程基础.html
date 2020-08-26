@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>1.cpu时间片 | 毫末之木</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/onedocs/logo.png">
+    <meta name="description" content="合抱之木生于毫末，九层之台起于累土，千里之行始于足下">
+    <link rel="preload" href="/onedocs/assets/css/0.styles.de272f6a.css" as="style"><link rel="preload" href="/onedocs/assets/js/app.c68a3051.js" as="script"><link rel="preload" href="/onedocs/assets/js/2.2038ef08.js" as="script"><link rel="preload" href="/onedocs/assets/js/53.9e040744.js" as="script"><link rel="prefetch" href="/onedocs/assets/js/10.d589e3c8.js"><link rel="prefetch" href="/onedocs/assets/js/100.ef39cc9d.js"><link rel="prefetch" href="/onedocs/assets/js/101.def30fa1.js"><link rel="prefetch" href="/onedocs/assets/js/102.0c0c5360.js"><link rel="prefetch" href="/onedocs/assets/js/103.9e5876b0.js"><link rel="prefetch" href="/onedocs/assets/js/104.57e3e032.js"><link rel="prefetch" href="/onedocs/assets/js/105.5665555d.js"><link rel="prefetch" href="/onedocs/assets/js/106.4231d33b.js"><link rel="prefetch" href="/onedocs/assets/js/107.d2dbbc07.js"><link rel="prefetch" href="/onedocs/assets/js/108.9b784665.js"><link rel="prefetch" href="/onedocs/assets/js/109.d40e72a2.js"><link rel="prefetch" href="/onedocs/assets/js/11.7736435c.js"><link rel="prefetch" href="/onedocs/assets/js/110.41f37a1d.js"><link rel="prefetch" href="/onedocs/assets/js/111.21e10adc.js"><link rel="prefetch" href="/onedocs/assets/js/112.4c8e5ab0.js"><link rel="prefetch" href="/onedocs/assets/js/113.f5f69139.js"><link rel="prefetch" href="/onedocs/assets/js/114.be7c12a2.js"><link rel="prefetch" href="/onedocs/assets/js/115.922f21dd.js"><link rel="prefetch" href="/onedocs/assets/js/116.eddf735e.js"><link rel="prefetch" href="/onedocs/assets/js/117.be212451.js"><link rel="prefetch" href="/onedocs/assets/js/118.7f75b004.js"><link rel="prefetch" href="/onedocs/assets/js/119.0561ed64.js"><link rel="prefetch" href="/onedocs/assets/js/12.450e7eb9.js"><link rel="prefetch" href="/onedocs/assets/js/120.d6b1c139.js"><link rel="prefetch" href="/onedocs/assets/js/121.4146c47b.js"><link rel="prefetch" href="/onedocs/assets/js/122.232c4ae5.js"><link rel="prefetch" href="/onedocs/assets/js/123.8e8f39d8.js"><link rel="prefetch" href="/onedocs/assets/js/124.8339a8c4.js"><link rel="prefetch" href="/onedocs/assets/js/125.a34be74c.js"><link rel="prefetch" href="/onedocs/assets/js/126.500b3bcf.js"><link rel="prefetch" href="/onedocs/assets/js/127.5658f1c4.js"><link rel="prefetch" href="/onedocs/assets/js/128.7c2c2a65.js"><link rel="prefetch" href="/onedocs/assets/js/129.2f353dec.js"><link rel="prefetch" href="/onedocs/assets/js/13.0e9843e7.js"><link rel="prefetch" href="/onedocs/assets/js/130.06be44f2.js"><link rel="prefetch" href="/onedocs/assets/js/131.d826aa66.js"><link rel="prefetch" href="/onedocs/assets/js/132.afa4d0ba.js"><link rel="prefetch" href="/onedocs/assets/js/133.591d4884.js"><link rel="prefetch" href="/onedocs/assets/js/134.f1f0ad1c.js"><link rel="prefetch" href="/onedocs/assets/js/135.770c081d.js"><link rel="prefetch" href="/onedocs/assets/js/136.52f15a10.js"><link rel="prefetch" href="/onedocs/assets/js/137.fbbc7509.js"><link rel="prefetch" href="/onedocs/assets/js/138.06a02fd9.js"><link rel="prefetch" href="/onedocs/assets/js/139.8c604941.js"><link rel="prefetch" href="/onedocs/assets/js/14.4ebf1c49.js"><link rel="prefetch" href="/onedocs/assets/js/140.d33af4eb.js"><link rel="prefetch" href="/onedocs/assets/js/141.d5453a41.js"><link rel="prefetch" href="/onedocs/assets/js/142.7bd69e48.js"><link rel="prefetch" href="/onedocs/assets/js/143.7f0d95b6.js"><link rel="prefetch" href="/onedocs/assets/js/144.9c60d82f.js"><link rel="prefetch" href="/onedocs/assets/js/145.e30afb0d.js"><link rel="prefetch" href="/onedocs/assets/js/146.bfa3b03e.js"><link rel="prefetch" href="/onedocs/assets/js/147.9a2781ef.js"><link rel="prefetch" href="/onedocs/assets/js/148.ba339c0d.js"><link rel="prefetch" href="/onedocs/assets/js/149.9e17d79d.js"><link rel="prefetch" href="/onedocs/assets/js/15.4be2d37d.js"><link rel="prefetch" href="/onedocs/assets/js/150.060f75bc.js"><link rel="prefetch" href="/onedocs/assets/js/151.3a4b131b.js"><link rel="prefetch" href="/onedocs/assets/js/152.fceed5aa.js"><link rel="prefetch" href="/onedocs/assets/js/153.4df7a292.js"><link rel="prefetch" href="/onedocs/assets/js/16.a6c92d39.js"><link rel="prefetch" href="/onedocs/assets/js/17.9d55c0aa.js"><link rel="prefetch" href="/onedocs/assets/js/18.5e41f3f2.js"><link rel="prefetch" href="/onedocs/assets/js/19.80c6b628.js"><link rel="prefetch" href="/onedocs/assets/js/20.4b322da9.js"><link rel="prefetch" href="/onedocs/assets/js/21.6a4dff4b.js"><link rel="prefetch" href="/onedocs/assets/js/22.e878cd24.js"><link rel="prefetch" href="/onedocs/assets/js/23.a28e699b.js"><link rel="prefetch" href="/onedocs/assets/js/24.14fa34c6.js"><link rel="prefetch" href="/onedocs/assets/js/25.e5f3feff.js"><link rel="prefetch" href="/onedocs/assets/js/26.c61614b0.js"><link rel="prefetch" href="/onedocs/assets/js/27.6975326b.js"><link rel="prefetch" href="/onedocs/assets/js/28.8a966c88.js"><link rel="prefetch" href="/onedocs/assets/js/29.c5b8b73b.js"><link rel="prefetch" href="/onedocs/assets/js/3.b3ce03d8.js"><link rel="prefetch" href="/onedocs/assets/js/30.2e3d48d3.js"><link rel="prefetch" href="/onedocs/assets/js/31.72e73d4e.js"><link rel="prefetch" href="/onedocs/assets/js/32.78abae36.js"><link rel="prefetch" href="/onedocs/assets/js/33.e02a339b.js"><link rel="prefetch" href="/onedocs/assets/js/34.78da6f46.js"><link rel="prefetch" href="/onedocs/assets/js/35.a2094c39.js"><link rel="prefetch" href="/onedocs/assets/js/36.3a158870.js"><link rel="prefetch" href="/onedocs/assets/js/37.380b80c5.js"><link rel="prefetch" href="/onedocs/assets/js/38.af7f652a.js"><link rel="prefetch" href="/onedocs/assets/js/39.0357dfeb.js"><link rel="prefetch" href="/onedocs/assets/js/4.7d5f245c.js"><link rel="prefetch" href="/onedocs/assets/js/40.ec407734.js"><link rel="prefetch" href="/onedocs/assets/js/41.8383b70f.js"><link rel="prefetch" href="/onedocs/assets/js/42.722796da.js"><link rel="prefetch" href="/onedocs/assets/js/43.9bc0af94.js"><link rel="prefetch" href="/onedocs/assets/js/44.63591df1.js"><link rel="prefetch" href="/onedocs/assets/js/45.52964ffc.js"><link rel="prefetch" href="/onedocs/assets/js/46.c51f7c59.js"><link rel="prefetch" href="/onedocs/assets/js/47.9cf24869.js"><link rel="prefetch" href="/onedocs/assets/js/48.dbc92765.js"><link rel="prefetch" href="/onedocs/assets/js/49.6fa12f84.js"><link rel="prefetch" href="/onedocs/assets/js/5.a3b3e033.js"><link rel="prefetch" href="/onedocs/assets/js/50.6f305a34.js"><link rel="prefetch" href="/onedocs/assets/js/51.25729b06.js"><link rel="prefetch" href="/onedocs/assets/js/52.bc7930e7.js"><link rel="prefetch" href="/onedocs/assets/js/54.0f5aaa2f.js"><link rel="prefetch" href="/onedocs/assets/js/55.df5f2233.js"><link rel="prefetch" href="/onedocs/assets/js/56.c10e7e7e.js"><link rel="prefetch" href="/onedocs/assets/js/57.0cb2502e.js"><link rel="prefetch" href="/onedocs/assets/js/58.e4ab1539.js"><link rel="prefetch" href="/onedocs/assets/js/59.125c6135.js"><link rel="prefetch" href="/onedocs/assets/js/6.a8b2a12d.js"><link rel="prefetch" href="/onedocs/assets/js/60.b6f42d01.js"><link rel="prefetch" href="/onedocs/assets/js/61.0c0defb4.js"><link rel="prefetch" href="/onedocs/assets/js/62.5fe6bcc8.js"><link rel="prefetch" href="/onedocs/assets/js/63.3fc04afa.js"><link rel="prefetch" href="/onedocs/assets/js/64.8eacf4f8.js"><link rel="prefetch" href="/onedocs/assets/js/65.6c2f8c40.js"><link rel="prefetch" href="/onedocs/assets/js/66.7100bbc3.js"><link rel="prefetch" href="/onedocs/assets/js/67.2d31ad53.js"><link rel="prefetch" href="/onedocs/assets/js/68.0c2fe42f.js"><link rel="prefetch" href="/onedocs/assets/js/69.b99ef9cf.js"><link rel="prefetch" href="/onedocs/assets/js/7.5872621b.js"><link rel="prefetch" href="/onedocs/assets/js/70.f8c2e60c.js"><link rel="prefetch" href="/onedocs/assets/js/71.122273a2.js"><link rel="prefetch" href="/onedocs/assets/js/72.cd7ee044.js"><link rel="prefetch" href="/onedocs/assets/js/73.2dab8421.js"><link rel="prefetch" href="/onedocs/assets/js/74.75f6409c.js"><link rel="prefetch" href="/onedocs/assets/js/75.461dbeaa.js"><link rel="prefetch" href="/onedocs/assets/js/76.f14025de.js"><link rel="prefetch" href="/onedocs/assets/js/77.f7575c89.js"><link rel="prefetch" href="/onedocs/assets/js/78.4bd565a9.js"><link rel="prefetch" href="/onedocs/assets/js/79.ca3494a9.js"><link rel="prefetch" href="/onedocs/assets/js/8.d1567d2e.js"><link rel="prefetch" href="/onedocs/assets/js/80.a5c4128a.js"><link rel="prefetch" href="/onedocs/assets/js/81.70c0ae68.js"><link rel="prefetch" href="/onedocs/assets/js/82.bf3097cd.js"><link rel="prefetch" href="/onedocs/assets/js/83.d640bb45.js"><link rel="prefetch" href="/onedocs/assets/js/84.c5f434d9.js"><link rel="prefetch" href="/onedocs/assets/js/85.c11ad081.js"><link rel="prefetch" href="/onedocs/assets/js/86.988fec2e.js"><link rel="prefetch" href="/onedocs/assets/js/87.88ec2015.js"><link rel="prefetch" href="/onedocs/assets/js/88.bb40926b.js"><link rel="prefetch" href="/onedocs/assets/js/89.4ba759d0.js"><link rel="prefetch" href="/onedocs/assets/js/9.b4c04a84.js"><link rel="prefetch" href="/onedocs/assets/js/90.ad8419bd.js"><link rel="prefetch" href="/onedocs/assets/js/91.a3334ef8.js"><link rel="prefetch" href="/onedocs/assets/js/92.1b044d36.js"><link rel="prefetch" href="/onedocs/assets/js/93.f4f6d3a4.js"><link rel="prefetch" href="/onedocs/assets/js/94.292c0fc8.js"><link rel="prefetch" href="/onedocs/assets/js/95.dd048e83.js"><link rel="prefetch" href="/onedocs/assets/js/96.63ebfce7.js"><link rel="prefetch" href="/onedocs/assets/js/97.3c6925f1.js"><link rel="prefetch" href="/onedocs/assets/js/98.fb2eaa7a.js"><link rel="prefetch" href="/onedocs/assets/js/99.65a83bdc.js">
+    <link rel="stylesheet" href="/onedocs/assets/css/0.styles.de272f6a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/onedocs/" class="home-link router-link-active"><img src="/onedocs/logo.png" alt="毫末之木" class="logo"> <span class="site-name can-hide">毫末之木</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/onedocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/javaapi/" class="nav-link">
+  javaapi
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/mybatis/" class="nav-link">
+  mybatis
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/juc/" class="nav-link router-link-active">
+  多线程
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Spring系列" class="dropdown-title"><span class="title">Spring系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/spring/" class="nav-link">
+  spring
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springmvc/" class="nav-link">
+  spring-mvc
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springboot/" class="nav-link">
+  spring-boot
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springcloud/" class="nav-link">
+  spring-cloud
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springsecurity/" class="nav-link">
+  spring-security
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Database" class="dropdown-title"><span class="title">Database</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/db/" class="nav-link">
+  db
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/redis/" class="nav-link">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/js/" class="nav-link">
+  js
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="互联网" class="dropdown-title"><span class="title">互联网</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/mq/" class="nav-link">
+  消息中间件
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/internet/" class="nav-link">
+  互联网
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/interview/" class="nav-link">
+  面试
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具集" class="dropdown-title"><span class="title">工具集</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/web/" class="nav-link">
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/maven/" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/github/" class="nav-link">
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/browser/" class="nav-link">
+  browser
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/idea/" class="nav-link">
+  idea
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/shihe110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/onedocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/javaapi/" class="nav-link">
+  javaapi
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/mybatis/" class="nav-link">
+  mybatis
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/juc/" class="nav-link router-link-active">
+  多线程
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Spring系列" class="dropdown-title"><span class="title">Spring系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/spring/" class="nav-link">
+  spring
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springmvc/" class="nav-link">
+  spring-mvc
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springboot/" class="nav-link">
+  spring-boot
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springcloud/" class="nav-link">
+  spring-cloud
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springsecurity/" class="nav-link">
+  spring-security
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Database" class="dropdown-title"><span class="title">Database</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/db/" class="nav-link">
+  db
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/redis/" class="nav-link">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/js/" class="nav-link">
+  js
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="互联网" class="dropdown-title"><span class="title">互联网</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/mq/" class="nav-link">
+  消息中间件
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/internet/" class="nav-link">
+  互联网
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/interview/" class="nav-link">
+  面试
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具集" class="dropdown-title"><span class="title">工具集</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/web/" class="nav-link">
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/maven/" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/github/" class="nav-link">
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/browser/" class="nav-link">
+  browser
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/idea/" class="nav-link">
+  idea
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/shihe110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>juc</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/onedocs/juc/1-多线程基础.html" class="active sidebar-link">1.cpu时间片</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_1-cpu时间片" class="sidebar-link">1.cpu时间片</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_2-进程" class="sidebar-link">2.进程</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_3-进程和线程比较" class="sidebar-link">3.进程和线程比较</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_4-java多线程" class="sidebar-link">4.java多线程</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_5-创建多线程的两种方式？" class="sidebar-link">5.创建多线程的两种方式？</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_6-线程状态" class="sidebar-link">6.线程状态</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_7-线程终止的原因" class="sidebar-link">7.线程终止的原因</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_8-中断线程的方法" class="sidebar-link">8.中断线程的方法</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_9-volatile关键字作用？" class="sidebar-link">9.volatile关键字作用？</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_10-什么是守护线程？如何设置守护线程？" class="sidebar-link">10.什么是守护线程？如何设置守护线程？</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_11-线程同步synchronized" class="sidebar-link">11.线程同步synchronized</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_12-synchronized使用" class="sidebar-link">12.synchronized使用</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_13-哪些操作不需要同步synchronized" class="sidebar-link">13.哪些操作不需要同步synchronized</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_14-什么是同步方法？" class="sidebar-link">14.什么是同步方法？</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_15-什么是可重入锁？" class="sidebar-link">15.什么是可重入锁？</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_16-什么是死锁？" class="sidebar-link">16.什么是死锁？</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_17-多线程协调wait、notify、notifyall" class="sidebar-link">17.多线程协调wait、notify、notifyAll</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_18-reentrantlock使用？" class="sidebar-link">18.ReentrantLock使用？</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_19-reentrantlock的多线程协调condition？" class="sidebar-link">19.ReentrantLock的多线程协调Condition？</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_20-介绍readwritelock？解决多线程同时读，只有一个线程能写的问题。" class="sidebar-link">20.介绍ReadWriteLock？解决多线程同时读，只有一个线程能写的问题。</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_21-java8读写锁stampedlock？邮戳锁，读写锁的升级版。进一步提升效率。" class="sidebar-link">21.java8读写锁StampedLock？邮戳锁，读写锁的升级版。进一步提升效率。</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_22-concurrent集合（并发）" class="sidebar-link">22.Concurrent集合（并发）</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_23-java-util-concurrent原子类atomic？" class="sidebar-link">23.java.util.concurrent原子类Atomic？</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_24-什么是线程池？解决什么问题？" class="sidebar-link">24.什么是线程池？解决什么问题？</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_25-callable接口有返回值得多线程接口runable没有返回值" class="sidebar-link">25.Callable接口有返回值得多线程接口Runable没有返回值</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_26-future" class="sidebar-link">26.Future</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_27-completablefuture" class="sidebar-link">27.CompletableFuture</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_28-fork-join的任务原理" class="sidebar-link">28.Fork/Join的任务原理</a></li><li class="sidebar-sub-header"><a href="/onedocs/juc/1-多线程基础.html#_29-threadlocal" class="sidebar-link">29.ThreadLocal</a></li></ul></li><li><a href="/onedocs/juc/" aria-current="page" class="sidebar-link">/juc/</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="_1-cpu时间片"><a href="#_1-cpu时间片" class="header-anchor">#</a> 1.cpu时间片</h2> <p>操作系统多任务执行，实际是cpu交替执行的结果。</p> <h2 id="_2-进程"><a href="#_2-进程" class="header-anchor">#</a> 2.进程</h2> <p>一个任务是一个进程，一个任务中至少包含一个子任务称之为线程。
+进程和线程的关系就是：一个进程可以包含一个或多个线程，但至少会有一个线程。</p> <p>操作系统调度的最小单元是线程。</p> <p>同一个应用程序，既可以有多个进程，也可以有多个线程。</p> <ul><li>多进程模式（每个进程只有一个线程）</li> <li>多线程模式（一个进程有多个线程）</li> <li>多进程+多线程模式</li></ul> <h2 id="_3-进程和线程比较"><a href="#_3-进程和线程比较" class="header-anchor">#</a> 3.进程和线程比较</h2> <ul><li>多进程的缺点<br>
+创建进程比创建线程开销大，尤其是在Windows系统上；
+进程间通信比线程间通信要慢，因为线程间通信就是读写同一个变量，速度很快。</li> <li>多进程优点<br>
+多进程稳定性比多线程高，因为在多进程的情况下，一个进程崩溃不会影响其他进程，而在多线程的情况下，任何一个线程崩溃会直接导致整个进程崩溃。</li></ul> <h2 id="_4-java多线程"><a href="#_4-java多线程" class="header-anchor">#</a> 4.java多线程</h2> <p>Java语言内置了多线程支持：一个Java程序实际上是一个JVM进程，JVM进程用一个主线程来执行main()方法，在main()方法内部，我们又可以启动多个线程。此外，JVM还有负责垃圾回收的其他工作线程等。</p> <p>因此，对于大多数Java程序来说，我们说多任务，实际上是说如何使用多线程实现多任务。</p> <p>和单线程相比，多线程编程的特点在于：多线程经常需要读写共享数据，并且需要同步。例如，播放电影时，就必须由一个线程播放视频，另一个线程播放音频，两个线程需要协调运行，否则画面和声音就不同步。因此，多线程编程的复杂度高，调试更困难。</p> <p>Java多线程编程的特点又在于：</p> <p>多线程模型是Java程序最基本的并发模型；
+后续读写网络、数据库、Web开发等都依赖Java多线程模型。</p> <h2 id="_5-创建多线程的两种方式？"><a href="#_5-创建多线程的两种方式？" class="header-anchor">#</a> 5.创建多线程的两种方式？</h2> <ul><li>继承Thread类</li> <li>实现Runable接口</li></ul> <p>Thread.setPriority(int n) // 1~10, 默认值5 设置线程优先级</p> <h2 id="_6-线程状态"><a href="#_6-线程状态" class="header-anchor">#</a> 6.线程状态</h2> <ul><li>New：新创建的线程，尚未执行；</li> <li>Runnable：运行中的线程，正在执行run()方法的Java代码；</li> <li>Blocked：运行中的线程，因为某些操作被阻塞而挂起；</li> <li>Waiting：运行中的线程，因为某些操作在等待中；</li> <li>Timed Waiting：运行中的线程，因为执行sleep()方法正在计时等待；</li> <li>Terminated：线程已终止，因为run()方法执行完毕。</li></ul> <h2 id="_7-线程终止的原因"><a href="#_7-线程终止的原因" class="header-anchor">#</a> 7.线程终止的原因</h2> <ul><li>线性正常终止：run()方法执行到return语句返回</li> <li>线性意外终止：run()方法因未捕获的异常导致线程终止</li> <li>对某个线程的Thread实例调用stop()方法强制终止（不推荐）</li></ul> <h2 id="_8-中断线程的方法"><a href="#_8-中断线程的方法" class="header-anchor">#</a> 8.中断线程的方法</h2> <ul><li><p>调用interrupt()方法<br>
+例子：假设从网络下载一个100M的文件，如果网速很慢，用户等得不耐烦，就可能在下载过程中点“取消”，这时，程序就需要中断下载线程的执行。</p></li> <li><p>设置标志位</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>public class Main {
+    public static void main(String[] args)  throws InterruptedException {
+        HelloThread t = new HelloThread();
+        t.start();
+        Thread.sleep(1);
+        t.running = false; // 标志位置为false
+    }
+}
+
+class HelloThread extends Thread {
+    public volatile boolean running = true;
+    public void run() {
+        int n = 0;
+        while (running) {
+            n ++;
+            System.out.println(n + &quot; hello!&quot;);
+        }
+        System.out.println(&quot;end!&quot;);
+    }
+}
+</code></pre></div><p>注意到HelloThread的标志位boolean running是一个线程间共享的变量。线程间共享变量需要使用volatile关键字标记，确保每个线程都能读取到更新后的变量值。</p> <h2 id="_9-volatile关键字作用？"><a href="#_9-volatile关键字作用？" class="header-anchor">#</a> 9.volatile关键字作用？</h2> <p>volatile关键字解决了共享变量在线程间的可见性问题。
+volatile关键字的目的是告诉虚拟机：</p> <ul><li>每次访问变量时，总是获取主内存的最新值；</li> <li>每次修改变量后，立刻回写到主内存</li></ul> <h2 id="_10-什么是守护线程？如何设置守护线程？"><a href="#_10-什么是守护线程？如何设置守护线程？" class="header-anchor">#</a> 10.什么是守护线程？如何设置守护线程？</h2> <p>只要有线程不结束，jvm进程就不会退出结束。
+但有些线程的目的是无限循环的：如定时任务。</p> <ul><li>守护线程（Daemon Thread）：指为其他线程服务的线程。守护线程不会阻碍jvm退出。</li> <li>设置守护线程：在调用start()前调用setDaemon(true)即标记该线程为守护线程</li></ul> <p>注意：守护线程不能持有任何需要关闭的资源，例如打开文件等，因为虚拟机退出时，守护线程没有任何机会来关闭文件，这会导致数据丢失。</p> <h2 id="_11-线程同步synchronized"><a href="#_11-线程同步synchronized" class="header-anchor">#</a> 11.线程同步synchronized</h2> <p>多线程模式下多个线程同时读写共享变量，会出现数据不一致问题。为解决该问题，即保证一段代码的原子性，通过加锁和解锁实现。</p> <div class="language- extra-class"><pre class="language-text"><code>synchronized(obj){// 获得锁
+    
+}// 释放锁
+解决了线程共享变量正确性问题，但同时带来了性能下降问题。因为synchronized代码块无法并发执行。此外，加锁和解锁需要消耗一定的时间，所以，synchronized会降低程序的执行效率。
+</code></pre></div><p>不必担心异常问题，最终都会释放锁。</p> <h2 id="_12-synchronized使用"><a href="#_12-synchronized使用" class="header-anchor">#</a> 12.synchronized使用</h2> <ul><li>找出修改共享变量的线程代码块；</li> <li>选择一个共享实例作为锁；</li> <li>使用synchronized(lockObject) { ... }。</li></ul> <p>注：对同一共享变量的处理synchronized使用时必须获取同一把锁。对不同共享变量的多线程操作，应使用不同的锁。</p> <h2 id="_13-哪些操作不需要同步synchronized"><a href="#_13-哪些操作不需要同步synchronized" class="header-anchor">#</a> 13.哪些操作不需要同步synchronized</h2> <p>JVM规范定义了几种原子操作：</p> <ul><li>基本类型（long和double除外）赋值，例如：int n = m；</li> <li>引用类型赋值，例如：List<String> list = anotherList。</String></li></ul> <p>long和double是64位数据，JVM没有明确规定64位赋值操作是不是一个原子操作，不过在x64平台的JVM是把long和double的赋值作为原子操作实现的。</p> <ul><li>单条原子操作不需要同步</li></ul> <div class="language- extra-class"><pre class="language-text"><code>public void set(int m) {
+    synchronized(lock) {
+        this.value = m;
+    }
+}
+// 正解
+public void set(String s) {
+    this.value = s;
+}
+</code></pre></div><ul><li>多条赋值就必须保证同步,但有些时候，通过一些巧妙的转换，可以把非原子操作变为原子操作</li></ul> <div class="language- extra-class"><pre class="language-text"><code>class Pair {
+    int first;
+    int last;
+    public void set(int first, int last) {
+        synchronized(this) {
+            this.first = first;
+            this.last = last;
+        }
+    }
+}
+
+class Pair {
+    int[] pair;
+    public void set(int first, int last) {
+        int[] ps = new int[] { first, last };
+        this.pair = ps;
+    }
+}
+每个线程进入都会new一个新的局部变量所以不存在同步问题
+</code></pre></div><h2 id="_14-什么是同步方法？"><a href="#_14-什么是同步方法？" class="header-anchor">#</a> 14.什么是同步方法？</h2> <p>使用synchronized修饰的方法是同步方法，将整个方法变成同步代码块，加锁对象是this。使用synchronized修饰静态方法，加锁对象是该方法所在类的类对象Class。</p> <p>通过合理的设计和数据封装可以让一个类变为“线程安全”；</p> <p>一个类没有特殊说明，默认不是thread-safe；</p> <p>多线程能否安全访问某个非线程安全的实例，需要具体问题具体分析。</p> <h2 id="_15-什么是可重入锁？"><a href="#_15-什么是可重入锁？" class="header-anchor">#</a> 15.什么是可重入锁？</h2> <p>jvm允许同一个线程重复获取同一个锁，这种被同一个线程反复获取的锁，就叫做可重入锁。</p> <p>java线程记录获取可重入锁，获取加1，退出同步代码块减1，当记录是0时，释放锁。</p> <h2 id="_16-什么是死锁？"><a href="#_16-什么是死锁？" class="header-anchor">#</a> 16.什么是死锁？</h2> <p>不同线程获取多个锁对象可能导致死锁。造成相互等待对方释放锁导致死锁。</p> <p>解决：多个线程获取锁的顺序要一致。</p> <p>a线程要先后获取s1、s2锁。b线程也要先后获取s1、s2锁。a获取s1锁，b就必须等待a释放s1后才能获取。</p> <h2 id="_17-多线程协调wait、notify、notifyall"><a href="#_17-多线程协调wait、notify、notifyall" class="header-anchor">#</a> 17.多线程协调wait、notify、notifyAll</h2> <ul><li><p>在synchronized内部可以调用wait()使线程进入等待状态；</p></li> <li><p>必须在已获得的锁对象上调用wait()方法；</p></li> <li><p>在synchronized内部可以调用notify()或notifyAll()唤醒其他等待线程；</p></li> <li><p>必须在已获得的锁对象上调用notify()或notifyAll()方法；</p></li> <li><p>已唤醒的线程还需要重新获得锁后才能继续执行。</p></li></ul> <h2 id="_18-reentrantlock使用？"><a href="#_18-reentrantlock使用？" class="header-anchor">#</a> 18.ReentrantLock使用？</h2> <p>ReentrantLock是一个高级的处理并发的包java.util.concurrent.</p> <p>synchronized加锁代码，在获取锁时会一直等待，一旦死锁就只能结束jvm才能结束线程。</p> <p>ReentrantLock提供了一些额外尝试机制，如可以设置尝试获取锁的时间。</p> <ul><li><p>ReentrantLock可以替代synchronized进行同步；</p></li> <li><p>ReentrantLock获取锁更安全；</p></li> <li><p>必须先获取到锁，再进入try {...}代码块，最后使用finally保证释放锁；</p></li> <li><p>可以使用tryLock()尝试获取锁。</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>if (lock.tryLock(1, TimeUnit.SECONDS)) {
+    try {
+        ...
+    } finally {
+        lock.unlock();
+    }
+}
+</code></pre></div><h2 id="_19-reentrantlock的多线程协调condition？"><a href="#_19-reentrantlock的多线程协调condition？" class="header-anchor">#</a> 19.ReentrantLock的多线程协调Condition？</h2> <ul><li><p>await()会释放当前锁，进入等待状态；</p></li> <li><p>signal()会唤醒某个等待线程；</p></li> <li><p>signalAll()会唤醒所有等待线程；</p></li> <li><p>唤醒线程从await()返回后需要重新获得锁。</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>class TaskQueue {
+    private final Lock lock = new ReentrantLock();
+    private final Condition condition = lock.newCondition();
+    private Queue&lt;String&gt; queue = new LinkedList&lt;&gt;();
+
+    public void addTask(String s) {
+        lock.lock();
+        try {
+            queue.add(s);
+            condition.signalAll();
+        } finally {
+            lock.unlock();
+        }
+    }
+
+    public String getTask() {
+        lock.lock();
+        try {
+            while (queue.isEmpty()) {
+                condition.await();
+            }
+            return queue.remove();
+        } finally {
+            lock.unlock();
+        }
+    }
+}
+</code></pre></div><h2 id="_20-介绍readwritelock？解决多线程同时读，只有一个线程能写的问题。"><a href="#_20-介绍readwritelock？解决多线程同时读，只有一个线程能写的问题。" class="header-anchor">#</a> 20.介绍ReadWriteLock？解决多线程同时读，只有一个线程能写的问题。</h2> <p>解决问题：写入时只允许一个线程可以保证安全，但读取时使用锁会降低效率。</p> <p>需求：允许多个线程同时读，但只要有一个线程在写，其他线程（不论读写）就必须等待</p> <p>使用ReadWriteLock可以解决这个问题，它保证：</p> <ul><li>只允许一个线程写入（其他线程既不能写入也不能读取）；</li> <li>没有写入时，多个线程允许同时读（提高性能）。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>public class Counter {
+    private final ReadWriteLock rwlock = new ReentrantReadWriteLock();
+    private final Lock rlock = rwlock.readLock();
+    private final Lock wlock = rwlock.writeLock();
+    private int[] counts = new int[10];
+
+    public void inc(int index) {
+        wlock.lock(); // 加写锁
+        try {
+            counts[index] += 1;
+        } finally {
+            wlock.unlock(); // 释放写锁
+        }
+    }
+
+    public int[] get() {
+        rlock.lock(); // 加读锁
+        try {
+            return Arrays.copyOf(counts, counts.length);
+        } finally {
+            rlock.unlock(); // 释放读锁
+        }
+    }
+}
+</code></pre></div><h2 id="_21-java8读写锁stampedlock？邮戳锁，读写锁的升级版。进一步提升效率。"><a href="#_21-java8读写锁stampedlock？邮戳锁，读写锁的升级版。进一步提升效率。" class="header-anchor">#</a> 21.java8读写锁StampedLock？邮戳锁，读写锁的升级版。进一步提升效率。</h2> <p>ReadWriteLock的问题，会发现它有个潜在的问题：如果有线程正在读，写线程需要等待读线程释放锁后才能获取写锁，即读的过程中不允许写，这是一种悲观的读锁。</p> <p>StampedLock解决的是读的过程允许写，但读取过程中可以判断是否有写入，如果有则再读一遍保证数据一致性。是乐观锁。</p> <div class="language- extra-class"><pre class="language-text"><code>public class Point {
+    private final StampedLock stampedLock = new StampedLock();
+
+    private double x;
+    private double y;
+
+    public void move(double deltaX, double deltaY) {
+        long stamp = stampedLock.writeLock(); // 获取写锁
+        try {
+            x += deltaX;
+            y += deltaY;
+        } finally {
+            stampedLock.unlockWrite(stamp); // 释放写锁
+        }
+    }
+
+    public double distanceFromOrigin() {
+        long stamp = stampedLock.tryOptimisticRead(); // 获得一个乐观读锁
+        // 注意下面两行代码不是原子操作
+        // 假设x,y = (100,200)
+        double currentX = x;
+        // 此处已读取到x=100，但x,y可能被写线程修改为(300,400)
+        double currentY = y;
+        // 此处已读取到y，如果没有写入，读取是正确的(100,200)
+        // 如果有写入，读取是错误的(100,400)
+        if (!stampedLock.validate(stamp)) { // 检查乐观读锁后是否有其他写锁发生
+            stamp = stampedLock.readLock(); // 获取一个悲观读锁
+            try {
+                currentX = x;
+                currentY = y;
+            } finally {
+                stampedLock.unlockRead(stamp); // 释放悲观读锁
+            }
+        }
+        return Math.sqrt(currentX * currentX + currentY * currentY);
+    }
+}
+</code></pre></div><ul><li><p>StampedLock提供了乐观读锁，可取代ReadWriteLock以进一步提升并发性能；</p></li> <li><p>StampedLock是不可重入锁。</p></li></ul> <h2 id="_22-concurrent集合（并发）"><a href="#_22-concurrent集合（并发）" class="header-anchor">#</a> 22.Concurrent集合（并发）</h2> <table><thead><tr><th>集合接口</th> <th>线程不安全</th> <th>线程安全</th></tr></thead> <tbody><tr><td>List</td> <td>ArrayList</td> <td>CopyOnWriteArrayList</td></tr> <tr><td>Map</td> <td>HashMap</td> <td>ConcurrentHashMap</td></tr> <tr><td>Set</td> <td>HashSet / TreeSet</td> <td>CopyOnWriteArraySet</td></tr> <tr><td>Queue</td> <td>ArrayDeque / LinkedList</td> <td>ArrayBlockingQueue / LinkedBlockingQueue</td></tr> <tr><td>Deque</td> <td>ArrayDeque / LinkedList</td> <td>LinkedBlockingDeque</td></tr></tbody></table> <p>使用java.util.concurrent包提供的线程安全的并发集合可以大大简化多线程编程：</p> <ul><li><p>多线程同时读写并发集合是安全的；</p></li> <li><p>尽量使用Java标准库提供的并发集合，避免自己编写同步代码。</p></li></ul> <h2 id="_23-java-util-concurrent原子类atomic？"><a href="#_23-java-util-concurrent原子类atomic？" class="header-anchor">#</a> 23.java.util.concurrent原子类Atomic？</h2> <p>使用java.util.concurrent.atomic提供的原子操作可以简化多线程编程：</p> <ul><li><p>原子操作实现了无锁的线程安全；</p></li> <li><p>适用于计数器，累加器等。</p></li></ul> <h2 id="_24-什么是线程池？解决什么问题？"><a href="#_24-什么是线程池？解决什么问题？" class="header-anchor">#</a> 24.什么是线程池？解决什么问题？</h2> <p>线程大量的创建和销毁需要消耗大量系统资源。
+于是使用一组线程来接收大量小任务并行分发处理就是线程池。（空间换时间-池化）</p> <p>简单地说，线程池内部维护了若干个线程，没有任务的时候，这些线程都处于等待状态。如果有新任务，就分配一个空闲线程执行。如果所有线程都处于忙碌状态，新任务要么放入队列等待，要么增加一个新线程进行处理。</p> <p>java库提供线程池接口：ExecutorService
+几个常用实现类：</p> <ul><li>FixedThreadPool：线程数固定的线程池；</li> <li>CachedThreadPool：线程数根据任务动态调整的线程池；</li> <li>SingleThreadExecutor：仅单线程执行的线程池。</li></ul> <p>创建这些线程池的方法封装在：Executor类中。</p> <p>JDK提供了ExecutorService实现了线程池功能：</p> <ul><li><p>线程池内部维护一组线程，可以高效执行大量小任务；</p></li> <li><p>Executors提供了静态方法创建不同类型的ExecutorService；</p></li> <li><p>必须调用shutdown()关闭ExecutorService；</p></li> <li><p>ScheduledThreadPool可以定期调度多个任务。</p></li></ul> <h2 id="_25-callable接口有返回值得多线程接口runable没有返回值"><a href="#_25-callable接口有返回值得多线程接口runable没有返回值" class="header-anchor">#</a> 25.Callable接口有返回值得多线程接口Runable没有返回值</h2> <h2 id="_26-future"><a href="#_26-future" class="header-anchor">#</a> 26.Future</h2> <p>一个Future<V>接口表示一个未来可能会返回的结果，它定义的方法有：</V></p> <ul><li>get()：获取结果（可能会等待）</li> <li>get(long timeout, TimeUnit unit)：获取结果，但只等待指定的时间；</li> <li>cancel(boolean mayInterruptIfRunning)：取消当前任务；</li> <li>isDone()：判断任务是否已完成。</li></ul> <h2 id="_27-completablefuture"><a href="#_27-completablefuture" class="header-anchor">#</a> 27.CompletableFuture</h2> <div class="language- extra-class"><pre class="language-text"><code>可见CompletableFuture的优点是：
+
+异步任务结束时，会自动回调某个对象的方法；
+异步任务出错时，会自动回调某个对象的方法；
+主线程设置好回调后，不再关心异步任务的执行。
+
+
+CompletableFuture可以指定异步处理流程：
+
+thenAccept()处理正常结果；
+exceptional()处理异常结果；
+thenApplyAsync()用于串行化另一个CompletableFuture；
+anyOf()和allOf()用于并行化多个CompletableFuture。
+</code></pre></div><h2 id="_28-fork-join的任务原理"><a href="#_28-fork-join的任务原理" class="header-anchor">#</a> 28.Fork/Join的任务原理</h2> <p>类似MapReduce，拆分并行计算最后合并结果。</p> <h2 id="_29-threadlocal"><a href="#_29-threadlocal" class="header-anchor">#</a> 29.ThreadLocal</h2> <p>它可以在一个线程中传递同一个对象。</p> <p>ThreadLocal实例通常总是以静态字段初始化如下：</p> <div class="language- extra-class"><pre class="language-text"><code>static ThreadLocal&lt;User&gt; threadLocalUser = new ThreadLocal&lt;&gt;();
+</code></pre></div><p>所有方法可以随时获取到ThreadLocal中的对象。</p> <p>实际上，可以把ThreadLocal看成一个全局Map&lt;Thread, Object&gt;：每个线程获取ThreadLocal变量时，总是使用Thread自身作为key：</p> <div class="language- extra-class"><pre class="language-text"><code>Object threadLocalValue = threadLocalMap.get(Thread.currentThread());
+</code></pre></div><p>因此，ThreadLocal相当于给每个线程都开辟了一个独立的存储空间，各个线程的ThreadLocal关联的实例互不干扰。</p> <p>注：ThreadLocal一定要在finally中清除：</p> <div class="language- extra-class"><pre class="language-text"><code>try {
+    threadLocalUser.set(user);
+    ...
+} finally {
+    threadLocalUser.remove();
+}
+</code></pre></div><p>为了保证能释放ThreadLocal关联的实例，我们可以通过AutoCloseable接口配合try (resource) {...}结构，让编译器自动为我们关闭。例如，一个保存了当前用户名的ThreadLocal可以封装为一个UserContext对象：</p> <div class="language- extra-class"><pre class="language-text"><code>public class UserContext implements AutoCloseable {
+
+    static final ThreadLocal&lt;String&gt; ctx = new ThreadLocal&lt;&gt;();
+
+    public UserContext(String user) {
+        ctx.set(user);
+    }
+
+    public static String currentUser() {
+        return ctx.get();
+    }
+
+    @Override
+    public void close() {
+        ctx.remove();
+    }
+}
+</code></pre></div><p>使用的时候，我们借助try (resource) {...}结构，可以这么写：</p> <div class="language- extra-class"><pre class="language-text"><code>try (var ctx = new UserContext(&quot;Bob&quot;)) {
+    // 可任意调用UserContext.currentUser():
+    String currentUser = UserContext.currentUser();
+} // 在此自动调用UserContext.close()方法释放Th
+</code></pre></div><p>readLocal关联对象
+这样就在UserContext中完全封装了ThreadLocal，外部代码在try (resource) {...}内部可以随时调用UserContext.currentUser()获取当前线程绑定的用户名。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/onedocs/juc/" class="router-link-active">
+        /juc/
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/onedocs/assets/js/app.c68a3051.js" defer></script><script src="/onedocs/assets/js/2.2038ef08.js" defer></script><script src="/onedocs/assets/js/53.9e040744.js" defer></script>
+  </body>
+</html>
