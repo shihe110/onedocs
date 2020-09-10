@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SpringMVC5的四个HandlerAdapter | 毫末之木</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/onedocs/logo.png">
+    <meta name="description" content="合抱之木生于毫末，九层之台起于累土，千里之行始于足下">
+    <link rel="preload" href="/onedocs/assets/css/0.styles.de272f6a.css" as="style"><link rel="preload" href="/onedocs/assets/js/app.51f56503.js" as="script"><link rel="preload" href="/onedocs/assets/js/2.2038ef08.js" as="script"><link rel="preload" href="/onedocs/assets/js/125.08c19d60.js" as="script"><link rel="prefetch" href="/onedocs/assets/js/10.f6a37571.js"><link rel="prefetch" href="/onedocs/assets/js/100.5b7c3783.js"><link rel="prefetch" href="/onedocs/assets/js/101.0f8962c5.js"><link rel="prefetch" href="/onedocs/assets/js/102.6387d84b.js"><link rel="prefetch" href="/onedocs/assets/js/103.c19aef19.js"><link rel="prefetch" href="/onedocs/assets/js/104.72b4f6cc.js"><link rel="prefetch" href="/onedocs/assets/js/105.d1924e4f.js"><link rel="prefetch" href="/onedocs/assets/js/106.886fc97a.js"><link rel="prefetch" href="/onedocs/assets/js/107.feb8687c.js"><link rel="prefetch" href="/onedocs/assets/js/108.4b40d148.js"><link rel="prefetch" href="/onedocs/assets/js/109.dde59b9c.js"><link rel="prefetch" href="/onedocs/assets/js/11.61cfa05d.js"><link rel="prefetch" href="/onedocs/assets/js/110.3bbdee43.js"><link rel="prefetch" href="/onedocs/assets/js/111.9953d06f.js"><link rel="prefetch" href="/onedocs/assets/js/112.a54caf4f.js"><link rel="prefetch" href="/onedocs/assets/js/113.5a4e1f25.js"><link rel="prefetch" href="/onedocs/assets/js/114.c61e6270.js"><link rel="prefetch" href="/onedocs/assets/js/115.1868ca20.js"><link rel="prefetch" href="/onedocs/assets/js/116.0b64d1d7.js"><link rel="prefetch" href="/onedocs/assets/js/117.7283a26f.js"><link rel="prefetch" href="/onedocs/assets/js/118.a3854fea.js"><link rel="prefetch" href="/onedocs/assets/js/119.89930d64.js"><link rel="prefetch" href="/onedocs/assets/js/12.01307b5f.js"><link rel="prefetch" href="/onedocs/assets/js/120.91bdf17c.js"><link rel="prefetch" href="/onedocs/assets/js/121.a535f735.js"><link rel="prefetch" href="/onedocs/assets/js/122.2b873e58.js"><link rel="prefetch" href="/onedocs/assets/js/123.4c2503db.js"><link rel="prefetch" href="/onedocs/assets/js/124.9f76221c.js"><link rel="prefetch" href="/onedocs/assets/js/126.531cb614.js"><link rel="prefetch" href="/onedocs/assets/js/127.b870c471.js"><link rel="prefetch" href="/onedocs/assets/js/128.b1ddde66.js"><link rel="prefetch" href="/onedocs/assets/js/129.5b28a994.js"><link rel="prefetch" href="/onedocs/assets/js/13.d503db71.js"><link rel="prefetch" href="/onedocs/assets/js/130.f83b8a10.js"><link rel="prefetch" href="/onedocs/assets/js/131.e92b6db1.js"><link rel="prefetch" href="/onedocs/assets/js/132.572ec2c9.js"><link rel="prefetch" href="/onedocs/assets/js/133.2bc39a71.js"><link rel="prefetch" href="/onedocs/assets/js/134.69c81707.js"><link rel="prefetch" href="/onedocs/assets/js/135.9f1ce78a.js"><link rel="prefetch" href="/onedocs/assets/js/136.07d35b12.js"><link rel="prefetch" href="/onedocs/assets/js/137.76e54793.js"><link rel="prefetch" href="/onedocs/assets/js/138.1fea3e42.js"><link rel="prefetch" href="/onedocs/assets/js/139.09b2587c.js"><link rel="prefetch" href="/onedocs/assets/js/14.1f2678b2.js"><link rel="prefetch" href="/onedocs/assets/js/140.cf6084ff.js"><link rel="prefetch" href="/onedocs/assets/js/141.6d05f5f9.js"><link rel="prefetch" href="/onedocs/assets/js/142.19feba5e.js"><link rel="prefetch" href="/onedocs/assets/js/143.f2b54d19.js"><link rel="prefetch" href="/onedocs/assets/js/144.46340684.js"><link rel="prefetch" href="/onedocs/assets/js/145.5e715935.js"><link rel="prefetch" href="/onedocs/assets/js/146.9d75e4d1.js"><link rel="prefetch" href="/onedocs/assets/js/147.1283bd8d.js"><link rel="prefetch" href="/onedocs/assets/js/148.be76fe37.js"><link rel="prefetch" href="/onedocs/assets/js/149.a9f6581b.js"><link rel="prefetch" href="/onedocs/assets/js/15.69ce579e.js"><link rel="prefetch" href="/onedocs/assets/js/150.068bc658.js"><link rel="prefetch" href="/onedocs/assets/js/151.02b65d13.js"><link rel="prefetch" href="/onedocs/assets/js/152.03101483.js"><link rel="prefetch" href="/onedocs/assets/js/153.5a33eee5.js"><link rel="prefetch" href="/onedocs/assets/js/154.5b07192c.js"><link rel="prefetch" href="/onedocs/assets/js/155.5f0e9ed0.js"><link rel="prefetch" href="/onedocs/assets/js/156.8c61c0fe.js"><link rel="prefetch" href="/onedocs/assets/js/157.bbc66b72.js"><link rel="prefetch" href="/onedocs/assets/js/158.bdefa6ef.js"><link rel="prefetch" href="/onedocs/assets/js/159.fb3dc53c.js"><link rel="prefetch" href="/onedocs/assets/js/16.741d57c4.js"><link rel="prefetch" href="/onedocs/assets/js/160.507fa378.js"><link rel="prefetch" href="/onedocs/assets/js/161.dbbbd12e.js"><link rel="prefetch" href="/onedocs/assets/js/162.f33eaf45.js"><link rel="prefetch" href="/onedocs/assets/js/17.53e3f09f.js"><link rel="prefetch" href="/onedocs/assets/js/18.dfb253bf.js"><link rel="prefetch" href="/onedocs/assets/js/19.6d10771a.js"><link rel="prefetch" href="/onedocs/assets/js/20.03fbbf40.js"><link rel="prefetch" href="/onedocs/assets/js/21.6a4dff4b.js"><link rel="prefetch" href="/onedocs/assets/js/22.e878cd24.js"><link rel="prefetch" href="/onedocs/assets/js/23.57ba01bf.js"><link rel="prefetch" href="/onedocs/assets/js/24.f0992e57.js"><link rel="prefetch" href="/onedocs/assets/js/25.e5f3feff.js"><link rel="prefetch" href="/onedocs/assets/js/26.ad2304d2.js"><link rel="prefetch" href="/onedocs/assets/js/27.b8be166f.js"><link rel="prefetch" href="/onedocs/assets/js/28.e5199e01.js"><link rel="prefetch" href="/onedocs/assets/js/29.145ed65e.js"><link rel="prefetch" href="/onedocs/assets/js/3.35fb6631.js"><link rel="prefetch" href="/onedocs/assets/js/30.0ad0e34c.js"><link rel="prefetch" href="/onedocs/assets/js/31.12e49390.js"><link rel="prefetch" href="/onedocs/assets/js/32.6d2df748.js"><link rel="prefetch" href="/onedocs/assets/js/33.a2c82261.js"><link rel="prefetch" href="/onedocs/assets/js/34.6ef94ba9.js"><link rel="prefetch" href="/onedocs/assets/js/35.dc3cad35.js"><link rel="prefetch" href="/onedocs/assets/js/36.677dbbb9.js"><link rel="prefetch" href="/onedocs/assets/js/37.228704b0.js"><link rel="prefetch" href="/onedocs/assets/js/38.7c28094a.js"><link rel="prefetch" href="/onedocs/assets/js/39.cad83290.js"><link rel="prefetch" href="/onedocs/assets/js/4.7d5f245c.js"><link rel="prefetch" href="/onedocs/assets/js/40.79119ffa.js"><link rel="prefetch" href="/onedocs/assets/js/41.2e429ad3.js"><link rel="prefetch" href="/onedocs/assets/js/42.db054b3a.js"><link rel="prefetch" href="/onedocs/assets/js/43.92adee23.js"><link rel="prefetch" href="/onedocs/assets/js/44.f9142c07.js"><link rel="prefetch" href="/onedocs/assets/js/45.8b71de19.js"><link rel="prefetch" href="/onedocs/assets/js/46.d88613a7.js"><link rel="prefetch" href="/onedocs/assets/js/47.81e0cea2.js"><link rel="prefetch" href="/onedocs/assets/js/48.10a8a658.js"><link rel="prefetch" href="/onedocs/assets/js/49.29663abd.js"><link rel="prefetch" href="/onedocs/assets/js/5.a3b3e033.js"><link rel="prefetch" href="/onedocs/assets/js/50.cb83f724.js"><link rel="prefetch" href="/onedocs/assets/js/51.ad4828fe.js"><link rel="prefetch" href="/onedocs/assets/js/52.d19f7392.js"><link rel="prefetch" href="/onedocs/assets/js/53.98e2f05a.js"><link rel="prefetch" href="/onedocs/assets/js/54.799a055c.js"><link rel="prefetch" href="/onedocs/assets/js/55.c8c622c1.js"><link rel="prefetch" href="/onedocs/assets/js/56.54407fc9.js"><link rel="prefetch" href="/onedocs/assets/js/57.95eda166.js"><link rel="prefetch" href="/onedocs/assets/js/58.bfb5b4cf.js"><link rel="prefetch" href="/onedocs/assets/js/59.65b43925.js"><link rel="prefetch" href="/onedocs/assets/js/6.a8b2a12d.js"><link rel="prefetch" href="/onedocs/assets/js/60.5bf046f1.js"><link rel="prefetch" href="/onedocs/assets/js/61.1c392353.js"><link rel="prefetch" href="/onedocs/assets/js/62.53ae2b91.js"><link rel="prefetch" href="/onedocs/assets/js/63.43fab463.js"><link rel="prefetch" href="/onedocs/assets/js/64.65a44a4c.js"><link rel="prefetch" href="/onedocs/assets/js/65.ab1fb279.js"><link rel="prefetch" href="/onedocs/assets/js/66.5aca3e53.js"><link rel="prefetch" href="/onedocs/assets/js/67.d93e8cf9.js"><link rel="prefetch" href="/onedocs/assets/js/68.abae4e6c.js"><link rel="prefetch" href="/onedocs/assets/js/69.07356771.js"><link rel="prefetch" href="/onedocs/assets/js/7.17a9aabe.js"><link rel="prefetch" href="/onedocs/assets/js/70.fbcf72b3.js"><link rel="prefetch" href="/onedocs/assets/js/71.e6d7d7d3.js"><link rel="prefetch" href="/onedocs/assets/js/72.b3c1c150.js"><link rel="prefetch" href="/onedocs/assets/js/73.8285c148.js"><link rel="prefetch" href="/onedocs/assets/js/74.63487477.js"><link rel="prefetch" href="/onedocs/assets/js/75.02ee94c9.js"><link rel="prefetch" href="/onedocs/assets/js/76.608d638f.js"><link rel="prefetch" href="/onedocs/assets/js/77.8d9e1d87.js"><link rel="prefetch" href="/onedocs/assets/js/78.869ad3b5.js"><link rel="prefetch" href="/onedocs/assets/js/79.55019fc9.js"><link rel="prefetch" href="/onedocs/assets/js/8.e64d4d9e.js"><link rel="prefetch" href="/onedocs/assets/js/80.3c4f6e31.js"><link rel="prefetch" href="/onedocs/assets/js/81.4704380d.js"><link rel="prefetch" href="/onedocs/assets/js/82.569d9d98.js"><link rel="prefetch" href="/onedocs/assets/js/83.57c0c0ae.js"><link rel="prefetch" href="/onedocs/assets/js/84.c093d910.js"><link rel="prefetch" href="/onedocs/assets/js/85.842dea08.js"><link rel="prefetch" href="/onedocs/assets/js/86.cf6d3683.js"><link rel="prefetch" href="/onedocs/assets/js/87.6ca8df5f.js"><link rel="prefetch" href="/onedocs/assets/js/88.aba00039.js"><link rel="prefetch" href="/onedocs/assets/js/89.78eaf2ff.js"><link rel="prefetch" href="/onedocs/assets/js/9.b16a8b90.js"><link rel="prefetch" href="/onedocs/assets/js/90.43e90d09.js"><link rel="prefetch" href="/onedocs/assets/js/91.7f408525.js"><link rel="prefetch" href="/onedocs/assets/js/92.6322c556.js"><link rel="prefetch" href="/onedocs/assets/js/93.acad0374.js"><link rel="prefetch" href="/onedocs/assets/js/94.fe634e70.js"><link rel="prefetch" href="/onedocs/assets/js/95.f19ff670.js"><link rel="prefetch" href="/onedocs/assets/js/96.a0db561c.js"><link rel="prefetch" href="/onedocs/assets/js/97.4677af5b.js"><link rel="prefetch" href="/onedocs/assets/js/98.b127476f.js"><link rel="prefetch" href="/onedocs/assets/js/99.5586e184.js">
+    <link rel="stylesheet" href="/onedocs/assets/css/0.styles.de272f6a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/onedocs/" class="home-link router-link-active"><img src="/onedocs/logo.png" alt="毫末之木" class="logo"> <span class="site-name can-hide">毫末之木</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/onedocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/javaapi/" class="nav-link">
+  javaapi
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/mybatis/" class="nav-link">
+  mybatis
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/juc/" class="nav-link">
+  多线程
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Spring系列" class="dropdown-title"><span class="title">Spring系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/spring/" class="nav-link">
+  spring
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springmvc/" class="nav-link router-link-active">
+  spring-mvc
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springboot/" class="nav-link">
+  spring-boot
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springcloud/" class="nav-link">
+  spring-cloud
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springsecurity/" class="nav-link">
+  spring-security
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Database" class="dropdown-title"><span class="title">Database</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/db/" class="nav-link">
+  db
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/redis/" class="nav-link">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/front/" class="nav-link">
+  前端
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="互联网" class="dropdown-title"><span class="title">互联网</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/mq/" class="nav-link">
+  消息中间件
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/internet/" class="nav-link">
+  互联网
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/interview/" class="nav-link">
+  面试
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具集" class="dropdown-title"><span class="title">工具集</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/web/" class="nav-link">
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/maven/" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/github/" class="nav-link">
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/browser/" class="nav-link">
+  browser
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/idea/" class="nav-link">
+  idea
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/shihe110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/onedocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/javaapi/" class="nav-link">
+  javaapi
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/mybatis/" class="nav-link">
+  mybatis
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/juc/" class="nav-link">
+  多线程
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Spring系列" class="dropdown-title"><span class="title">Spring系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/spring/" class="nav-link">
+  spring
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springmvc/" class="nav-link router-link-active">
+  spring-mvc
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springboot/" class="nav-link">
+  spring-boot
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springcloud/" class="nav-link">
+  spring-cloud
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springsecurity/" class="nav-link">
+  spring-security
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Database" class="dropdown-title"><span class="title">Database</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/db/" class="nav-link">
+  db
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/redis/" class="nav-link">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/front/" class="nav-link">
+  前端
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="互联网" class="dropdown-title"><span class="title">互联网</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/mq/" class="nav-link">
+  消息中间件
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/internet/" class="nav-link">
+  互联网
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/interview/" class="nav-link">
+  面试
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具集" class="dropdown-title"><span class="title">工具集</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/web/" class="nav-link">
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/maven/" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/github/" class="nav-link">
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/browser/" class="nav-link">
+  browser
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/idea/" class="nav-link">
+  idea
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/shihe110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>springmvc</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/onedocs/springmvc/1-mvc和三层架构的关系.html" class="sidebar-link">MVC和三层架构的关系</a></li><li><a href="/onedocs/springmvc/10-SpringMVC5的四个HandlerAdapter.html" class="active sidebar-link">SpringMVC5的四个HandlerAdapter</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/onedocs/springmvc/10-SpringMVC5的四个HandlerAdapter.html#springmvc5的四个handleradapter" class="sidebar-link">SpringMVC5的四个HandlerAdapter</a></li></ul></li><li><a href="/onedocs/springmvc/11-SpringMVC跳转静态资源的处理逻辑.html" class="sidebar-link">SpringMVC跳转静态资源的处理逻辑</a></li><li><a href="/onedocs/springmvc/2-SpringMVC项目快速搭建.html" class="sidebar-link">springmvc项目快速搭建</a></li><li><a href="/onedocs/springmvc/3-@ControllerAdvice.html" class="sidebar-link">@ControllerAdvice</a></li><li><a href="/onedocs/springmvc/4-Json定制.html" class="sidebar-link">Json定制</a></li><li><a href="/onedocs/springmvc/5-springmvc配置原理.html" class="sidebar-link">SpringMvc的配置原理</a></li><li><a href="/onedocs/springmvc/6-springmvc拦截器.html" class="sidebar-link">SpringMVC的拦截器interceptor</a></li><li><a href="/onedocs/springmvc/7-springmvc消息转换.html" class="sidebar-link">SpringMVC消息转换HTTPMessageConverter</a></li><li><a href="/onedocs/springmvc/8-springmvc流程.html" class="sidebar-link">springMVC的工作流程</a></li><li><a href="/onedocs/springmvc/9-SpringMVC5中的三个HandlerMapping.html" class="sidebar-link">SpringMVC5中的三个HandlerMapping</a></li><li><a href="/onedocs/springmvc/" aria-current="page" class="sidebar-link">首页</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="springmvc5的四个handleradapter"><a href="#springmvc5的四个handleradapter" class="header-anchor">#</a> SpringMVC5的四个HandlerAdapter</h2> <p>SpringMVC通过HandlerMapping将Url映射到handler，再讲handler交给HandlerAdapter进行调用处理。</p> <hr> <ul><li><strong>1.SimpleServletHandlerAdapter</strong></li> <li><strong>2.SimpleControllerHandlerAdapter</strong></li> <li><strong>3.HttpRequestHandlerAdapter</strong></li> <li>**4.RequestMappingHandlerAdapter     **</li></ul> <hr> <p>HandlerAdapter接口：</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">HandlerAdapter</span> <span class="token punctuation">{</span>
+    
+	<span class="token comment">// 判断当前handlerAdpter是否可以调用处理handler</span>
+	<span class="token keyword">boolean</span> <span class="token function">supports</span><span class="token punctuation">(</span><span class="token class-name">Object</span> handler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+	<span class="token comment">// 调用handler，处理请求。</span>
+	<span class="token annotation punctuation">@Nullable</span>
+	<span class="token class-name">ModelAndView</span> <span class="token function">handle</span><span class="token punctuation">(</span><span class="token class-name">HttpServletRequest</span> request<span class="token punctuation">,</span> 
+                        <span class="token class-name">HttpServletResponse</span> response<span class="token punctuation">,</span> 
+                        <span class="token class-name">Object</span> handler<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">long</span> <span class="token function">getLastModified</span><span class="token punctuation">(</span><span class="token class-name">HttpServletRequest</span> request<span class="token punctuation">,</span> <span class="token class-name">Object</span> handler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><hr> <h3 id="_1-simpleservlethandleradapter配置"><a href="#_1-simpleservlethandleradapter配置" class="header-anchor">#</a> 1.SimpleServletHandlerAdapter配置</h3> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SimpleServletHandlerAdapter</span> <span class="token keyword">implements</span> <span class="token class-name">HandlerAdapter</span> <span class="token punctuation">{</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">supports</span><span class="token punctuation">(</span><span class="token class-name">Object</span> handler<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token punctuation">(</span>handler <span class="token keyword">instanceof</span> <span class="token class-name">Servlet</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token annotation punctuation">@Nullable</span>
+	<span class="token keyword">public</span> <span class="token class-name">ModelAndView</span> <span class="token function">handle</span><span class="token punctuation">(</span><span class="token class-name">HttpServletRequest</span> request<span class="token punctuation">,</span> 
+                               <span class="token class-name">HttpServletResponse</span> response<span class="token punctuation">,</span> 
+                               <span class="token class-name">Object</span> handler<span class="token punctuation">)</span>
+			<span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+
+		<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">Servlet</span><span class="token punctuation">)</span> handler<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">service</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">long</span> <span class="token function">getLastModified</span><span class="token punctuation">(</span><span class="token class-name">HttpServletRequest</span> request<span class="token punctuation">,</span> <span class="token class-name">Object</span> handler<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><p>SimpleServletHandlerAdapter首先通过supports判断处理类型是否为Servlet的handler，如果是则对handler的调用处理，具体是调用Servlet的service方法处理请求。</p> <p>Servlet</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token annotation punctuation">@Controller</span><span class="token punctuation">(</span><span class="token string">&quot;/hello&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloServlet</span> <span class="token keyword">extends</span> <span class="token class-name">HttpServlet</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doGet</span><span class="token punctuation">(</span><span class="token class-name">HttpServletRequest</span> req<span class="token punctuation">,</span> 
+                         <span class="token class-name">HttpServletResponse</span> resp<span class="token punctuation">)</span> 
+        <span class="token keyword">throws</span> <span class="token class-name">ServletException</span><span class="token punctuation">,</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        resp<span class="token punctuation">.</span><span class="token function">getWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">&quot;hello&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span><span class="token function">getContextPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doPost</span><span class="token punctuation">(</span><span class="token class-name">HttpServletRequest</span> req<span class="token punctuation">,</span> 
+                          <span class="token class-name">HttpServletResponse</span> resp<span class="token punctuation">)</span> 
+        <span class="token keyword">throws</span> <span class="token class-name">ServletException</span><span class="token punctuation">,</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token function">doGet</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> resp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><hr> <h3 id="_2-simplecontrollerhandleradapter配置"><a href="#_2-simplecontrollerhandleradapter配置" class="header-anchor">#</a> 2.SimpleControllerHandlerAdapter配置</h3> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SimpleControllerHandlerAdapter</span> <span class="token keyword">implements</span> <span class="token class-name">HandlerAdapter</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">SimpleControllerHandlerAdapter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">supports</span><span class="token punctuation">(</span><span class="token class-name">Object</span> handler<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> handler <span class="token keyword">instanceof</span> <span class="token class-name">Controller</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">ModelAndView</span> <span class="token function">handle</span><span class="token punctuation">(</span><span class="token class-name">HttpServletRequest</span> request<span class="token punctuation">,</span> 
+                               <span class="token class-name">HttpServletResponse</span> response<span class="token punctuation">,</span> 
+                               <span class="token class-name">Object</span> handler<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">Controller</span><span class="token punctuation">)</span>handler<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">handleRequest</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">long</span> <span class="token function">getLastModified</span><span class="token punctuation">(</span><span class="token class-name">HttpServletRequest</span> request<span class="token punctuation">,</span> 
+                                <span class="token class-name">Object</span> handler<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> handler <span class="token keyword">instanceof</span> <span class="token class-name">LastModified</span> <span class="token operator">?</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">LastModified</span><span class="token punctuation">)</span>handler<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getLastModified</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token operator">-</span><span class="token number">1L</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>该适配器可以处理Controller类型的handler，调用Controller的handleRequest()方法。</p> <div class="language- extra-class"><pre class="language-text"><code>org.springframework.web.servlet.mvc.Controller类型的handler
+</code></pre></div><p>Controller写法:</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token annotation punctuation">@Controller</span><span class="token punctuation">(</span><span class="token string">&quot;/hello&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloController</span> <span class="token keyword">implements</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>mvc<span class="token punctuation">.</span><span class="token class-name">Controller</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">ModelAndView</span> <span class="token function">handleRequest</span><span class="token punctuation">(</span><span class="token class-name">HttpServletRequest</span> request<span class="token punctuation">,</span> <span class="token class-name">HttpServletResponse</span> response<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+        response<span class="token punctuation">.</span><span class="token function">getWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;helloController&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>通过BeanNameURLHandlerMapping映射到该Controller，使用SimpleControllerHandlerAdapter调用处理。</p> <h3 id="_3-httprequesthandleradapter配置"><a href="#_3-httprequesthandleradapter配置" class="header-anchor">#</a> 3.HttpRequestHandlerAdapter配置</h3> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HttpRequestHandlerAdapter</span> <span class="token keyword">implements</span> <span class="token class-name">HandlerAdapter</span> <span class="token punctuation">{</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">supports</span><span class="token punctuation">(</span><span class="token class-name">Object</span> handler<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token punctuation">(</span>handler <span class="token keyword">instanceof</span> <span class="token class-name">HttpRequestHandler</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token annotation punctuation">@Nullable</span>
+	<span class="token keyword">public</span> <span class="token class-name">ModelAndView</span> <span class="token function">handle</span><span class="token punctuation">(</span><span class="token class-name">HttpServletRequest</span> request<span class="token punctuation">,</span> 
+                               <span class="token class-name">HttpServletResponse</span> response<span class="token punctuation">,</span> 
+                               <span class="token class-name">Object</span> handler<span class="token punctuation">)</span>
+			<span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+
+		<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">HttpRequestHandler</span><span class="token punctuation">)</span> handler<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">handleRequest</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">long</span> <span class="token function">getLastModified</span><span class="token punctuation">(</span><span class="token class-name">HttpServletRequest</span> request<span class="token punctuation">,</span> 
+                                <span class="token class-name">Object</span> handler<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>handler <span class="token keyword">instanceof</span> <span class="token class-name">LastModified</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">LastModified</span><span class="token punctuation">)</span> handler<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getLastModified</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1L</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>同理该适配器可以处理handler类型为：<strong>HttpRequestHandler</strong>类型，调用handleRequest()方法处理。</p> <p>controller写法：</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token annotation punctuation">@Controller</span><span class="token punctuation">(</span><span class="token string">&quot;/hello&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloController</span> <span class="token keyword">implements</span> <span class="token class-name">HttpRequestHandler</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">handleRequest</span><span class="token punctuation">(</span><span class="token class-name">HttpServletRequest</span> request<span class="token punctuation">,</span> 
+                              <span class="token class-name">HttpServletResponse</span> response<span class="token punctuation">)</span> 
+        <span class="token keyword">throws</span> <span class="token class-name">ServletException</span><span class="token punctuation">,</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        response<span class="token punctuation">.</span><span class="token function">getWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;hello&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><hr> <h3 id="_4-requestmappinghandleradapter配置"><a href="#_4-requestmappinghandleradapter配置" class="header-anchor">#</a> 4.RequestMappingHandlerAdapter配置</h3> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RequestMappingHandlerAdapter</span> <span class="token keyword">extends</span> <span class="token class-name">AbstractHandlerMethodAdapter</span>
+		<span class="token keyword">implements</span> <span class="token class-name">BeanFactoryAware</span><span class="token punctuation">,</span> <span class="token class-name">InitializingBean</span> <span class="token punctuation">{</span>
+    	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">protected</span> <span class="token keyword">boolean</span> <span class="token function">supportsInternal</span><span class="token punctuation">(</span><span class="token class-name">HandlerMethod</span> handlerMethod<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">AbstractHandlerMethodAdapter</span> <span class="token keyword">extends</span> <span class="token class-name">WebContentGenerator</span> <span class="token keyword">implements</span> <span class="token class-name">HandlerAdapter</span><span class="token punctuation">,</span> <span class="token class-name">Ordered</span> <span class="token punctuation">{</span>
+    	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">boolean</span> <span class="token function">supports</span><span class="token punctuation">(</span><span class="token class-name">Object</span> handler<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        
+		<span class="token keyword">return</span> <span class="token punctuation">(</span>handler <span class="token keyword">instanceof</span> <span class="token class-name">HandlerMethod</span> 
+                <span class="token operator">&amp;&amp;</span> <span class="token function">supportsInternal</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">HandlerMethod</span><span class="token punctuation">)</span> handler<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">protected</span> <span class="token class-name">ModelAndView</span> <span class="token function">handleInternal</span><span class="token punctuation">(</span><span class="token class-name">HttpServletRequest</span> request<span class="token punctuation">,</span>
+			<span class="token class-name">HttpServletResponse</span> response<span class="token punctuation">,</span> <span class="token class-name">HandlerMethod</span> handlerMethod<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+
+		<span class="token class-name">ModelAndView</span> mav<span class="token punctuation">;</span>
+		<span class="token function">checkRequest</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token comment">// Execute invokeHandlerMethod in synchronized block if required.</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>synchronizeOnSession<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token class-name">HttpSession</span> session <span class="token operator">=</span> request<span class="token punctuation">.</span><span class="token function">getSession</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>session <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				<span class="token class-name">Object</span> mutex <span class="token operator">=</span> <span class="token class-name">WebUtils</span><span class="token punctuation">.</span><span class="token function">getSessionMutex</span><span class="token punctuation">(</span>session<span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token keyword">synchronized</span> <span class="token punctuation">(</span>mutex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+					mav <span class="token operator">=</span> <span class="token function">invokeHandlerMethod</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> response<span class="token punctuation">,</span> handlerMethod<span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token punctuation">}</span>
+			<span class="token punctuation">}</span>
+			<span class="token keyword">else</span> <span class="token punctuation">{</span>
+				<span class="token comment">// No HttpSession available -&gt; no mutex necessary</span>
+				mav <span class="token operator">=</span> <span class="token function">invokeHandlerMethod</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> response<span class="token punctuation">,</span> handlerMethod<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">else</span> <span class="token punctuation">{</span>
+			<span class="token comment">// No synchronization on session demanded at all...</span>
+			mav <span class="token operator">=</span> <span class="token function">invokeHandlerMethod</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> response<span class="token punctuation">,</span> handlerMethod<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>response<span class="token punctuation">.</span><span class="token function">containsHeader</span><span class="token punctuation">(</span>HEADER_CACHE_CONTROL<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">getSessionAttributesHandler</span><span class="token punctuation">(</span>handlerMethod<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hasSessionAttributes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				<span class="token function">applyCacheSeconds</span><span class="token punctuation">(</span>response<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>cacheSecondsForSessionAttributeHandlers<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+			<span class="token keyword">else</span> <span class="token punctuation">{</span>
+				<span class="token function">prepareResponse</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span>
+
+		<span class="token keyword">return</span> mav<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+</code></pre></div><p>RequestMappingHandlerAdapter可以处理类型为HandlerMethod的handler，对handler的处理是调用通过java反射调用HandlerMethod的方法。</p> <p>controller写法</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token annotation punctuation">@Controller</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloController</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">&quot;/hello&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;hello.html&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>只有RequestMappingHandlerAdapter有order属性，其他三个HandlerAdapter没有order属性。前三个HandlerAdapter处理的handler类型各不相同，处理也比较简单，不需要使用order区分优先级。</p> <p>使用RequestMappingHandlerMapping将请求URL&quot;/hello&quot;的handler映射到HelloController.hello()（需在方法上添加@RequestMapping注解），使用RequestMappingHandlerAdapter调用处理。</p> <hr> <p>前三个HandlerAdapter对handler的处理比较简单：</p> <p>HttpRequestHandlerAdapter和SimpleControllerHandlerAdapter直接调用固定唯一的方法handleRequest()；</p> <p>SimpleServletHandlerAdapter直接调用固定唯一的方法service()。</p> <p>RequestMappingHandlerAdapter实现起来就很复杂了，处理调用的方法不唯一也不固定，需要有更多的处理。</p> <hr> <p>在HandlerAdapter处理的返回值上，虽然统一的返回ModelAndView对象，但HttpRequestHandlerAdapter和SimpleServletHandlerAdapter实际上都是直接返回null;</p> <p>SimpleControllerHandlerAdapter返回handler（Controller）处理的结果，ModelAndView对象或者null；</p> <p>RequestMappingHandlerAdapter是通过反射调用获取的结果，这个结果可能是ModelAndView对象，也可能是String类型对象，还可以是一个map等，需要对返回的结果做更多的判断处理，再返回统一的ModelAndView对象。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/onedocs/springmvc/1-mvc和三层架构的关系.html" class="prev">
+        MVC和三层架构的关系
+      </a></span> <span class="next"><a href="/onedocs/springmvc/11-SpringMVC跳转静态资源的处理逻辑.html">
+        SpringMVC跳转静态资源的处理逻辑
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/onedocs/assets/js/app.51f56503.js" defer></script><script src="/onedocs/assets/js/2.2038ef08.js" defer></script><script src="/onedocs/assets/js/125.08c19d60.js" defer></script>
+  </body>
+</html>
