@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JVM入门总结 | 毫末之木</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/onedocs/logo.png">
+    <meta name="description" content="合抱之木生于毫末，九层之台起于累土，千里之行始于足下">
+    <link rel="preload" href="/onedocs/assets/css/0.styles.de272f6a.css" as="style"><link rel="preload" href="/onedocs/assets/js/app.e0504603.js" as="script"><link rel="preload" href="/onedocs/assets/js/2.2038ef08.js" as="script"><link rel="preload" href="/onedocs/assets/js/52.a82b4ac8.js" as="script"><link rel="prefetch" href="/onedocs/assets/js/10.f6a37571.js"><link rel="prefetch" href="/onedocs/assets/js/100.bf63558b.js"><link rel="prefetch" href="/onedocs/assets/js/101.cadfc716.js"><link rel="prefetch" href="/onedocs/assets/js/102.228fbd56.js"><link rel="prefetch" href="/onedocs/assets/js/103.c662b851.js"><link rel="prefetch" href="/onedocs/assets/js/104.bf10f97f.js"><link rel="prefetch" href="/onedocs/assets/js/105.42297f62.js"><link rel="prefetch" href="/onedocs/assets/js/106.5fec983b.js"><link rel="prefetch" href="/onedocs/assets/js/107.44d78888.js"><link rel="prefetch" href="/onedocs/assets/js/108.0bf1da5d.js"><link rel="prefetch" href="/onedocs/assets/js/109.33df81e8.js"><link rel="prefetch" href="/onedocs/assets/js/11.61cfa05d.js"><link rel="prefetch" href="/onedocs/assets/js/110.37c6a673.js"><link rel="prefetch" href="/onedocs/assets/js/111.d0745a6f.js"><link rel="prefetch" href="/onedocs/assets/js/112.896c20d3.js"><link rel="prefetch" href="/onedocs/assets/js/113.ba73bbe7.js"><link rel="prefetch" href="/onedocs/assets/js/114.285eae67.js"><link rel="prefetch" href="/onedocs/assets/js/115.9ef9f274.js"><link rel="prefetch" href="/onedocs/assets/js/116.c766fd18.js"><link rel="prefetch" href="/onedocs/assets/js/117.4b4b5f8f.js"><link rel="prefetch" href="/onedocs/assets/js/118.77801d1c.js"><link rel="prefetch" href="/onedocs/assets/js/119.5f2de0db.js"><link rel="prefetch" href="/onedocs/assets/js/12.01307b5f.js"><link rel="prefetch" href="/onedocs/assets/js/120.db5a2544.js"><link rel="prefetch" href="/onedocs/assets/js/121.3e1120a7.js"><link rel="prefetch" href="/onedocs/assets/js/122.15db53bf.js"><link rel="prefetch" href="/onedocs/assets/js/123.7eb75cac.js"><link rel="prefetch" href="/onedocs/assets/js/124.6d5d2703.js"><link rel="prefetch" href="/onedocs/assets/js/125.2b72f325.js"><link rel="prefetch" href="/onedocs/assets/js/126.0f334670.js"><link rel="prefetch" href="/onedocs/assets/js/127.add5b5dc.js"><link rel="prefetch" href="/onedocs/assets/js/128.8dee2046.js"><link rel="prefetch" href="/onedocs/assets/js/129.1cc6ef43.js"><link rel="prefetch" href="/onedocs/assets/js/13.0e9843e7.js"><link rel="prefetch" href="/onedocs/assets/js/130.880acb43.js"><link rel="prefetch" href="/onedocs/assets/js/131.05a3b4f2.js"><link rel="prefetch" href="/onedocs/assets/js/132.7e40c9dd.js"><link rel="prefetch" href="/onedocs/assets/js/133.8452078c.js"><link rel="prefetch" href="/onedocs/assets/js/134.9d982b6a.js"><link rel="prefetch" href="/onedocs/assets/js/135.0e2ecf22.js"><link rel="prefetch" href="/onedocs/assets/js/136.b93ab627.js"><link rel="prefetch" href="/onedocs/assets/js/137.a3ac1183.js"><link rel="prefetch" href="/onedocs/assets/js/138.a5f8253e.js"><link rel="prefetch" href="/onedocs/assets/js/139.8d2d2ed3.js"><link rel="prefetch" href="/onedocs/assets/js/14.1f2678b2.js"><link rel="prefetch" href="/onedocs/assets/js/140.f316bc65.js"><link rel="prefetch" href="/onedocs/assets/js/141.4329f321.js"><link rel="prefetch" href="/onedocs/assets/js/142.84de330a.js"><link rel="prefetch" href="/onedocs/assets/js/143.33c910cb.js"><link rel="prefetch" href="/onedocs/assets/js/144.772fc978.js"><link rel="prefetch" href="/onedocs/assets/js/145.5b5002a9.js"><link rel="prefetch" href="/onedocs/assets/js/146.88aa0c0f.js"><link rel="prefetch" href="/onedocs/assets/js/147.e96373a7.js"><link rel="prefetch" href="/onedocs/assets/js/148.b4c8be91.js"><link rel="prefetch" href="/onedocs/assets/js/149.1ea72874.js"><link rel="prefetch" href="/onedocs/assets/js/15.69ce579e.js"><link rel="prefetch" href="/onedocs/assets/js/150.5520b849.js"><link rel="prefetch" href="/onedocs/assets/js/151.e95264d4.js"><link rel="prefetch" href="/onedocs/assets/js/152.f76653a4.js"><link rel="prefetch" href="/onedocs/assets/js/153.3cf08ff4.js"><link rel="prefetch" href="/onedocs/assets/js/154.75d44f04.js"><link rel="prefetch" href="/onedocs/assets/js/155.4e652b6d.js"><link rel="prefetch" href="/onedocs/assets/js/156.52dfe88f.js"><link rel="prefetch" href="/onedocs/assets/js/157.83358103.js"><link rel="prefetch" href="/onedocs/assets/js/158.05182abd.js"><link rel="prefetch" href="/onedocs/assets/js/159.0a341b5c.js"><link rel="prefetch" href="/onedocs/assets/js/16.741d57c4.js"><link rel="prefetch" href="/onedocs/assets/js/160.a260ac01.js"><link rel="prefetch" href="/onedocs/assets/js/161.0a91f71a.js"><link rel="prefetch" href="/onedocs/assets/js/162.313e8057.js"><link rel="prefetch" href="/onedocs/assets/js/163.2e3c776c.js"><link rel="prefetch" href="/onedocs/assets/js/164.0197d2c3.js"><link rel="prefetch" href="/onedocs/assets/js/165.22bf3e3b.js"><link rel="prefetch" href="/onedocs/assets/js/166.dd9ae5a6.js"><link rel="prefetch" href="/onedocs/assets/js/167.1836600e.js"><link rel="prefetch" href="/onedocs/assets/js/168.3671e218.js"><link rel="prefetch" href="/onedocs/assets/js/17.35a10d84.js"><link rel="prefetch" href="/onedocs/assets/js/18.9dd6fa79.js"><link rel="prefetch" href="/onedocs/assets/js/19.f4e03e09.js"><link rel="prefetch" href="/onedocs/assets/js/20.80e68c20.js"><link rel="prefetch" href="/onedocs/assets/js/21.40f6b8cf.js"><link rel="prefetch" href="/onedocs/assets/js/22.c81a146b.js"><link rel="prefetch" href="/onedocs/assets/js/23.e9a26275.js"><link rel="prefetch" href="/onedocs/assets/js/24.ec0a9ca1.js"><link rel="prefetch" href="/onedocs/assets/js/25.39fba076.js"><link rel="prefetch" href="/onedocs/assets/js/26.1c7bcc3c.js"><link rel="prefetch" href="/onedocs/assets/js/27.3e6c0ca0.js"><link rel="prefetch" href="/onedocs/assets/js/28.0e9db906.js"><link rel="prefetch" href="/onedocs/assets/js/29.71d5a89a.js"><link rel="prefetch" href="/onedocs/assets/js/3.aa988536.js"><link rel="prefetch" href="/onedocs/assets/js/30.09138ea6.js"><link rel="prefetch" href="/onedocs/assets/js/31.cb1c7490.js"><link rel="prefetch" href="/onedocs/assets/js/32.6090c8d6.js"><link rel="prefetch" href="/onedocs/assets/js/33.1d9048c9.js"><link rel="prefetch" href="/onedocs/assets/js/34.943439b5.js"><link rel="prefetch" href="/onedocs/assets/js/35.194def41.js"><link rel="prefetch" href="/onedocs/assets/js/36.67181f53.js"><link rel="prefetch" href="/onedocs/assets/js/37.71e0022a.js"><link rel="prefetch" href="/onedocs/assets/js/38.17c196a9.js"><link rel="prefetch" href="/onedocs/assets/js/39.133a6677.js"><link rel="prefetch" href="/onedocs/assets/js/4.7d5f245c.js"><link rel="prefetch" href="/onedocs/assets/js/40.690b861a.js"><link rel="prefetch" href="/onedocs/assets/js/41.7dae413f.js"><link rel="prefetch" href="/onedocs/assets/js/42.5fd35219.js"><link rel="prefetch" href="/onedocs/assets/js/43.12189d67.js"><link rel="prefetch" href="/onedocs/assets/js/44.1d99eadf.js"><link rel="prefetch" href="/onedocs/assets/js/45.3139ffd5.js"><link rel="prefetch" href="/onedocs/assets/js/46.8523cfea.js"><link rel="prefetch" href="/onedocs/assets/js/47.e450460f.js"><link rel="prefetch" href="/onedocs/assets/js/48.bcc81505.js"><link rel="prefetch" href="/onedocs/assets/js/49.ebc85be0.js"><link rel="prefetch" href="/onedocs/assets/js/5.f8be39f3.js"><link rel="prefetch" href="/onedocs/assets/js/50.5c2d59fd.js"><link rel="prefetch" href="/onedocs/assets/js/51.d597c487.js"><link rel="prefetch" href="/onedocs/assets/js/53.7e846a18.js"><link rel="prefetch" href="/onedocs/assets/js/54.fccf7432.js"><link rel="prefetch" href="/onedocs/assets/js/55.9b7443ca.js"><link rel="prefetch" href="/onedocs/assets/js/56.31a4e77b.js"><link rel="prefetch" href="/onedocs/assets/js/57.fcf167c5.js"><link rel="prefetch" href="/onedocs/assets/js/58.345e9c2b.js"><link rel="prefetch" href="/onedocs/assets/js/59.a0fc752a.js"><link rel="prefetch" href="/onedocs/assets/js/6.adb9b803.js"><link rel="prefetch" href="/onedocs/assets/js/60.2368a78a.js"><link rel="prefetch" href="/onedocs/assets/js/61.7572fa6a.js"><link rel="prefetch" href="/onedocs/assets/js/62.05dc54d9.js"><link rel="prefetch" href="/onedocs/assets/js/63.7ef0e47a.js"><link rel="prefetch" href="/onedocs/assets/js/64.6314de2c.js"><link rel="prefetch" href="/onedocs/assets/js/65.d62c7c53.js"><link rel="prefetch" href="/onedocs/assets/js/66.207f0f1c.js"><link rel="prefetch" href="/onedocs/assets/js/67.5c592667.js"><link rel="prefetch" href="/onedocs/assets/js/68.a7708f32.js"><link rel="prefetch" href="/onedocs/assets/js/69.f2dfce99.js"><link rel="prefetch" href="/onedocs/assets/js/7.17a9aabe.js"><link rel="prefetch" href="/onedocs/assets/js/70.432e8b26.js"><link rel="prefetch" href="/onedocs/assets/js/71.2d1f5d9c.js"><link rel="prefetch" href="/onedocs/assets/js/72.e59fee6b.js"><link rel="prefetch" href="/onedocs/assets/js/73.ac854f40.js"><link rel="prefetch" href="/onedocs/assets/js/74.f1adb5bf.js"><link rel="prefetch" href="/onedocs/assets/js/75.81169538.js"><link rel="prefetch" href="/onedocs/assets/js/76.cb1168d8.js"><link rel="prefetch" href="/onedocs/assets/js/77.29592718.js"><link rel="prefetch" href="/onedocs/assets/js/78.bed97e43.js"><link rel="prefetch" href="/onedocs/assets/js/79.b4aa58c7.js"><link rel="prefetch" href="/onedocs/assets/js/8.0a691bde.js"><link rel="prefetch" href="/onedocs/assets/js/80.7117913a.js"><link rel="prefetch" href="/onedocs/assets/js/81.cb9d775c.js"><link rel="prefetch" href="/onedocs/assets/js/82.640fa306.js"><link rel="prefetch" href="/onedocs/assets/js/83.101b5a05.js"><link rel="prefetch" href="/onedocs/assets/js/84.66449154.js"><link rel="prefetch" href="/onedocs/assets/js/85.d0c5c099.js"><link rel="prefetch" href="/onedocs/assets/js/86.4690f476.js"><link rel="prefetch" href="/onedocs/assets/js/87.85a6bfd2.js"><link rel="prefetch" href="/onedocs/assets/js/88.fd7c2a5d.js"><link rel="prefetch" href="/onedocs/assets/js/89.f3fc2bed.js"><link rel="prefetch" href="/onedocs/assets/js/9.b16a8b90.js"><link rel="prefetch" href="/onedocs/assets/js/90.e37e6501.js"><link rel="prefetch" href="/onedocs/assets/js/91.abbe3309.js"><link rel="prefetch" href="/onedocs/assets/js/92.dd4acb93.js"><link rel="prefetch" href="/onedocs/assets/js/93.8f44fecb.js"><link rel="prefetch" href="/onedocs/assets/js/94.fb6cbed1.js"><link rel="prefetch" href="/onedocs/assets/js/95.359a8a37.js"><link rel="prefetch" href="/onedocs/assets/js/96.d4612b15.js"><link rel="prefetch" href="/onedocs/assets/js/97.d946fd32.js"><link rel="prefetch" href="/onedocs/assets/js/98.97949fea.js"><link rel="prefetch" href="/onedocs/assets/js/99.517062b1.js">
+    <link rel="stylesheet" href="/onedocs/assets/css/0.styles.de272f6a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/onedocs/" class="home-link router-link-active"><img src="/onedocs/logo.png" alt="毫末之木" class="logo"> <span class="site-name can-hide">毫末之木</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/onedocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/javaapi/" class="nav-link router-link-active">
+  javaapi
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/mybatis/" class="nav-link">
+  mybatis
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/juc/" class="nav-link">
+  多线程
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Spring系列" class="dropdown-title"><span class="title">Spring系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/spring/" class="nav-link">
+  spring
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springmvc/" class="nav-link">
+  spring-mvc
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springboot/" class="nav-link">
+  spring-boot
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springcloud/" class="nav-link">
+  spring-cloud
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springsecurity/" class="nav-link">
+  spring-security
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Database" class="dropdown-title"><span class="title">Database</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/db/" class="nav-link">
+  db
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/redis/" class="nav-link">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/front/" class="nav-link">
+  前端
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="互联网" class="dropdown-title"><span class="title">互联网</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/mq/" class="nav-link">
+  消息中间件
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/internet/" class="nav-link">
+  互联网
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/interview/" class="nav-link">
+  面试
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具集" class="dropdown-title"><span class="title">工具集</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/web/" class="nav-link">
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/maven/" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/github/" class="nav-link">
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/browser/" class="nav-link">
+  browser
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/idea/" class="nav-link">
+  idea
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/shihe110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/onedocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/javaapi/" class="nav-link router-link-active">
+  javaapi
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/mybatis/" class="nav-link">
+  mybatis
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/juc/" class="nav-link">
+  多线程
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Spring系列" class="dropdown-title"><span class="title">Spring系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/spring/" class="nav-link">
+  spring
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springmvc/" class="nav-link">
+  spring-mvc
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springboot/" class="nav-link">
+  spring-boot
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springcloud/" class="nav-link">
+  spring-cloud
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springsecurity/" class="nav-link">
+  spring-security
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Database" class="dropdown-title"><span class="title">Database</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/db/" class="nav-link">
+  db
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/redis/" class="nav-link">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/front/" class="nav-link">
+  前端
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="互联网" class="dropdown-title"><span class="title">互联网</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/mq/" class="nav-link">
+  消息中间件
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/internet/" class="nav-link">
+  互联网
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/interview/" class="nav-link">
+  面试
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具集" class="dropdown-title"><span class="title">工具集</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/web/" class="nav-link">
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/maven/" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/github/" class="nav-link">
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/browser/" class="nav-link">
+  browser
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/idea/" class="nav-link">
+  idea
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/shihe110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>javaapi</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/onedocs/javaapi/JVM入门.html" class="active sidebar-link">JVM入门总结</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/onedocs/javaapi/JVM入门.html#jvm入门总结" class="sidebar-link">JVM入门总结</a></li></ul></li><li><a href="/onedocs/javaapi/JVM内存调优原则和方法.html" class="sidebar-link">JVM内存调优</a></li><li><a href="/onedocs/javaapi/" aria-current="page" class="sidebar-link">/javaapi/</a></li><li><a href="/onedocs/javaapi/java10关键字var用法.html" class="sidebar-link">java10新增关键字var的用法</a></li><li><a href="/onedocs/javaapi/java中线程的实现方式.html" class="sidebar-link">java多线程实现的两种方式</a></li><li><a href="/onedocs/javaapi/日期和时间.html" class="sidebar-link">java标准库日期和时间API</a></li><li><a href="/onedocs/javaapi/线程本地变量ThreadLocal.html" class="sidebar-link">ThreadLocal线程本地变量</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="jvm入门总结"><a href="#jvm入门总结" class="header-anchor">#</a> JVM入门总结</h2> <p>jvm(Java Virtual Machine):Java虚拟机，识别Java源代码。</p> <h3 id="_1、字节码"><a href="#_1、字节码" class="header-anchor">#</a> 1、字节码</h3> <p>中间层，jvm将字节码解释执行或使用JIT编译机器码执行。</p> <h4 id="字节码7种主要命令"><a href="#字节码7种主要命令" class="header-anchor">#</a> 字节码7种主要命令</h4> <div class="language- extra-class"><pre class="language-text"><code>1、加载存储指令
+ - ILOAD ALOAD # 压栈操作
+ - ISTORE ASTORE # 弹栈存储局部变量表操作
+ - ICONST BIPUSH SIPUSH LDC # 常量压栈操作
+ 
+2、运算指令
+ - IADD IMUL # 弹栈 计算结果 压栈
+
+3、类型转换指令
+ - I2L D2F # 转换数值类型
+
+4、对象创建和访问指令
+ 创建、初始化、方法调用
+ - NEW NEWARRAY # 创建-分配内存-引用分配内存
+ - GETFIELD PUTFIELD GETSTATIC # 属性访问
+ - INSTANCEOF CHECKCAST # 检查实例类型指令
+ 
+5、操作栈管理指令
+ - POP POP2 # 弹栈操作
+ - DUP 复制栈顶元素并压栈
+6、方法调用和返回指令
+ - INVOKEVIRTUAL # 调用对象的实例方法。
+ - INVOKESPECIAL # 调用实例初始化方法、私有方法、父类方法等。
+ - 1NVOKESTATIC # 调用类静态方法。
+ - RETURN # 返回VOID类型。
+7、同步指令
+ - ACC_SYNCHRONIZED
+</code></pre></div><p><img src="D:%5Cjianguoyun%5C%E6%88%91%E7%9A%84%E5%9D%9A%E6%9E%9C%E4%BA%91%5Cassets%5C%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16031822842760.png" alt="img"></p> <h4 id="字节码三种执行方式"><a href="#字节码三种执行方式" class="header-anchor">#</a> 字节码三种执行方式</h4> <ul><li>解释执行</li> <li>JIT编译执行（动态编译）</li> <li>JIT编译和解释混合执行（主流jvm默认模式）</li></ul> <p><strong>JIT的作用</strong></p> <p>将Java字节码动态编译成机器码</p> <p><img src="D:%5Cjianguoyun%5C%E6%88%91%E7%9A%84%E5%9D%9A%E6%9E%9C%E4%BA%91%5Cassets%5C%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16031828915304.png" alt="img"></p> <h3 id="_2、类加载过程"><a href="#_2、类加载过程" class="header-anchor">#</a> 2、类加载过程</h3> <p>一句话：类加载是一个将.class字节码文件实例化成Class对象并进行相关初始化的过程。</p> <p>【ClassLoader器（将字节码加载到内存中）、双亲委派模型（溯源委派加载模型）】</p> <p>类加载的三个阶段：</p> <ul><li>Load加载</li> <li>Link链接
+<ul><li>验证</li> <li>准备</li> <li>解析</li></ul></li> <li>Init初始化</li></ul> <hr> <h4 id="类加载器"><a href="#类加载器" class="header-anchor">#</a> 类加载器</h4> <p>类加载器：是一组上下等级类加载器：</p> <ul><li><p>第一层：Bootstrap（通常有操作系统相关本地代码实现）</p> <p>加载Java核心类，Object、System、String等</p></li> <li><p>第二层：Platform ClassLoader（jdk9）之前是 Extension ClassLoader（平台类加载器）</p> <p>加载一些扩展系统类，如xml、加密、压缩等功能类。</p></li> <li><p>第三层：Application ClassLoader（应用类加载器）</p> <p>加载用户定义的classpath路径下的类。</p></li></ul> <p>第二层第三层类加载器由Java实现。</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">// JDK11下</span>
+<span class="token comment">// 第三层应用类加载器：AppClassLoader</span>
+<span class="token class-name">ClassLoader</span> c <span class="token operator">=</span> <span class="token class-name">TestWhoLoad</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span><span class="token function">getClassLoader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 第二层平台类加载器：PlatformClassLoader</span>
+<span class="token class-name">ClassLoader</span> c1 <span class="token operator">=</span> c<span class="token punctuation">.</span><span class="token function">getPerent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 第一层Bootstrap：null</span>
+<span class="token class-name">ClassLoader</span> c2 <span class="token operator">=</span> c1<span class="token punctuation">.</span><span class="token function">getPerent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// JDK8下的执行结果</span>
+<span class="token class-name">AppClassLoader</span>：应用类加载器
+<span class="token class-name">ExtClassLoader</span>：扩展类加载器
+<span class="token keyword">null</span>：<span class="token class-name">Bootstrap</span>系统本地类实现（由c<span class="token operator">++</span>来实现）
+</code></pre></div><h4 id="双亲委派模型"><a href="#双亲委派模型" class="header-anchor">#</a> 双亲委派模型</h4> <p><img src="D:%5Cjianguoyun%5C%E6%88%91%E7%9A%84%E5%9D%9A%E6%9E%9C%E4%BA%91%5Cassets%5Cimage-20201019171410719.png" alt="image-20201019171410719"></p> <p>低层次的当前类加载器，不能覆盖高层次类加载器已经加载的类。</p> <p><strong>低层次类加载想加载一个类的过程</strong></p> <p>不同层次的类加载器加载的类不同所有要有一系列判断才会确定是否加载</p> <ul><li><p>1、向上级类加载器询问是否已经加载了？</p></li> <li><p>2、上级加载器自问：1、是否加载过？2、没有加载过，则是否可以加载？</p></li> <li><p>3、上级加载器对以上两个问题都为否时，当前加载器才可以加载</p></li></ul> <blockquote><p>追加Bootstrap类加载路径：</p> <div class="language- extra-class"><pre class="language-text"><code>-Xbootclasspath/a : /Users/yangguanbao/book/easyCoding/byJdkl l/src
+</code></pre></div><p>启动时观察加载的类</p> <div class="language- extra-class"><pre class="language-text"><code>-XX:+TraceClassLoading
+</code></pre></div></blockquote> <p><strong>什么情况下需自定义类加载器</strong></p> <ul><li>隔离加载类：隔离中间件jar包中类加载（路径相同冲突）</li> <li>修改类加载方式：按需加载</li> <li>扩展加载源：db、网络、机顶盒</li> <li>防止源码泄漏：</li></ul> <p><strong>实现自定义类加载器步骤</strong></p> <ul><li>1、继承ClassLoader</li> <li>2、重写findClass()方法</li> <li>3、调用defineClass()方法</li></ul> <p><strong>主流的容器类框架都会自定义类加载器，实现不同中间件之间的类隔离 有效避免了类冲突。</strong></p> <h3 id="_3、内存布局"><a href="#_3、内存布局" class="header-anchor">#</a> 3、内存布局</h3> <p>内存是硬盘和CPU的中间仓库和桥梁，承载着操作系统和应用程序的实时运行。</p> <p>内存布局策略：内存的申请、分配、管理</p> <p><img src="D:%5Cjianguoyun%5C%E6%88%91%E7%9A%84%E5%9D%9A%E6%9E%9C%E4%BA%91%5Cassets%5Cimage-20201019174315974.png" alt="image-20201019174315974"></p> <p><strong>JVM内存布局</strong>（jdk11）</p> <ul><li><p>堆区（Heap）</p></li> <li><p>元数据区（Metaspace）</p></li> <li><p>虚拟机栈（jvm stacks）</p></li> <li><p>本地方法栈（native Method stacks）</p></li> <li><p>程序计数器（Program Counter Register）</p></li></ul> <hr> <h4 id="堆区heap"><a href="#堆区heap" class="header-anchor">#</a> <strong>堆区heap</strong></h4> <p><strong>0、堆区的实质？</strong></p> <p>堆区的实质是一块提供了对象的新陈代谢机制内存空间。</p> <p><strong>1、作用是什么？</strong></p> <p>是一块内存区域，存储几乎所有实例对象，由各子线程共享使用。</p> <p><strong>2、堆空间大小设定</strong></p> <p>JVM运行参数设定：堆空间大小设定</p> <div class="language- extra-class"><pre class="language-text"><code>-Xms256M -Xmx1024M
+# -X表示它是 JVM 运行参数， ms memory start 的简称，
+mx memory max 的简称，分别代表最小堆容量和最大堆容量。
+</code></pre></div><p><strong>堆空间不断扩缩容，会造成不必要的系统压力，所以线上生产环境，JVM的Xms和Xmx设置成大小一样，避免GC后堆区调整带来的压力。</strong></p> <p><strong>3、堆空间分块</strong></p> <ul><li>新生代
+<ul><li>1个 Eden区</li> <li>2个Survivor</li></ul></li> <li>老年代</li></ul> <p>配置计数器阈值</p> <div class="language-cmd extra-class"><pre class="language-text"><code>-XX:MaxTenuringThreshold=15 #默认值15，对象在Survivor区交换14后，晋升到老年代
+</code></pre></div><p><img src="D:%5Cjianguoyun%5C%E6%88%91%E7%9A%84%E5%9D%9A%E6%9E%9C%E4%BA%91%5Cassets%5C%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_160315531322.png" alt="img"></p> <p>【新对象申请在Eden区】（主要是空间的问题，只要能放得下，就会分配对象内存）</p> <p>​	【如果放得下】（开辟空间分配对象内存）</p> <p>​	【如果放不下则启动YGC】（新生代垃圾回收机制）</p> <p>【给新生代腾空间】（结果就是垃圾回收后能不能放下）</p> <p>​	【如果能放下】（直接开辟空间分配对象内存）</p> <p>​	【如果放不下】（直接放入老年代，老年代存储也要看空间是否足够）</p> <p>​		【如果老年代能放下】（直接开辟空间分配对象内存）</p> <p>​		【如果老年代放不下则启动FGC】（启动全垃圾回收机制，给对象腾空间）</p> <p>​			【FGC结果空间足够】（老年代开辟空间存对象）</p> <p>​			【如果空间不够】则内存溢出OOM</p> <p>【YGC机制】</p> <p>​	将Eden区老的对象或清除或移动到Survivor区（没引用则清除，有引用则移动）</p> <p>​	同时判断空间--如果空间足够则移动到s0区或s1区</p> <p>​	如果空间不够则晋升至老年代（同理也需要判断空间及启动相应处理机制）</p> <p>​	每次YGC都会判断s0和s1区存活阈值，同时对象在这两个区做交换</p> <p>每次YGC时所有的旧对象在s0和s1区相互交换，之所以要两块内存是为了判断对象存活阈值是否达到，如果达到阈值则对象晋升老年代。</p> <hr> <p><strong>4、YGC新生代垃圾回收</strong></p> <p><strong>5、FGC垃圾回收</strong></p> <h5 id="堆jvm参数设定"><a href="#堆jvm参数设定" class="header-anchor">#</a> 堆JVM参数设定</h5> <div class="language- extra-class"><pre class="language-text"><code>-Xms256M -Xmx1024M # jvm堆内存大小参数设定，ms：memory start mx：memory max
+-XX:MaxTenuringThreshold=15 # 存活区交换次数默认15  1：直接从Eden区移至Old区
+-XX:+HeapDumpOnOutOfMemoryError # 内存溢出错误堆内错误信息
+</code></pre></div><h4 id="元空间metaspace"><a href="#元空间metaspace" class="header-anchor">#</a> 元空间Metaspace</h4> <p>JDK8元空间的前身为Perm区（永久代）已经被淘汰。</p> <p><strong>元空间的前身永久代Perm被淘汰原因</strong></p> <p>Perm启动内存大小固定，调优困难。FGC时会移动类元信息。如果动态加载类过多，会造成Perm区内存溢出OOM。</p> <p>JDK8以后Perm被元空间代替，常量池被移到堆区，其他信息如类元信息、字段、静态属性、方法、常量被移动到元空间。</p> <h5 id="jvm参数设定"><a href="#jvm参数设定" class="header-anchor">#</a> JVM参数设定</h5> <div class="language-xml extra-class"><pre class="language-xml"><code>-XX:MaxPermSize=1280m # 该参数在JDK8以后被删除，如果显示配置jvm也不会报错，但会给出提示：Java Hotspot 64Bit Server VM warning：ignoring option MaxPermSize=2560m；support was removed in 8.0。
+</code></pre></div><h4 id="jvm-stack（虚拟机栈）"><a href="#jvm-stack（虚拟机栈）" class="header-anchor">#</a> JVM Stack（虚拟机栈）</h4> <p><strong>jvm虚拟机栈是什么？</strong></p> <p>是表述Java方法执行的内存区域（且线程私有:是不是说明每个线程都有自己的虚拟机栈）</p> <p>虚拟机栈内存储着栈帧，且只能操作栈顶栈帧。（压栈弹栈）</p> <p><strong>栈帧组成</strong></p> <ul><li>局部变量表（存方法参数和局部变量的区域，index[0]是所属对象实例引用）</li> <li>操作栈（初始为空的桶式结构栈）</li> <li>动态连接（每个栈帧包含一个在常量池中对当前方法的引用）</li> <li>方法返回地址（正常退出、异常退出</li></ul> <p><strong>操作栈和局部变量表交互说明</strong></p> <div class="language- extra-class"><pre class="language-text"><code>// Java代码
+public int add(){
+	int x = 13;
+	int y = 14;
+	int z = x + y;
+	return z;
+}
+</code></pre></div><div class="language-class extra-class"><pre class="language-text"><code>// 字节码操作顺序
+public add() ; 
+descriptor:() 
+flags:ACC_PUBLIC 
+Code:
+	stack=2, locals=4, args_Size=1
+		BIPUSH 13  # 压栈（操作栈）
+		ISTORE_1   # 弹栈 存s1（局部变量表）
+
+		BIPUSH 14  # 压栈
+		ISTORE_2   # 弹栈 存s2
+ 
+		ILOAD_1    # 压栈 s1值（将slot_1中的值压栈）
+		ILOAD_2    # 压栈 s2值
+		IADD       # 弹栈 s1 s2 CPU加和 并结果压栈
+		ISTORE_3   # 弹栈 存s3
+		
+		ILOAD_3    # 压栈 存s3
+		IRETURN    # 弹栈 s3
+</code></pre></div><p>面试题：i++和++i的区别</p> <p>++操作是在局部变量表进行的：iinc操作</p> <p>所有有：先压栈还是先++从而影响结果。</p> <p>i++是先压栈，后++，再弹栈，是非原子操作，有多线程问题，即使通过volatile修饰也会产生数据相互覆盖问题。</p> <p><strong>方法返回地址退出的三种可能</strong></p> <ul><li>返回值压入上层调用栈帧</li> <li>异常信息抛给能够处理的栈帧</li> <li>PC计数器指向方法调用后的下一条指令</li></ul> <h4 id="本地方法栈（native-method-stacks"><a href="#本地方法栈（native-method-stacks" class="header-anchor">#</a> 本地方法栈（native method stacks)</h4> <p>也是表述Java方法执行的内存区域，也是线程私有的，为调用本地方法服务。</p> <p>本地方法通过JNI（Java native Interface）来访问虚拟机运行时的数据区，甚至可以调用寄存器，具有和jvm相同的权限和能力。内存不足也会造成本地方法栈内存溢出。</p> <p>大量调用本地方法会架空jvm，导致jvm稳定性降低，可以使用中间框架解耦，提升jvm稳定性。如果要求高效率也可以考虑设计为JNI调用方式。</p> <h4 id="程序技术寄存器pc"><a href="#程序技术寄存器pc" class="header-anchor">#</a> 程序技术寄存器PC</h4> <p>Program Counter Register</p> <p>CPU只有把数据装载到寄存器才能够运行。</p> <p>程序计数器作用：用来存放执行指令和偏移量和行号指示器等。</p> <p>CPU时间片切换时使用程序计数器记录执行位置。用于线程的执行和恢复</p> <hr> <p>堆区和元空间是线程共享的。</p> <p>虚拟机栈、本地方法栈、程序计数器是线程私有的。</p> <p><img src="D:%5Cjianguoyun%5C%E6%88%91%E7%9A%84%E5%9D%9A%E6%9E%9C%E4%BA%91%5Cassets%5C%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16031636889249.png" alt="img"></p> <h3 id="_4、对象实例化"><a href="#_4、对象实例化" class="header-anchor">#</a> 4、对象实例化</h3> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">Object</span> ref <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p><img src="E:%5Cjianguoyun%5C%E6%88%91%E7%9A%84%E5%9D%9A%E6%9E%9C%E4%BA%91%5Cassets%5C%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16031753593718.png" alt="img"></p> <h4 id="字节码对象实例化过程"><a href="#字节码对象实例化过程" class="header-anchor">#</a> 字节码对象实例化过程</h4> <ul><li><p>NEW:创建对象，先找Class类对象，否则先进行类加载。</p> <p>分配内存（属性分配内存，0值初始化）</p> <p>引用ref也是一个变量，占4个字节存储。</p> <p>将指向实例对象的引用变量压栈。</p></li> <li><p>DUP：在栈顶复制引用变量压栈（两个引用变量）</p> <p>如果<init>方法有参数，还需要将参数压栈，这里没有则，栈中只有两个实例引用变量。</init></p></li> <li><p>INVOKESPECIAL：调用实例方法，通过栈顶引用调用<init>方法。</init></p> <p><clinit> 是类初始化时执行的方法 而＜init&gt; 是对象初始化时执行的方法。</clinit></p></li></ul> <h4 id="程序执行步骤初始化"><a href="#程序执行步骤初始化" class="header-anchor">#</a> 程序执行步骤初始化</h4> <ul><li><p>确认元信息是否存在。</p> <div class="language- extra-class"><pre class="language-text"><code>当jvm收到new指令时
+1、检查元空间Metaspace中类元信息是否存在。
+2、若不存在：双亲委派类加载类元信息并生成Class对象。（ClassLoader＋包名＋类名为 Key 进行查找对应的.class 文件。）
+3、若找不到则抛异常：ClassNotFoundException
+</code></pre></div></li> <li><p>分配对象内存</p> <div class="language- extra-class"><pre class="language-text"><code>Object ref = new Object()
+1、计算对象占用空间new Object()
+2、ref分配引用变量空间4字节
+3、堆区分配对象内存
+分配内存空间时必须是同步操作，方式采用：CAS、失败重试、区域加锁等保证分配操作原子性。
+</code></pre></div></li> <li><p>设定默认值</p> <div class="language-java extra-class"><pre class="language-java"><code>成员变量设置默认值，即零值（根据具体类型<span class="token keyword">null</span>等）
+</code></pre></div></li> <li><p>设置对象头</p> <div class="language-java extra-class"><pre class="language-java"><code>设置对象的：哈希码、GC信息、锁信息、对象所属的类元信息等
+</code></pre></div></li> <li><p>执行init方法</p> <div class="language-java extra-class"><pre class="language-java"><code>初始化成员变量、执行实例化代码、调用构造函数。
+将堆内对象的首地址赋值给引用变量
+</code></pre></div></li></ul> <h3 id="_5、垃圾回收"><a href="#_5、垃圾回收" class="header-anchor">#</a> 5、垃圾回收</h3> <p>Java会自动做内存管理，使上层业务更安全更无脑的使用内存-只关注程序逻辑。</p> <p><strong>垃圾回收的目的</strong></p> <p>清除不再使用的对象，自动释放内存。</p> <p><strong>GC是如何判断对象是否可以被回收？</strong></p> <p>即判断对象是否存活，jvm引入GC Roots。如果一个对象与GC Roots之间没有直接和间接引用关系，则认为可以被回收。</p> <p><strong>什么对象可以作为GC Roots？</strong></p> <p>类静态属性中引用的对象</p> <p>常量引用的对象</p> <p>虚拟机栈中引用的对象</p> <p>本地方法栈中引用的对象</p> <p><strong>垃圾回收算法</strong></p> <ul><li><p>标记-清除算法</p> <div class="language- extra-class"><pre class="language-text"><code>GC Roots出发，标记引用关系的对象，剩下的清除
+导致大量空间碎片，导致要分配连续大内存时，触发FGC
+</code></pre></div></li> <li><p>标记-整理算法</p> <div class="language- extra-class"><pre class="language-text"><code>GC Roots出发，标记存活对象，并将存活对象整理到内存空间一端，形成连续的已用空间，最后把其余的空间清理
+</code></pre></div></li> <li><p>标记-复制算法</p> <div class="language- extra-class"><pre class="language-text"><code>开辟两块空间，每次只激活一块，gc时将活对象复制到未激活空间并激活该空间，将原已激活空间标记未激活，
+然后清除原空间的对象。
+</code></pre></div></li></ul> <p><strong>垃圾回收器</strong></p> <p>是jvm垃圾回收的具体实现，版本很多。</p> <ul><li><p>Serial：用于YGC，STW暂停应用回收</p></li> <li><p>CMS：并发标记扫描回收器，也会STW</p> <div class="language- extra-class"><pre class="language-text"><code>-XX :+UseCMSCompactAtFullCollection # 强制jvm在FGC后对老年代压缩，执行一次空间碎片整理，整理阶段会触发STW
+-XX +CMSFullGCsBeforeCompaction=n # 在执行n次FGC后，执行老年代空间碎片整理
+</code></pre></div></li> <li><p>G1：自带压缩功能，避免碎片问题，STW时间可控性更高，jdk11默认回收器</p> <div class="language- extra-class"><pre class="language-text"><code>-XX:+UseG1GC 
+</code></pre></div><p>G1将堆空间分割成相同大小区域region，四种类型</p> <ul><li>Eden</li> <li>Survivor</li> <li>Old</li> <li>Humongous</li></ul></li></ul> <p>G1的原理是，分割整理机制，优先清理垃圾最多的区域，采用Mark-Copy算法，不会有碎片化问题，且可预测STW时间。</p> <hr> <p>垃圾回收机制思想：主要采用分割整理思想。</p> <p>整理思想：标记整理Mark-Compact</p> <p>分割思想：标记复制Mark-Copy</p> <p>多分割：G1回收器，任务分解后采用Mark-Copy，既加快了回收速度，又避免了碎片化触发FGC</p> <hr></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/onedocs/javaapi/JVM内存调优原则和方法.html">
+        JVM内存调优
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/onedocs/assets/js/app.e0504603.js" defer></script><script src="/onedocs/assets/js/2.2038ef08.js" defer></script><script src="/onedocs/assets/js/52.a82b4ac8.js" defer></script>
+  </body>
+</html>

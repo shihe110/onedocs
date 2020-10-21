@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Redis学习笔记 | 毫末之木</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/onedocs/logo.png">
+    <meta name="description" content="合抱之木生于毫末，九层之台起于累土，千里之行始于足下">
+    <link rel="preload" href="/onedocs/assets/css/0.styles.de272f6a.css" as="style"><link rel="preload" href="/onedocs/assets/js/app.e0504603.js" as="script"><link rel="preload" href="/onedocs/assets/js/2.2038ef08.js" as="script"><link rel="preload" href="/onedocs/assets/js/77.29592718.js" as="script"><link rel="prefetch" href="/onedocs/assets/js/10.f6a37571.js"><link rel="prefetch" href="/onedocs/assets/js/100.bf63558b.js"><link rel="prefetch" href="/onedocs/assets/js/101.cadfc716.js"><link rel="prefetch" href="/onedocs/assets/js/102.228fbd56.js"><link rel="prefetch" href="/onedocs/assets/js/103.c662b851.js"><link rel="prefetch" href="/onedocs/assets/js/104.bf10f97f.js"><link rel="prefetch" href="/onedocs/assets/js/105.42297f62.js"><link rel="prefetch" href="/onedocs/assets/js/106.5fec983b.js"><link rel="prefetch" href="/onedocs/assets/js/107.44d78888.js"><link rel="prefetch" href="/onedocs/assets/js/108.0bf1da5d.js"><link rel="prefetch" href="/onedocs/assets/js/109.33df81e8.js"><link rel="prefetch" href="/onedocs/assets/js/11.61cfa05d.js"><link rel="prefetch" href="/onedocs/assets/js/110.37c6a673.js"><link rel="prefetch" href="/onedocs/assets/js/111.d0745a6f.js"><link rel="prefetch" href="/onedocs/assets/js/112.896c20d3.js"><link rel="prefetch" href="/onedocs/assets/js/113.ba73bbe7.js"><link rel="prefetch" href="/onedocs/assets/js/114.285eae67.js"><link rel="prefetch" href="/onedocs/assets/js/115.9ef9f274.js"><link rel="prefetch" href="/onedocs/assets/js/116.c766fd18.js"><link rel="prefetch" href="/onedocs/assets/js/117.4b4b5f8f.js"><link rel="prefetch" href="/onedocs/assets/js/118.77801d1c.js"><link rel="prefetch" href="/onedocs/assets/js/119.5f2de0db.js"><link rel="prefetch" href="/onedocs/assets/js/12.01307b5f.js"><link rel="prefetch" href="/onedocs/assets/js/120.db5a2544.js"><link rel="prefetch" href="/onedocs/assets/js/121.3e1120a7.js"><link rel="prefetch" href="/onedocs/assets/js/122.15db53bf.js"><link rel="prefetch" href="/onedocs/assets/js/123.7eb75cac.js"><link rel="prefetch" href="/onedocs/assets/js/124.6d5d2703.js"><link rel="prefetch" href="/onedocs/assets/js/125.2b72f325.js"><link rel="prefetch" href="/onedocs/assets/js/126.0f334670.js"><link rel="prefetch" href="/onedocs/assets/js/127.add5b5dc.js"><link rel="prefetch" href="/onedocs/assets/js/128.8dee2046.js"><link rel="prefetch" href="/onedocs/assets/js/129.1cc6ef43.js"><link rel="prefetch" href="/onedocs/assets/js/13.0e9843e7.js"><link rel="prefetch" href="/onedocs/assets/js/130.880acb43.js"><link rel="prefetch" href="/onedocs/assets/js/131.05a3b4f2.js"><link rel="prefetch" href="/onedocs/assets/js/132.7e40c9dd.js"><link rel="prefetch" href="/onedocs/assets/js/133.8452078c.js"><link rel="prefetch" href="/onedocs/assets/js/134.9d982b6a.js"><link rel="prefetch" href="/onedocs/assets/js/135.0e2ecf22.js"><link rel="prefetch" href="/onedocs/assets/js/136.b93ab627.js"><link rel="prefetch" href="/onedocs/assets/js/137.a3ac1183.js"><link rel="prefetch" href="/onedocs/assets/js/138.a5f8253e.js"><link rel="prefetch" href="/onedocs/assets/js/139.8d2d2ed3.js"><link rel="prefetch" href="/onedocs/assets/js/14.1f2678b2.js"><link rel="prefetch" href="/onedocs/assets/js/140.f316bc65.js"><link rel="prefetch" href="/onedocs/assets/js/141.4329f321.js"><link rel="prefetch" href="/onedocs/assets/js/142.84de330a.js"><link rel="prefetch" href="/onedocs/assets/js/143.33c910cb.js"><link rel="prefetch" href="/onedocs/assets/js/144.772fc978.js"><link rel="prefetch" href="/onedocs/assets/js/145.5b5002a9.js"><link rel="prefetch" href="/onedocs/assets/js/146.88aa0c0f.js"><link rel="prefetch" href="/onedocs/assets/js/147.e96373a7.js"><link rel="prefetch" href="/onedocs/assets/js/148.b4c8be91.js"><link rel="prefetch" href="/onedocs/assets/js/149.1ea72874.js"><link rel="prefetch" href="/onedocs/assets/js/15.69ce579e.js"><link rel="prefetch" href="/onedocs/assets/js/150.5520b849.js"><link rel="prefetch" href="/onedocs/assets/js/151.e95264d4.js"><link rel="prefetch" href="/onedocs/assets/js/152.f76653a4.js"><link rel="prefetch" href="/onedocs/assets/js/153.3cf08ff4.js"><link rel="prefetch" href="/onedocs/assets/js/154.75d44f04.js"><link rel="prefetch" href="/onedocs/assets/js/155.4e652b6d.js"><link rel="prefetch" href="/onedocs/assets/js/156.52dfe88f.js"><link rel="prefetch" href="/onedocs/assets/js/157.83358103.js"><link rel="prefetch" href="/onedocs/assets/js/158.05182abd.js"><link rel="prefetch" href="/onedocs/assets/js/159.0a341b5c.js"><link rel="prefetch" href="/onedocs/assets/js/16.741d57c4.js"><link rel="prefetch" href="/onedocs/assets/js/160.a260ac01.js"><link rel="prefetch" href="/onedocs/assets/js/161.0a91f71a.js"><link rel="prefetch" href="/onedocs/assets/js/162.313e8057.js"><link rel="prefetch" href="/onedocs/assets/js/163.2e3c776c.js"><link rel="prefetch" href="/onedocs/assets/js/164.0197d2c3.js"><link rel="prefetch" href="/onedocs/assets/js/165.22bf3e3b.js"><link rel="prefetch" href="/onedocs/assets/js/166.dd9ae5a6.js"><link rel="prefetch" href="/onedocs/assets/js/167.1836600e.js"><link rel="prefetch" href="/onedocs/assets/js/168.3671e218.js"><link rel="prefetch" href="/onedocs/assets/js/17.35a10d84.js"><link rel="prefetch" href="/onedocs/assets/js/18.9dd6fa79.js"><link rel="prefetch" href="/onedocs/assets/js/19.f4e03e09.js"><link rel="prefetch" href="/onedocs/assets/js/20.80e68c20.js"><link rel="prefetch" href="/onedocs/assets/js/21.40f6b8cf.js"><link rel="prefetch" href="/onedocs/assets/js/22.c81a146b.js"><link rel="prefetch" href="/onedocs/assets/js/23.e9a26275.js"><link rel="prefetch" href="/onedocs/assets/js/24.ec0a9ca1.js"><link rel="prefetch" href="/onedocs/assets/js/25.39fba076.js"><link rel="prefetch" href="/onedocs/assets/js/26.1c7bcc3c.js"><link rel="prefetch" href="/onedocs/assets/js/27.3e6c0ca0.js"><link rel="prefetch" href="/onedocs/assets/js/28.0e9db906.js"><link rel="prefetch" href="/onedocs/assets/js/29.71d5a89a.js"><link rel="prefetch" href="/onedocs/assets/js/3.aa988536.js"><link rel="prefetch" href="/onedocs/assets/js/30.09138ea6.js"><link rel="prefetch" href="/onedocs/assets/js/31.cb1c7490.js"><link rel="prefetch" href="/onedocs/assets/js/32.6090c8d6.js"><link rel="prefetch" href="/onedocs/assets/js/33.1d9048c9.js"><link rel="prefetch" href="/onedocs/assets/js/34.943439b5.js"><link rel="prefetch" href="/onedocs/assets/js/35.194def41.js"><link rel="prefetch" href="/onedocs/assets/js/36.67181f53.js"><link rel="prefetch" href="/onedocs/assets/js/37.71e0022a.js"><link rel="prefetch" href="/onedocs/assets/js/38.17c196a9.js"><link rel="prefetch" href="/onedocs/assets/js/39.133a6677.js"><link rel="prefetch" href="/onedocs/assets/js/4.7d5f245c.js"><link rel="prefetch" href="/onedocs/assets/js/40.690b861a.js"><link rel="prefetch" href="/onedocs/assets/js/41.7dae413f.js"><link rel="prefetch" href="/onedocs/assets/js/42.5fd35219.js"><link rel="prefetch" href="/onedocs/assets/js/43.12189d67.js"><link rel="prefetch" href="/onedocs/assets/js/44.1d99eadf.js"><link rel="prefetch" href="/onedocs/assets/js/45.3139ffd5.js"><link rel="prefetch" href="/onedocs/assets/js/46.8523cfea.js"><link rel="prefetch" href="/onedocs/assets/js/47.e450460f.js"><link rel="prefetch" href="/onedocs/assets/js/48.bcc81505.js"><link rel="prefetch" href="/onedocs/assets/js/49.ebc85be0.js"><link rel="prefetch" href="/onedocs/assets/js/5.f8be39f3.js"><link rel="prefetch" href="/onedocs/assets/js/50.5c2d59fd.js"><link rel="prefetch" href="/onedocs/assets/js/51.d597c487.js"><link rel="prefetch" href="/onedocs/assets/js/52.a82b4ac8.js"><link rel="prefetch" href="/onedocs/assets/js/53.7e846a18.js"><link rel="prefetch" href="/onedocs/assets/js/54.fccf7432.js"><link rel="prefetch" href="/onedocs/assets/js/55.9b7443ca.js"><link rel="prefetch" href="/onedocs/assets/js/56.31a4e77b.js"><link rel="prefetch" href="/onedocs/assets/js/57.fcf167c5.js"><link rel="prefetch" href="/onedocs/assets/js/58.345e9c2b.js"><link rel="prefetch" href="/onedocs/assets/js/59.a0fc752a.js"><link rel="prefetch" href="/onedocs/assets/js/6.adb9b803.js"><link rel="prefetch" href="/onedocs/assets/js/60.2368a78a.js"><link rel="prefetch" href="/onedocs/assets/js/61.7572fa6a.js"><link rel="prefetch" href="/onedocs/assets/js/62.05dc54d9.js"><link rel="prefetch" href="/onedocs/assets/js/63.7ef0e47a.js"><link rel="prefetch" href="/onedocs/assets/js/64.6314de2c.js"><link rel="prefetch" href="/onedocs/assets/js/65.d62c7c53.js"><link rel="prefetch" href="/onedocs/assets/js/66.207f0f1c.js"><link rel="prefetch" href="/onedocs/assets/js/67.5c592667.js"><link rel="prefetch" href="/onedocs/assets/js/68.a7708f32.js"><link rel="prefetch" href="/onedocs/assets/js/69.f2dfce99.js"><link rel="prefetch" href="/onedocs/assets/js/7.17a9aabe.js"><link rel="prefetch" href="/onedocs/assets/js/70.432e8b26.js"><link rel="prefetch" href="/onedocs/assets/js/71.2d1f5d9c.js"><link rel="prefetch" href="/onedocs/assets/js/72.e59fee6b.js"><link rel="prefetch" href="/onedocs/assets/js/73.ac854f40.js"><link rel="prefetch" href="/onedocs/assets/js/74.f1adb5bf.js"><link rel="prefetch" href="/onedocs/assets/js/75.81169538.js"><link rel="prefetch" href="/onedocs/assets/js/76.cb1168d8.js"><link rel="prefetch" href="/onedocs/assets/js/78.bed97e43.js"><link rel="prefetch" href="/onedocs/assets/js/79.b4aa58c7.js"><link rel="prefetch" href="/onedocs/assets/js/8.0a691bde.js"><link rel="prefetch" href="/onedocs/assets/js/80.7117913a.js"><link rel="prefetch" href="/onedocs/assets/js/81.cb9d775c.js"><link rel="prefetch" href="/onedocs/assets/js/82.640fa306.js"><link rel="prefetch" href="/onedocs/assets/js/83.101b5a05.js"><link rel="prefetch" href="/onedocs/assets/js/84.66449154.js"><link rel="prefetch" href="/onedocs/assets/js/85.d0c5c099.js"><link rel="prefetch" href="/onedocs/assets/js/86.4690f476.js"><link rel="prefetch" href="/onedocs/assets/js/87.85a6bfd2.js"><link rel="prefetch" href="/onedocs/assets/js/88.fd7c2a5d.js"><link rel="prefetch" href="/onedocs/assets/js/89.f3fc2bed.js"><link rel="prefetch" href="/onedocs/assets/js/9.b16a8b90.js"><link rel="prefetch" href="/onedocs/assets/js/90.e37e6501.js"><link rel="prefetch" href="/onedocs/assets/js/91.abbe3309.js"><link rel="prefetch" href="/onedocs/assets/js/92.dd4acb93.js"><link rel="prefetch" href="/onedocs/assets/js/93.8f44fecb.js"><link rel="prefetch" href="/onedocs/assets/js/94.fb6cbed1.js"><link rel="prefetch" href="/onedocs/assets/js/95.359a8a37.js"><link rel="prefetch" href="/onedocs/assets/js/96.d4612b15.js"><link rel="prefetch" href="/onedocs/assets/js/97.d946fd32.js"><link rel="prefetch" href="/onedocs/assets/js/98.97949fea.js"><link rel="prefetch" href="/onedocs/assets/js/99.517062b1.js">
+    <link rel="stylesheet" href="/onedocs/assets/css/0.styles.de272f6a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/onedocs/" class="home-link router-link-active"><img src="/onedocs/logo.png" alt="毫末之木" class="logo"> <span class="site-name can-hide">毫末之木</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/onedocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/javaapi/" class="nav-link">
+  javaapi
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/mybatis/" class="nav-link">
+  mybatis
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/juc/" class="nav-link">
+  多线程
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Spring系列" class="dropdown-title"><span class="title">Spring系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/spring/" class="nav-link">
+  spring
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springmvc/" class="nav-link">
+  spring-mvc
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springboot/" class="nav-link">
+  spring-boot
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springcloud/" class="nav-link">
+  spring-cloud
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springsecurity/" class="nav-link">
+  spring-security
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Database" class="dropdown-title"><span class="title">Database</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/db/" class="nav-link">
+  db
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/redis/" class="nav-link router-link-active">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/front/" class="nav-link">
+  前端
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="互联网" class="dropdown-title"><span class="title">互联网</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/mq/" class="nav-link">
+  消息中间件
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/internet/" class="nav-link">
+  互联网
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/interview/" class="nav-link">
+  面试
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具集" class="dropdown-title"><span class="title">工具集</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/web/" class="nav-link">
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/maven/" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/github/" class="nav-link">
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/browser/" class="nav-link">
+  browser
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/idea/" class="nav-link">
+  idea
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/shihe110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/onedocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/javaapi/" class="nav-link">
+  javaapi
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/mybatis/" class="nav-link">
+  mybatis
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/juc/" class="nav-link">
+  多线程
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Spring系列" class="dropdown-title"><span class="title">Spring系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/spring/" class="nav-link">
+  spring
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springmvc/" class="nav-link">
+  spring-mvc
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springboot/" class="nav-link">
+  spring-boot
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springcloud/" class="nav-link">
+  spring-cloud
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springsecurity/" class="nav-link">
+  spring-security
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Database" class="dropdown-title"><span class="title">Database</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/db/" class="nav-link">
+  db
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/redis/" class="nav-link router-link-active">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/front/" class="nav-link">
+  前端
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="互联网" class="dropdown-title"><span class="title">互联网</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/mq/" class="nav-link">
+  消息中间件
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/internet/" class="nav-link">
+  互联网
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/interview/" class="nav-link">
+  面试
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具集" class="dropdown-title"><span class="title">工具集</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/web/" class="nav-link">
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/maven/" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/github/" class="nav-link">
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/browser/" class="nav-link">
+  browser
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/idea/" class="nav-link">
+  idea
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/shihe110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>redis</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/onedocs/redis/2-redis配置.html" class="sidebar-link">redis入门之配置</a></li><li><a href="/onedocs/redis/3-redis数据类型.html" class="sidebar-link">redis数据类型</a></li><li><a href="/onedocs/redis/4-redis在Linux安装.html" class="sidebar-link">Linux安装redis</a></li><li><a href="/onedocs/redis/" aria-current="page" class="sidebar-link">/redis/</a></li><li><a href="/onedocs/redis/Redis入门.html" class="active sidebar-link">Redis学习笔记</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/onedocs/redis/Redis入门.html#redis学习笔记" class="sidebar-link">Redis学习笔记</a></li><li class="sidebar-sub-header"><a href="/onedocs/redis/Redis入门.html#redis入门" class="sidebar-link">Redis入门</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="redis学习笔记"><a href="#redis学习笔记" class="header-anchor">#</a> Redis学习笔记</h2> <p>mysql数据库引擎发展</p> <ul><li>MyISAM - 表锁（早些年的引擎，效率低下）</li> <li>innoDB - 行级锁</li></ul> <p>本质还是一个读和写的问题，发展开始使用分库分表解决写的压力。mysql还推出过表分区技术。</p> <p>热榜数据、位置数据等（量大，变化快）就不适合mysql类的关系型数据库。图形数据库、json数据。</p> <p>对于大文件、图片、博客等大数据量的问题：mongo</p> <h3 id="目前一个基本互联网项目的架构："><a href="#目前一个基本互联网项目的架构：" class="header-anchor">#</a> 目前一个基本互联网项目的架构：</h3> <p>用户--》企业防火墙或路由网关（负载均衡）--》app服务器</p> <hr> <p>为什么用使用nosql</p> <p>用户信息</p> <p>地理位置</p> <p>用户自己的数据</p> <p>用户日志</p> <hr> <p>什么是NoSql（不仅仅是sql）</p> <p>泛指非关系型数据库</p> <p>web2.0 视频 音乐 高并发社区、关系型数据库就不能满足需求</p> <hr> <p>解耦</p> <p>方便扩展（数据之间没有关系，方便扩展）</p> <p>大数据量高性能：redis每秒可以读11万次写8万次，nosql的缓存是记录级别的，是一种细粒度的缓存</p> <p>数据类型是多样的：（不需要事先设计数据库）</p> <p>没有固定查询语言</p> <p>键值对存储、列存储、文档存储、图形数据库</p> <p>最终一致性</p> <p>cap定理和base （异地多活）</p> <p>高性能、高可用、高可扩展</p> <hr> <p>大数据：3V + 3高</p> <p>对问题的描述：（海量、多样、实时）</p> <p>对程序的基本要求（高并发、高可扩展（动态扩展）、高性能）</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 1.基础信息</span>
+-- RDBMS
+
+<span class="token comment"># 2.商品描述，评论（文字较多）</span>
+- mongodb
+
+<span class="token comment"># 3.图片</span>
+- fastDFS
+- TFS
+- GFS
+- HDFS
+- oss
+
+<span class="token comment"># 4.商品关键字</span>
+- solr
+- ES
+- ISearch
+
+<span class="token comment"># 5.商品热门信息（秒杀、排行）</span>
+- redis
+- tair
+- memechad
+
+<span class="token comment"># 6.商品交易，支付接口</span>
+- 三方应用
+</code></pre></div><p>大型互联网应用的问题</p> <ul><li>数据类型太多</li> <li>数据源太多</li> <li>数据要改造，大面积改造</li></ul> <hr> <p>Nosql的四大分类</p> <ul><li><p>k-v键值对存储数据库</p> <ul><li>新浪 redis</li> <li>美团 redis tair</li> <li>阿里、百度 redis memecache</li></ul></li> <li><p>文档数据库</p> <ul><li>mongodb （分布式文件存储的数据库，c++编写，处理大量文档，介于关系和非关系型数据库的中间产品，最像关系型的非关系型数据库）</li> <li>contchDb</li></ul></li> <li><p>列存储数据库</p> <ul><li>HBase</li> <li>分布式文件系统</li></ul></li> <li><p>图关系数据库（存关系）</p> <ul><li>社交数据关系拓扑</li> <li>neo4j、infoGrid （社交网络、推荐系统、专注于构建关系图谱）</li></ul></li></ul> <hr> <h2 id="redis入门"><a href="#redis入门" class="header-anchor">#</a> Redis入门</h2> <h3 id="redis概述"><a href="#redis概述" class="header-anchor">#</a> redis概述</h3> <p>Redis（Remote Dictionary Server）远程字典服务，开源免费、c编写、支持网络、可基于内存也可以持久化的日志型，key-value数据库，并提供多种语言的api。</p> <h3 id="redis能干啥？"><a href="#redis能干啥？" class="header-anchor">#</a> redis能干啥？</h3> <p>1、内存存储、持久化（rdb、aof）</p> <p>2、效率高，高速缓存</p> <p>3、发布订阅系统</p> <p>4、地图信息分析</p> <p>5、计时器、计数器（浏览量）</p> <h3 id="特性"><a href="#特性" class="header-anchor">#</a> 特性</h3> <p><strong>1、多样数据类型</strong></p> <p>Redis支持五种数据类型：string(字符串)、hash(哈希表)、list(列表)、set(集合)、zset(sorted set有序集合)</p> <p>三种特殊数据类型：bitmaps、hyperloglog、geospatial</p> <p><strong>2、持久化</strong></p> <p>rdb（快照持久化 redis database）、aof（append only file 日志文件持久化）</p> <p><strong>3、集群</strong></p> <p>主从复制、哨兵模式、</p> <p><strong>4、事务</strong></p> <hr> <p>官网：redis.io</p> <p>中文网：www.redis.cn  https://www.redis.net.cn/tutorial/3505.html</p> <p>github：https://github.com/redis</p> <h3 id="window安装"><a href="#window安装" class="header-anchor">#</a> window安装</h3> <p>下载：</p> <p>解压安装</p> <p>启动</p> <p>测试连接：ping</p> <h3 id="linux安装"><a href="#linux安装" class="header-anchor">#</a> Linux安装</h3> <p>1、下载：http://download.redis.io/releases/redis-6.0.8.tar.gz?_ga=2.12548340.175437557.1601005182-2129720179.1597734486</p> <p>或：wget http://download.redis.io/releases/redis-6.0.8.tar.gz</p> <p>2、解压</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">tar</span> zxvf redisxxx
+</code></pre></div><p>3、基本环境安装：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> redis-6.x.x <span class="token comment"># cd 到解压目录下</span>
+
+yum <span class="token function">install</span> gcc-c++ <span class="token comment"># 安装gcc redis是c++写的所以需要安装gcc</span>
+
+gcc -v <span class="token comment">#查看安装情况</span>
+
+<span class="token function">make</span> 
+
+<span class="token function">make</span> <span class="token function">install</span>
+</code></pre></div><p>4、redis默认安装路径：/usr/local/bin</p> <p>5、将解压后redis配置文件拷贝到/usr/local/bin/新建一个文件夹</p> <p>6、配置redis，设置守护进程为yes</p> <p>7、启动 redis.server  /xxx/redis.conf指定使用哪个配置文件配置启动</p> <div class="language-bash extra-class"><pre class="language-bash"><code>redis.server  /xxx/redis.conf
+</code></pre></div><p>8、使用redis-cli连接测试</p> <div class="language-bash extra-class"><pre class="language-bash"><code>redis-cli -p <span class="token number">6379</span>
+
+<span class="token function">ping</span>
+</code></pre></div><p>9、查看redis进程是否开启</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">ps</span> -ef<span class="token operator">|</span><span class="token function">grep</span> redis
+</code></pre></div><p>10、关闭redis</p> <div class="language- extra-class"><pre class="language-text"><code>shutdown 
+
+exit
+</code></pre></div><p>11、再次查看进程</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">ps</span> -ef<span class="token operator">|</span><span class="token function">grep</span> redis
+</code></pre></div><p>博客：https://www.cnblogs.com/happywish/p/10944253.html</p> <p>https://blog.csdn.net/weidu01/article/details/105946606</p> <p>12、单机多redis集群测试</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 安装redis报错 原因gcc版本过低</span>
+<span class="token comment"># cc1: error: unrecognized command line option &quot;-std=c11&quot;</span>
+
+<span class="token comment"># 解决办法：默认gcc版本一般情况是4.4.7，更新gcc版本，本方案升级到4.8.2</span>
+<span class="token comment"># 查看gcc版本</span>
+gcc -v  <span class="token comment"># 显示4.4.7</span>
+
+<span class="token comment"># 下载4.8.2 解压</span>
+<span class="token function">wget</span> http://ftp.gnu.org/gnu/gcc/gcc-4.8.2/gcc-4.8.2.tar.gz
+<span class="token function">tar</span> -jxvf gcc-4.8.2.tar.gz
+
+<span class="token comment"># 下载编译需求依赖</span>
+<span class="token builtin class-name">cd</span> gcc-4.8.2
+./contrib/download_prerequisites
+
+<span class="token comment"># 新建文件夹</span>
+<span class="token function">mkdir</span> gcc-build-4.8.2
+<span class="token builtin class-name">cd</span> gcc-build-4.8.2
+
+<span class="token comment"># 生成makefile文件</span>
+<span class="token punctuation">..</span>/configure  -enable-checking<span class="token operator">=</span>release -enable-languages<span class="token operator">=</span>c,c++ -disable-multilib
+
+<span class="token comment"># 编译安装</span>
+<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span>
+
+<span class="token comment"># 安装完成测试</span>
+gcc -v
+</code></pre></div><p><strong>菜鸟安装教程</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">wget</span> 下载地址
+<span class="token function">tar</span> -zxvf redis.xxxx.tar.gz
+<span class="token builtin class-name">cd</span> redis.xxx
+<span class="token function">make</span>
+</code></pre></div><p>make完后目录下出现变异后redis服务程序redis-server，redis-cli位于src目录下</p> <p>启动redis</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> src
+./redis-server  <span class="token comment"># 使用默认配置启动</span>
+</code></pre></div><p>使用配置文件启动</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> src 
+./redis-server  <span class="token punctuation">..</span>/redis.conf <span class="token comment"># 使用配置文件 redis.conf启动，可以自定义</span>
+</code></pre></div><p>测试交互</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> src
+./redis.cli
+
+<span class="token operator">&gt;</span> <span class="token builtin class-name">set</span> name zhangsan
+<span class="token operator">&gt;</span>get name
+</code></pre></div><hr> <h3 id="redis性能测试"><a href="#redis性能测试" class="header-anchor">#</a> redis性能测试</h3> <p>（官方自带性能测试工具）</p> <div class="language-bash extra-class"><pre class="language-bash"><code>redis-benchmark <span class="token punctuation">[</span>option<span class="token punctuation">]</span> <span class="token punctuation">[</span>option value<span class="token punctuation">]</span>
+</code></pre></div><p>redis 性能测试工具可选参数如下所示：</p> <table><thead><tr><th style="text-align:left;">序号</th> <th style="text-align:left;">选项</th> <th style="text-align:left;">描述</th> <th style="text-align:left;">默认值</th></tr></thead> <tbody><tr><td style="text-align:left;">1</td> <td style="text-align:left;"><strong>-h</strong></td> <td style="text-align:left;">指定服务器主机名</td> <td style="text-align:left;">127.0.0.1</td></tr> <tr><td style="text-align:left;">2</td> <td style="text-align:left;"><strong>-p</strong></td> <td style="text-align:left;">指定服务器端口</td> <td style="text-align:left;">6379</td></tr> <tr><td style="text-align:left;">3</td> <td style="text-align:left;"><strong>-s</strong></td> <td style="text-align:left;">指定服务器 socket</td> <td style="text-align:left;"></td></tr> <tr><td style="text-align:left;">4</td> <td style="text-align:left;"><strong>-c</strong></td> <td style="text-align:left;">指定并发连接数</td> <td style="text-align:left;">50</td></tr> <tr><td style="text-align:left;">5</td> <td style="text-align:left;"><strong>-n</strong></td> <td style="text-align:left;">指定请求数</td> <td style="text-align:left;">10000</td></tr> <tr><td style="text-align:left;">6</td> <td style="text-align:left;"><strong>-d</strong></td> <td style="text-align:left;">以字节的形式指定 SET/GET 值的数据大小</td> <td style="text-align:left;">2</td></tr> <tr><td style="text-align:left;">7</td> <td style="text-align:left;"><strong>-k</strong></td> <td style="text-align:left;">1=keep alive 0=reconnect</td> <td style="text-align:left;">1</td></tr> <tr><td style="text-align:left;">8</td> <td style="text-align:left;"><strong>-r</strong></td> <td style="text-align:left;">SET/GET/INCR 使用随机 key, SADD 使用随机值</td> <td style="text-align:left;"></td></tr> <tr><td style="text-align:left;">9</td> <td style="text-align:left;"><strong>-P</strong></td> <td style="text-align:left;">通过管道传输 <numreq> 请求</numreq></td> <td style="text-align:left;">1</td></tr> <tr><td style="text-align:left;">10</td> <td style="text-align:left;"><strong>-q</strong></td> <td style="text-align:left;">强制退出 redis。仅显示 query/sec 值</td> <td style="text-align:left;"></td></tr> <tr><td style="text-align:left;">11</td> <td style="text-align:left;"><strong>--csv</strong></td> <td style="text-align:left;">以 CSV 格式输出</td> <td style="text-align:left;"></td></tr> <tr><td style="text-align:left;">12</td> <td style="text-align:left;"><strong>-l</strong></td> <td style="text-align:left;">生成循环，永久执行测试</td> <td style="text-align:left;"></td></tr> <tr><td style="text-align:left;">13</td> <td style="text-align:left;"><strong>-t</strong></td> <td style="text-align:left;">仅运行以逗号分隔的测试命令列表。</td> <td style="text-align:left;"></td></tr> <tr><td style="text-align:left;">14</td> <td style="text-align:left;"><strong>-I</strong></td> <td style="text-align:left;">Idle 模式。仅打开 N 个 idle 连接并等待。</td> <td style="text-align:left;"></td></tr></tbody></table> <p>示例：测试100个并发，100000个请求</p> <div class="language-bash extra-class"><pre class="language-bash"><code>redis-benchmark -c <span class="token number">100</span> -n <span class="token number">100000</span> -q
+</code></pre></div><h3 id="基础知识"><a href="#基础知识" class="header-anchor">#</a> 基础知识</h3> <p>redis默认有16个数据库，默认使用第0个，使用select num切换数据库</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token keyword">select</span> <span class="token number">3</span> <span class="token comment"># 切第三个数据库</span>
+
+dbsize <span class="token comment"># 查看库大小  # 可以使用不同的数据库存不同的数据</span>
+
+keys * <span class="token comment"># 查看所有的key</span>
+
+flushdb  <span class="token comment"># 清空当前数据库</span>
+
+flushall <span class="token comment"># 清空所有数据库内容</span>
+</code></pre></div><blockquote><p>redis是单线程的，为什么还这么快？</p></blockquote> <p>redis是基于内存操作的，cpu不是redis性能瓶颈，redis的性能瓶颈在于机器的内存和网络带宽！所以就使用了单线程。redis是用c语言写的，官方数据qps 100000+</p> <p><strong>为什么redis单线程，还可以如此的快？</strong></p> <p>一般来说速度：cpu&gt;内存&gt;硬盘</p> <p>多线程需要CPU上下文切换，是一个耗时的操作。redis将所有数据全部放在内存中，所以对于一块内存使用单线程操作效率就是最高的。多次读写都在一个CPU上。</p> <h3 id="redis配置"><a href="#redis配置" class="header-anchor">#</a> Redis配置</h3> <p>redis的配置有两种方式：配置文件配置、命令行配置config</p> <p>配置文件位置：redis安装目录下 redis.conf文件（window下命名为：redis.windows.conf）</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment">##################获取配置########################</span>
+<span class="token comment"># 获取配置 config get config_setting_name</span>
+<span class="token comment"># 获取日志配置</span>
+config get loglevel
+
+<span class="token comment"># 获取所有配置</span>
+config get *
+
+<span class="token comment">######################修改配置#####################</span>
+<span class="token comment"># 设置配置命令： config set config_setting_name  new_config_vlaue</span>
+<span class="token comment"># 设置日志级别</span>
+config <span class="token builtin class-name">set</span> loglevel <span class="token string">&quot;notice&quot;</span>
+
+</code></pre></div><p>**redis.conf配置文件说 **</p> <table><thead><tr><th style="text-align:left;">序号</th> <th style="text-align:left;">配置项</th> <th style="text-align:left;">说明</th></tr></thead> <tbody><tr><td style="text-align:left;">1</td> <td style="text-align:left;"><code>daemonize no</code></td> <td style="text-align:left;">Redis 默认不是以守护进程的方式运行，可以通过该配置项修改，使用 yes 启用守护进程（Windows 不支持守护线程的配置为 no ）</td></tr> <tr><td style="text-align:left;">2</td> <td style="text-align:left;"><code>pidfile /var/run/redis.pid</code></td> <td style="text-align:left;">当 Redis 以守护进程方式运行时，Redis 默认会把 pid 写入 /var/run/redis.pid 文件，可以通过 pidfile 指定</td></tr> <tr><td style="text-align:left;">3</td> <td style="text-align:left;"><code>port 6379</code></td> <td style="text-align:left;">指定 Redis 监听端口，默认端口为 6379，作者在自己的一篇博文中解释了为什么选用 6379 作为默认端口，因为 6379 在手机按键上 MERZ 对应的号码，而 MERZ 取自意大利歌女 Alessia Merz 的名字</td></tr> <tr><td style="text-align:left;">4</td> <td style="text-align:left;"><code>bind 127.0.0.1</code></td> <td style="text-align:left;">绑定的主机地址</td></tr> <tr><td style="text-align:left;">5</td> <td style="text-align:left;"><code>timeout 300</code></td> <td style="text-align:left;">当客户端闲置多长秒后关闭连接，如果指定为 0 ，表示关闭该功能</td></tr> <tr><td style="text-align:left;">6</td> <td style="text-align:left;"><code>loglevel notice</code></td> <td style="text-align:left;">指定日志记录级别，Redis 总共支持四个级别：debug、verbose、notice、warning，默认为 notice</td></tr> <tr><td style="text-align:left;">7</td> <td style="text-align:left;"><code>logfile stdout</code></td> <td style="text-align:left;">日志记录方式，默认为标准输出，如果配置 Redis 为守护进程方式运行，而这里又配置为日志记录方式为标准输出，则日志将会发送给 /dev/null</td></tr> <tr><td style="text-align:left;">8</td> <td style="text-align:left;"><code>databases 16</code></td> <td style="text-align:left;">设置数据库的数量，默认数据库为0，可以使用SELECT 命令在连接上指定数据库id</td></tr> <tr><td style="text-align:left;">9</td> <td style="text-align:left;"><code>save &lt;seconds&gt; &lt;changes&gt;</code>Redis 默认配置文件中提供了三个条件：<strong>save 900 1<strong><strong>save 300 10</strong></strong>save 60 10000</strong>分别表示 900 秒（15 分钟）内有 1 个更改，300 秒（5 分钟）内有 10 个更改以及 60 秒内有 10000 个更改。</td> <td style="text-align:left;">指定在多长时间内，有多少次更新操作，就将数据同步到数据文件，可以多个条件配合</td></tr> <tr><td style="text-align:left;">10</td> <td style="text-align:left;"><code>rdbcompression yes</code></td> <td style="text-align:left;">指定存储至本地数据库时是否压缩数据，默认为 yes，Redis 采用 LZF 压缩，如果为了节省 CPU 时间，可以关闭该选项，但会导致数据库文件变的巨大</td></tr> <tr><td style="text-align:left;">11</td> <td style="text-align:left;"><code>dbfilename dump.rdb</code></td> <td style="text-align:left;">指定本地数据库文件名，默认值为 dump.rdb</td></tr> <tr><td style="text-align:left;">12</td> <td style="text-align:left;"><code>dir ./</code></td> <td style="text-align:left;">指定本地数据库存放目录</td></tr> <tr><td style="text-align:left;">13</td> <td style="text-align:left;"><code>slaveof &lt;masterip&gt; &lt;masterport&gt;</code></td> <td style="text-align:left;">设置当本机为 slave 服务时，设置 master 服务的 IP 地址及端口，在 Redis 启动时，它会自动从 master 进行数据同步</td></tr> <tr><td style="text-align:left;">14</td> <td style="text-align:left;"><code>masterauth &lt;master-password&gt;</code></td> <td style="text-align:left;">当 master 服务设置了密码保护时，slav 服务连接 master 的密码</td></tr> <tr><td style="text-align:left;">15</td> <td style="text-align:left;"><code>requirepass foobared</code></td> <td style="text-align:left;">设置 Redis 连接密码，如果配置了连接密码，客户端在连接 Redis 时需要通过 AUTH <password> 命令提供密码，默认关闭</password></td></tr> <tr><td style="text-align:left;">16</td> <td style="text-align:left;"><code>maxclients 128</code></td> <td style="text-align:left;">设置同一时间最大客户端连接数，默认无限制，Redis 可以同时打开的客户端连接数为 Redis 进程可以打开的最大文件描述符数，如果设置 maxclients 0，表示不作限制。当客户端连接数到达限制时，Redis 会关闭新的连接并向客户端返回 max number of clients reached 错误信息</td></tr> <tr><td style="text-align:left;">17</td> <td style="text-align:left;"><code>maxmemory &lt;bytes&gt;</code></td> <td style="text-align:left;">指定 Redis 最大内存限制，Redis 在启动时会把数据加载到内存中，达到最大内存后，Redis 会先尝试清除已到期或即将到期的 Key，当此方法处理 后，仍然到达最大内存设置，将无法再进行写入操作，但仍然可以进行读取操作。Redis 新的 vm 机制，会把 Key 存放内存，Value 会存放在 swap 区</td></tr> <tr><td style="text-align:left;">18</td> <td style="text-align:left;"><code>appendonly no</code></td> <td style="text-align:left;">指定是否在每次更新操作后进行日志记录，Redis 在默认情况下是异步的把数据写入磁盘，如果不开启，可能会在断电时导致一段时间内的数据丢失。因为 redis 本身同步数据文件是按上面 save 条件来同步的，所以有的数据会在一段时间内只存在于内存中。默认为 no</td></tr> <tr><td style="text-align:left;">19</td> <td style="text-align:left;"><code>appendfilename appendonly.aof</code></td> <td style="text-align:left;">指定更新日志文件名，默认为 appendonly.aof</td></tr> <tr><td style="text-align:left;">20</td> <td style="text-align:left;"><code>appendfsync everysec</code></td> <td style="text-align:left;">指定更新日志条件，共有 3 个可选值：<strong>no</strong>：表示等操作系统进行数据缓存同步到磁盘（快）<strong>always</strong>：表示每次更新操作后手动调用 fsync() 将数据写到磁盘（慢，安全）<strong>everysec</strong>：表示每秒同步一次（折中，默认值）</td></tr> <tr><td style="text-align:left;">21</td> <td style="text-align:left;"><code>vm-enabled no</code></td> <td style="text-align:left;">指定是否启用虚拟内存机制，默认值为 no，简单的介绍一下，VM 机制将数据分页存放，由 Redis 将访问量较少的页即冷数据 swap 到磁盘上，访问多的页面由磁盘自动换出到内存中（在后面的文章我会仔细分析 Redis 的 VM 机制）</td></tr> <tr><td style="text-align:left;">22</td> <td style="text-align:left;"><code>vm-swap-file /tmp/redis.swap</code></td> <td style="text-align:left;">虚拟内存文件路径，默认值为 /tmp/redis.swap，不可多个 Redis 实例共享</td></tr> <tr><td style="text-align:left;">23</td> <td style="text-align:left;"><code>vm-max-memory 0</code></td> <td style="text-align:left;">将所有大于 vm-max-memory 的数据存入虚拟内存，无论 vm-max-memory 设置多小，所有索引数据都是内存存储的(Redis 的索引数据 就是 keys)，也就是说，当 vm-max-memory 设置为 0 的时候，其实是所有 value 都存在于磁盘。默认值为 0</td></tr> <tr><td style="text-align:left;">24</td> <td style="text-align:left;"><code>vm-page-size 32</code></td> <td style="text-align:left;">Redis swap 文件分成了很多的 page，一个对象可以保存在多个 page 上面，但一个 page 上不能被多个对象共享，vm-page-size 是要根据存储的 数据大小来设定的，作者建议如果存储很多小对象，page 大小最好设置为 32 或者 64bytes；如果存储很大大对象，则可以使用更大的 page，如果不确定，就使用默认值</td></tr> <tr><td style="text-align:left;">25</td> <td style="text-align:left;"><code>vm-pages 134217728</code></td> <td style="text-align:left;">设置 swap 文件中的 page 数量，由于页表（一种表示页面空闲或使用的 bitmap）是在放在内存中的，，在磁盘上每 8 个 pages 将消耗 1byte 的内存。</td></tr> <tr><td style="text-align:left;">26</td> <td style="text-align:left;"><code>vm-max-threads 4</code></td> <td style="text-align:left;">设置访问swap文件的线程数,最好不要超过机器的核数,如果设置为0,那么所有对swap文件的操作都是串行的，可能会造成比较长时间的延迟。默认值为4</td></tr> <tr><td style="text-align:left;">27</td> <td style="text-align:left;"><code>glueoutputbuf yes</code></td> <td style="text-align:left;">设置在向客户端应答时，是否把较小的包合并为一个包发送，默认为开启</td></tr> <tr><td style="text-align:left;">28</td> <td style="text-align:left;"><code>hash-max-zipmap-entries 64 hash-max-zipmap-value 512</code></td> <td style="text-align:left;">指定在超过一定的数量或者最大的元素超过某一临界值时，采用一种特殊的哈希算法</td></tr> <tr><td style="text-align:left;">29</td> <td style="text-align:left;"><code>activerehashing yes</code></td> <td style="text-align:left;">指定是否激活重置哈希，默认为开启（后面在介绍 Redis 的哈希算法时具体介绍）</td></tr> <tr><td style="text-align:left;">30</td> <td style="text-align:left;"><code>include /path/to/local.conf</code></td> <td style="text-align:left;">指定包含其它的配置文件，可以在同一主机上多个Redis实例之间使用同一份配置文件，而同时各个实例又拥有自己的特定配置文件</td></tr></tbody></table> <h3 id="redis命令"><a href="#redis命令" class="header-anchor">#</a> Redis命令</h3> <p>redis客户端： redis-cli</p> <p>连接服务器命令</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ redis-cli  <span class="token comment"># 连接本机服务器</span>
+$ redis-cli -h <span class="token function">host</span> -p port -a password <span class="token comment"># 连接远程服务器</span>
+<span class="token comment"># 验证是否连接成功</span>
+$ <span class="token function">ping</span>
+
+$ redis-cli --raw  <span class="token comment"># 避免中文乱码</span>
+</code></pre></div><p>redis命令大全：http://www.kayooo.com/</p> <h3 id="redis键命令"><a href="#redis键命令" class="header-anchor">#</a> Redis键命令</h3> <p>作用：用于管理redis的键  语法：command key_name</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token builtin class-name">set</span> keyname value_1
+$ del keyname  <span class="token comment"># 删除键名为keyname的键</span>
+$ exisis key <span class="token comment"># 检查key是否存在</span>
+$ expire key <span class="token number">100</span> <span class="token comment"># 设置过期时间，以秒为单位，键key设置100秒过期</span>
+$ move keyname <span class="token number">1</span> <span class="token comment"># 1表示当前数据库 移除当前key</span>
+$ keys pattern <span class="token comment"># 查找所有符合给定格式的key</span>
+$ persist key <span class="token comment"># 设置永久不过期</span>
+$ ttl name <span class="token comment"># 查询过期时间还剩多少</span>
+$ randomkey <span class="token comment"># 随机返回一个key</span>
+$ <span class="token function">rename</span> key newkey <span class="token comment"># 修改key的名称</span>
+$ renamenx key newkey <span class="token comment"># 仅当newkey不存在时，将key改名为newkey</span>
+$ <span class="token builtin class-name">type</span> key <span class="token comment"># 返回key所存储的值的类型</span>
+$ dump key <span class="token comment"># 序列化key,并返回被序列化的值</span>
+</code></pre></div><h3 id="五大数据类型"><a href="#五大数据类型" class="header-anchor">#</a> 五大数据类型</h3> <p><strong>1.string（字符串）</strong></p> <p>使用场景：计数器（incrby）、统计数量、粉丝数、对象缓存存储</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment">##########################################################################</span>
+$ <span class="token builtin class-name">set</span> k1 v1 <span class="token comment"># 设置key k1值为v1</span>
+$ get k1 <span class="token comment"># 获取k1的值</span>
+$ keys * <span class="token comment"># 所有key</span>
+
+$ exists key1 <span class="token comment"># 是否存在</span>
+$ append key1 <span class="token string">&quot;hello&quot;</span> <span class="token comment"># 给key1的值追加拼接hello字符串，如果当前key不存在，则新建该key</span>
+$ strlen key1 <span class="token comment"># 获取字符串长度</span>
+
+<span class="token comment">##########################################################################</span>
+<span class="token comment"># i++ 操作</span>
+$ <span class="token builtin class-name">set</span> views <span class="token number">0</span> <span class="token comment"># 初始浏览量为0</span>
+$ incr views <span class="token comment"># key 浏览加 1</span>
+$ decr views <span class="token comment"># key views减 1</span>
+
+$ incrby views <span class="token number">10</span> <span class="token comment"># 设置增加步长 加10</span>
+$ decrby views <span class="token number">10</span> <span class="token comment"># 自减10</span>
+
+<span class="token comment">#########################################################################</span>
+<span class="token comment"># 字符串范围 </span>
+<span class="token comment"># 截取字符串 substring</span>
+$ flushdb <span class="token comment"># 清空数据库</span>
+$ <span class="token builtin class-name">set</span> k1 helloworld
+$ get k1
+$ getrange k1 <span class="token number">0</span> <span class="token number">5</span> <span class="token comment"># 截取前0-5的字符串 substr</span>
+$ getrange k1 <span class="token number">0</span> -1 <span class="token comment"># 获取到末尾</span>
+
+<span class="token comment"># 替换字符串 replace</span>
+$ setrange k1 <span class="token number">1</span> xx <span class="token comment"># 从1开始替换两个字符 hxxloworld</span>
+
+<span class="token comment">##########################################################</span>
+$ setex key seconds value <span class="token comment"># set expire 设置过期时间</span>
+$ setnx key1 value1 <span class="token comment"># 如果key不存在，设置值</span>
+
+$ mset k1 v1 k2 v2 <span class="token comment"># 一次性设置过个值</span>
+$ mget k1 k2 <span class="token comment"># 查看多个值</span>
+
+$ msetnx k1 v1 k3 v3 <span class="token comment"># 原子性操作，如果k1存在，k3不存在，也不能成功，只有所有的key都不存在时才成功</span>
+
+<span class="token comment"># 示例： $ mset user:1:name &quot;zhangsan&quot; user:1:age 22 </span>
+<span class="token comment">#############################################</span>
+$ getset k1 v1 <span class="token comment"># 获得旧值设置新值  如果不存在则返回null  可以做一些更新的操作</span>
+
+</code></pre></div><p><strong>2.list（列表）</strong></p> <p>应用场景：栈、</p> <p><strong>hash（哈希）</strong></p> <p>key-map</p> <p>Redis hash 是一个 string 类型的 field（字段） 和 value（值） 的映射表，hash 特别适合用于存储对象。</p> <p>示例</p> <div class="language-bash extra-class"><pre class="language-bash"><code>HMSET runoobkey name <span class="token string">&quot;redis tutorial&quot;</span> description <span class="token string">&quot;redis basic commands for caching&quot;</span> likes <span class="token number">20</span> visitors <span class="token number">23000</span>
+
+hgetall runoobkey
+
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">&quot;name&quot;</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">&quot;redis tutorial&quot;</span>
+<span class="token number">3</span><span class="token punctuation">)</span> <span class="token string">&quot;description&quot;</span>
+<span class="token number">4</span><span class="token punctuation">)</span> <span class="token string">&quot;redis basic commands for caching&quot;</span>
+<span class="token number">5</span><span class="token punctuation">)</span> <span class="token string">&quot;likes&quot;</span>
+<span class="token number">6</span><span class="token punctuation">)</span> <span class="token string">&quot;20&quot;</span>
+<span class="token number">7</span><span class="token punctuation">)</span> <span class="token string">&quot;visitors&quot;</span>
+<span class="token number">8</span><span class="token punctuation">)</span> <span class="token string">&quot;23000&quot;</span>
+</code></pre></div><p><strong>Zset(有序集合)</strong></p> <p>在set基础上，增加一个值，用于排序</p> <div class="language-bash extra-class"><pre class="language-bash"><code>zset k1  score1  v1
+
+zset name <span class="token number">1</span> zhangsan <span class="token number">2</span> lisi <span class="token comment"># 添加多个值</span>
+
+zrange name <span class="token number">0</span> -1 <span class="token comment"># 获取所有值</span>
+
+zrangebyscore salary -inf +inf   <span class="token comment"># 负无穷到正无穷薪水排序 </span>
+</code></pre></div><p>排行榜应用可以使用zset实现、取top10，排名等</p> <h3 id="三种特殊数据类型"><a href="#三种特殊数据类型" class="header-anchor">#</a> 三种特殊数据类型</h3> <p><strong>geospatial地理位置</strong></p> <p>人员的定位、附近的人、打车距离计算</p> <p>redis的geo在3.2版本就有了，这个功能可以推算地理位置的信息，两地之间的距离，方圆几里的人</p> <p>命令：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>GEOADD <span class="token comment"># 添加地理位置  可以下载城市数据使用java一次性导入</span>
+geoadd china:city <span class="token number">116.405285</span> <span class="token number">39.904989</span> beijing  <span class="token comment"># 添加北京地理位置</span>
+geoadd china:city <span class="token number">121.472644</span> <span class="token number">31.231706</span> shanghai <span class="token number">113.280637</span> <span class="token number">23.125178</span> guangzhou <span class="token comment"># 添加上海广州</span>
+
+GEODIST <span class="token comment"># 计算距离</span>
+getdist china:city beijing shanghai <span class="token comment"># 计算北京上海距离</span>
+
+GEOHASH
+GEOPOS
+GEORADIUS
+GEORADIUSBYMEMBER
+</code></pre></div><h3 id=""><a href="#" class="header-anchor">#</a></h3> <p>redis乐观锁 watch</p> <h3 id="jedis"><a href="#jedis" class="header-anchor">#</a> Jedis</h3> <p><strong>什么是Jedis？</strong></p> <p>是redis官方推荐的连接redis的开发工具。java驱动redis的工具包。</p> <h3 id="redis的持久化（-）"><a href="#redis的持久化（-）" class="header-anchor">#</a> redis的持久化（**）</h3> <p><strong>为什么需要持久化？</strong></p> <p>redis作为基于内存的数据库，每次重启都会导致数据消失，除非你的数据只需要在服务器运行时存在，否则就必须持久化。</p> <p><strong>redis两种持久化方案</strong></p> <ul><li>RDB（Redis DataBase）<strong>快照</strong>在指定时间间隔对数据进行快照保存。<strong>（RDB是redis默认持久化配置）</strong></li> <li>AOF（Append Only File）记录所有写操作，当服务重启时重新执行这些命令来恢复原始数据。</li></ul> <hr> <p>可以同时开启两种持久化方式，这时在服务重启时会优先载入AOF文件来恢复原始数据，因为AOF文件保存的数据集要比RDB文件数据要完整。RDB在redis意外停止工作时丢失部分数据。</p> <hr> <p><strong>RDB持久化（快照持久化）</strong></p> <ul><li>配置文件配置</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment">################################ SNAPSHOTTING  ################################</span>
+<span class="token comment">#   save &lt;seconds&gt; &lt;changes&gt;</span>
+
+save <span class="token number">900</span> <span class="token number">1</span> <span class="token comment"># 900秒 修改1次触发</span>
+save <span class="token number">300</span> <span class="token number">10</span> <span class="token comment"># 300秒 修改10</span>
+save <span class="token number">60</span> <span class="token number">10000</span> <span class="token comment"># 60秒 修改10000</span>
+</code></pre></div><ul><li>还可以手动调用：save 或 bgsave快照保存。</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code>save 
+bgsave  <span class="token comment"># 两个命令都可以</span>
+</code></pre></div><p><strong>rdb工作方式</strong>（redis保存dump.rdb文件时，服务器的操作：）</p> <ul><li>redis调用forks一个子进程</li> <li>子进程将数据集写入一个临时rdb文件中</li> <li>当子进程完成对新rdb文件的写入时，redis用新的rdb文件替换原来的rdb文件，并删除旧的rdb文件。</li></ul> <p><strong>RDB的优点</strong></p> <ul><li>1.设置rdb保存机制，保存数据，意外情况下根据需求恢复到不同版本的数据集。</li> <li>2.RDB文件紧凑，适合传输到远端数据中心，适用于灾难恢复。</li> <li>3.rdb在保存文件时会fork出一个子进程来持久化，父进程不需要参与io操作，最大化redis的性能。</li> <li>4.和AOF相比，在恢复大的数据集的时候，RDB方式会更快一些</li></ul> <p><strong>RDB的缺点</strong></p> <ul><li>1.redis意外宕机会丢失部分数据。</li> <li>2.RDB在保存文件时，要经常fork子进程，在数据集较大的时候fork过程会非常耗时，从而影响一定性能。fork子进程占用一定内存空间。</li></ul> <p><strong>RDB触发</strong></p> <p>rdb触发时会产生一个dump.rdb文件</p> <ul><li>1.在满足配置条件的时触发（如 save 60 5 一分钟修改5次）</li> <li>2.执行flushall命令时，也会触发rdb规则</li> <li>3.退出redis时（关机），也会触发产生rdb文件</li></ul> <p><strong>如何恢复rdb文件</strong></p> <ul><li>1.只需将rdb文件，放在redis的启动目录下，redis启动时会自动检查dump.rdb文件并恢复其中的数据。</li> <li>2.查看需要存放的目录  config get dir</li></ul> <hr> <p><strong>AOF持久化（append only file）</strong></p> <p>aof默认是不开启的，可以手动配置。只需要配置：appendonly  yes</p> <p><strong>如果aof文件有错误</strong>，这时redis是启动不起来的，这时需要修复aof文件，redis提供了一个工具redis-check-aop执行：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>redis-check-aof --fix
+</code></pre></div><p><strong>优点和缺点</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>appendonly no <span class="token comment"># 默认关闭</span>
+<span class="token comment"># The name of the append only file (default: &quot;appendonly.aof&quot;)</span>
+appendfilename <span class="token string">&quot;appendonly.aof&quot;</span>  <span class="token comment"># aof文件名称</span>
+
+<span class="token comment"># appendfsync always # 每次都同步aof,非常慢，但非常安全</span>
+appendfsync everysec <span class="token comment"># 每秒同步一次，足够快和rdb差不多，可能会丢失1秒数据，默认配置（兼顾速度和安全）</span>
+<span class="token comment"># appendfsync no # 不开启，从不同步，效率最高，交给操作系统处理</span>
+
+<span class="token comment"># rewrite 重写规则设置，如果aof文件超过设置值时，会再fork一个进程，重写一个新文件</span>
+</code></pre></div><p><strong>优点</strong></p> <ul><li>1.每一次修改都同步appendfsync always</li> <li>2.每一秒同步一次，最多会丢失1秒数据</li> <li>3.从不同步设置效率最高</li> <li>4.日志重写，aof文件过大时会触发重写，重写后新的aof文件包含了恢复当前数据集所需的最小命令集合。（而且绝对安全，重写新的aof文件时，会继续将命令追加到现有文件中，并且新建完成后自动切换到新文件追加命令）</li> <li>5.aof文件容易被人读懂，可以对文件分析，如果不小心执行错误命令，只要aof文件没被重写，只要停止服务器，将错误命令移除，重启redis即可恢复到错误命令之前的状态。</li></ul> <p><strong>日志重写</strong>除了默认配置外也可以手动调用命令：bgrewriteaof来触发日志重写</p> <div class="language-bash extra-class"><pre class="language-bash"><code>bgrewriteaof
+</code></pre></div><p><strong>缺点</strong></p> <ul><li>1.相同的数据集aof文件要远远大于rdb文件，恢复数据时速度会比rdb慢</li> <li>2.aof运行效率也低于rdb（aof属于IO操作），所以默认开启rdb</li></ul> <p><strong>AOF重写工作原理</strong></p> <p>aof和rdb快照都利用了写时复制机制</p> <ul><li>redis会fork一个子进程</li> <li>子进程开始将新的aof文件内容写入到临时文件</li> <li>重写时，同时父进程一边将写入命令累积到一个内存缓存中，一边将这些命令追加到现有的aof文件末尾（这就解释了aof为什么是安全的）</li> <li>当子进程完成重写工作，给父进程发一个信号，父进程会将缓存中的数据追加到新aof文件末尾（从而完成新旧文件替换）</li></ul> <p><strong>扩展</strong></p> <p><strong>如何选择使用哪种持久化配置？</strong></p> <p>官方推荐使用默认rdb配置，如果对数据安全性要求高建议两种配置都开启，不推荐单独使用aof持久化。因为rdb定时快照便于数据库备份，且rdb的恢复数据比aof要快。</p> <p><strong>怎样从RDB方式切换到AOF方式？</strong></p> <p>【不重启切换1.备份dump.rdb 2.开启aof：redis-cli  config  set appendonly  yes  3.关闭rdb：redis-cli config set save &quot;&quot; (可选)】</p> <p>在 Redis 2.2 或以上版本，可以在不重启的情况下，从 RDB 切换到 AOF ：</p> <ul><li>为最新的 dump.rdb 文件创建一个备份。</li> <li>将备份放到一个安全的地方。</li> <li>执行以下两条命令:</li> <li>redis-cli config set appendonly yes</li> <li>redis-cli config set save “”</li> <li>确保写命令会被正确地追加到 AOF 文件的末尾。</li> <li>执行的第一条命令开启了 AOF 功能： Redis 会阻塞直到初始 AOF 文件创建完成为止， 之后 Redis 会继续处理命令请求， 并开始将写入命令追加到 AOF 文件末尾。</li></ul> <p>执行的第二条命令用于关闭 RDB 功能。 这一步是可选的， 如果你愿意的话， 也可以同时使用 RDB 和 AOF 这两种持久化功能。</p> <p>重要:别忘了在 redis.conf 中打开 AOF 功能！ 否则的话， 服务器重启之后， 之前通过 CONFIG SET 设置的配置就会被遗忘， 程序会按原来的配置来启动服务器。</p> <p><strong>AOF和RDB之间的相互作用</strong></p> <p>版本号大于2.4的redis，快照（bgsave）和日志重写（bgrewriteaof）不能同时执行。原因这两个操作都会对磁盘进行大量IO操作。总之就是为了一个字-快</p> <p><strong>备份redis数据</strong></p> <p>任何时候，复制rdb文件都是绝对安全的。</p> <ul><li>创建一个定期任务（cron job）， 每小时将一个 RDB 文件备份到一个文件夹， 并且每天将一个 RDB 文件备份到另一个文件夹。</li> <li>确保快照的备份都带有相应的日期和时间信息， 每次执行定期任务脚本时， 使用 find 命令来删除过期的快照： 比如说， 你可以保留最近 48 小时内的每小时快照， 还可以保留最近一两个月的每日快照。</li> <li>至少每天一次， 将 RDB 备份到你的数据中心之外， 或者至少是备份到你运行 Redis 服务器的物理机器之外。</li></ul> <p><strong>容灾备份</strong></p> <p>Redis 的容灾备份基本上就是对数据进行备份， 并将这些备份传送到多个不同的外部数据中心。容灾备份可以在 Redis 运行并产生快照的主数据中心发生严重的问题时， 仍然让数据处于安全状态。</p> <p>因为很多 Redis 用户都是创业者， 他们没有大把大把的钱可以浪费， 所以下面介绍的都是一些实用又便宜的容灾备份方法：</p> <ul><li>Amazon S3 ，以及其他类似 S3 的服务，是一个构建灾难备份系统的好地方。 最简单的方法就是将你的每小时或者每日 RDB 备份加密并传送到 S3 。 对数据的加密可以通过 gpg -c 命令来完成（对称加密模式）。 记得把你的密码放到几个不同的、安全的地方去（比如你可以把密码复制给你组织里最重要的人物）。 同时使用多个储存服务来保存数据文件，可以提升数据的安全性。</li> <li>传送快照可以使用 SCP 来完成（SSH 的组件）。 以下是简单并且安全的传送方法： 买一个离你的数据中心非常远的 VPS ， 装上 SSH ， 创建一个无口令的 SSH 客户端 key ， 并将这个 key 添加到 VPS 的 authorized_keys 文件中， 这样就可以向这个 VPS 传送快照备份文件了。 为了达到最好的数据安全性，至少要从两个不同的提供商那里各购买一个 VPS 来进行数据容灾备份。</li> <li>需要注意的是， 这类容灾系统如果没有小心地进行处理的话， 是很容易失效的。最低限度下， 你应该在文件传送完毕之后， 检查所传送备份文件的体积和原始快照文件的体积是否相同。 如果你使用的是 VPS ， 那么还可以通过比对文件的 SHA1 校验和来确认文件是否传送完整。</li></ul> <p>另外， 你还需要一个独立的警报系统， 让它在负责传送备份文件的传送器（transfer）失灵时通知你。</p> <ul><li>只做缓存的话，不需要持久化</li> <li>5.性能建议
+<ul><li>rdb文件只做备份，建议在slave机器上持久化rdb文件，没15分钟备份一次，值保留save 900 1设置</li> <li>如果开启aof，日志重写过程中产生的新数据在追加到新aof文件时，几乎不可避免会造成阻塞。64m的默认设置太小，建议只要磁盘允许设置到5G以上，默认超过原始大小100%重写可改到适当的数据。</li> <li>如果不开启aof，依靠主从复制也可以实现高可用性，节省大笔io，减少rewrite过程造成的系统波动。代价是主从机同时宕机，会损失十几分钟的数据，启动时要比较主从机rdb文件，载入比较新的那个。（断电）异地多活，主从复制保证安全。</li></ul></li></ul> <hr> <h3 id="redis发布订阅"><a href="#redis发布订阅" class="header-anchor">#</a> Redis发布订阅</h3> <p>缓存穿透（mysql查不到）-布隆过滤器</p> <p>缓存击穿（mysql有数据，热点数据，缓存过期）-加锁</p> <p>缓存雪崩（缓存服务器宕机）</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/onedocs/redis/" class="prev router-link-active">
+        /redis/
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/onedocs/assets/js/app.e0504603.js" defer></script><script src="/onedocs/assets/js/2.2038ef08.js" defer></script><script src="/onedocs/assets/js/77.29592718.js" defer></script>
+  </body>
+</html>

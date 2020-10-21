@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JVM内存调优 | 毫末之木</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/onedocs/logo.png">
+    <meta name="description" content="合抱之木生于毫末，九层之台起于累土，千里之行始于足下">
+    <link rel="preload" href="/onedocs/assets/css/0.styles.de272f6a.css" as="style"><link rel="preload" href="/onedocs/assets/js/app.e0504603.js" as="script"><link rel="preload" href="/onedocs/assets/js/2.2038ef08.js" as="script"><link rel="preload" href="/onedocs/assets/js/53.7e846a18.js" as="script"><link rel="prefetch" href="/onedocs/assets/js/10.f6a37571.js"><link rel="prefetch" href="/onedocs/assets/js/100.bf63558b.js"><link rel="prefetch" href="/onedocs/assets/js/101.cadfc716.js"><link rel="prefetch" href="/onedocs/assets/js/102.228fbd56.js"><link rel="prefetch" href="/onedocs/assets/js/103.c662b851.js"><link rel="prefetch" href="/onedocs/assets/js/104.bf10f97f.js"><link rel="prefetch" href="/onedocs/assets/js/105.42297f62.js"><link rel="prefetch" href="/onedocs/assets/js/106.5fec983b.js"><link rel="prefetch" href="/onedocs/assets/js/107.44d78888.js"><link rel="prefetch" href="/onedocs/assets/js/108.0bf1da5d.js"><link rel="prefetch" href="/onedocs/assets/js/109.33df81e8.js"><link rel="prefetch" href="/onedocs/assets/js/11.61cfa05d.js"><link rel="prefetch" href="/onedocs/assets/js/110.37c6a673.js"><link rel="prefetch" href="/onedocs/assets/js/111.d0745a6f.js"><link rel="prefetch" href="/onedocs/assets/js/112.896c20d3.js"><link rel="prefetch" href="/onedocs/assets/js/113.ba73bbe7.js"><link rel="prefetch" href="/onedocs/assets/js/114.285eae67.js"><link rel="prefetch" href="/onedocs/assets/js/115.9ef9f274.js"><link rel="prefetch" href="/onedocs/assets/js/116.c766fd18.js"><link rel="prefetch" href="/onedocs/assets/js/117.4b4b5f8f.js"><link rel="prefetch" href="/onedocs/assets/js/118.77801d1c.js"><link rel="prefetch" href="/onedocs/assets/js/119.5f2de0db.js"><link rel="prefetch" href="/onedocs/assets/js/12.01307b5f.js"><link rel="prefetch" href="/onedocs/assets/js/120.db5a2544.js"><link rel="prefetch" href="/onedocs/assets/js/121.3e1120a7.js"><link rel="prefetch" href="/onedocs/assets/js/122.15db53bf.js"><link rel="prefetch" href="/onedocs/assets/js/123.7eb75cac.js"><link rel="prefetch" href="/onedocs/assets/js/124.6d5d2703.js"><link rel="prefetch" href="/onedocs/assets/js/125.2b72f325.js"><link rel="prefetch" href="/onedocs/assets/js/126.0f334670.js"><link rel="prefetch" href="/onedocs/assets/js/127.add5b5dc.js"><link rel="prefetch" href="/onedocs/assets/js/128.8dee2046.js"><link rel="prefetch" href="/onedocs/assets/js/129.1cc6ef43.js"><link rel="prefetch" href="/onedocs/assets/js/13.0e9843e7.js"><link rel="prefetch" href="/onedocs/assets/js/130.880acb43.js"><link rel="prefetch" href="/onedocs/assets/js/131.05a3b4f2.js"><link rel="prefetch" href="/onedocs/assets/js/132.7e40c9dd.js"><link rel="prefetch" href="/onedocs/assets/js/133.8452078c.js"><link rel="prefetch" href="/onedocs/assets/js/134.9d982b6a.js"><link rel="prefetch" href="/onedocs/assets/js/135.0e2ecf22.js"><link rel="prefetch" href="/onedocs/assets/js/136.b93ab627.js"><link rel="prefetch" href="/onedocs/assets/js/137.a3ac1183.js"><link rel="prefetch" href="/onedocs/assets/js/138.a5f8253e.js"><link rel="prefetch" href="/onedocs/assets/js/139.8d2d2ed3.js"><link rel="prefetch" href="/onedocs/assets/js/14.1f2678b2.js"><link rel="prefetch" href="/onedocs/assets/js/140.f316bc65.js"><link rel="prefetch" href="/onedocs/assets/js/141.4329f321.js"><link rel="prefetch" href="/onedocs/assets/js/142.84de330a.js"><link rel="prefetch" href="/onedocs/assets/js/143.33c910cb.js"><link rel="prefetch" href="/onedocs/assets/js/144.772fc978.js"><link rel="prefetch" href="/onedocs/assets/js/145.5b5002a9.js"><link rel="prefetch" href="/onedocs/assets/js/146.88aa0c0f.js"><link rel="prefetch" href="/onedocs/assets/js/147.e96373a7.js"><link rel="prefetch" href="/onedocs/assets/js/148.b4c8be91.js"><link rel="prefetch" href="/onedocs/assets/js/149.1ea72874.js"><link rel="prefetch" href="/onedocs/assets/js/15.69ce579e.js"><link rel="prefetch" href="/onedocs/assets/js/150.5520b849.js"><link rel="prefetch" href="/onedocs/assets/js/151.e95264d4.js"><link rel="prefetch" href="/onedocs/assets/js/152.f76653a4.js"><link rel="prefetch" href="/onedocs/assets/js/153.3cf08ff4.js"><link rel="prefetch" href="/onedocs/assets/js/154.75d44f04.js"><link rel="prefetch" href="/onedocs/assets/js/155.4e652b6d.js"><link rel="prefetch" href="/onedocs/assets/js/156.52dfe88f.js"><link rel="prefetch" href="/onedocs/assets/js/157.83358103.js"><link rel="prefetch" href="/onedocs/assets/js/158.05182abd.js"><link rel="prefetch" href="/onedocs/assets/js/159.0a341b5c.js"><link rel="prefetch" href="/onedocs/assets/js/16.741d57c4.js"><link rel="prefetch" href="/onedocs/assets/js/160.a260ac01.js"><link rel="prefetch" href="/onedocs/assets/js/161.0a91f71a.js"><link rel="prefetch" href="/onedocs/assets/js/162.313e8057.js"><link rel="prefetch" href="/onedocs/assets/js/163.2e3c776c.js"><link rel="prefetch" href="/onedocs/assets/js/164.0197d2c3.js"><link rel="prefetch" href="/onedocs/assets/js/165.22bf3e3b.js"><link rel="prefetch" href="/onedocs/assets/js/166.dd9ae5a6.js"><link rel="prefetch" href="/onedocs/assets/js/167.1836600e.js"><link rel="prefetch" href="/onedocs/assets/js/168.3671e218.js"><link rel="prefetch" href="/onedocs/assets/js/17.35a10d84.js"><link rel="prefetch" href="/onedocs/assets/js/18.9dd6fa79.js"><link rel="prefetch" href="/onedocs/assets/js/19.f4e03e09.js"><link rel="prefetch" href="/onedocs/assets/js/20.80e68c20.js"><link rel="prefetch" href="/onedocs/assets/js/21.40f6b8cf.js"><link rel="prefetch" href="/onedocs/assets/js/22.c81a146b.js"><link rel="prefetch" href="/onedocs/assets/js/23.e9a26275.js"><link rel="prefetch" href="/onedocs/assets/js/24.ec0a9ca1.js"><link rel="prefetch" href="/onedocs/assets/js/25.39fba076.js"><link rel="prefetch" href="/onedocs/assets/js/26.1c7bcc3c.js"><link rel="prefetch" href="/onedocs/assets/js/27.3e6c0ca0.js"><link rel="prefetch" href="/onedocs/assets/js/28.0e9db906.js"><link rel="prefetch" href="/onedocs/assets/js/29.71d5a89a.js"><link rel="prefetch" href="/onedocs/assets/js/3.aa988536.js"><link rel="prefetch" href="/onedocs/assets/js/30.09138ea6.js"><link rel="prefetch" href="/onedocs/assets/js/31.cb1c7490.js"><link rel="prefetch" href="/onedocs/assets/js/32.6090c8d6.js"><link rel="prefetch" href="/onedocs/assets/js/33.1d9048c9.js"><link rel="prefetch" href="/onedocs/assets/js/34.943439b5.js"><link rel="prefetch" href="/onedocs/assets/js/35.194def41.js"><link rel="prefetch" href="/onedocs/assets/js/36.67181f53.js"><link rel="prefetch" href="/onedocs/assets/js/37.71e0022a.js"><link rel="prefetch" href="/onedocs/assets/js/38.17c196a9.js"><link rel="prefetch" href="/onedocs/assets/js/39.133a6677.js"><link rel="prefetch" href="/onedocs/assets/js/4.7d5f245c.js"><link rel="prefetch" href="/onedocs/assets/js/40.690b861a.js"><link rel="prefetch" href="/onedocs/assets/js/41.7dae413f.js"><link rel="prefetch" href="/onedocs/assets/js/42.5fd35219.js"><link rel="prefetch" href="/onedocs/assets/js/43.12189d67.js"><link rel="prefetch" href="/onedocs/assets/js/44.1d99eadf.js"><link rel="prefetch" href="/onedocs/assets/js/45.3139ffd5.js"><link rel="prefetch" href="/onedocs/assets/js/46.8523cfea.js"><link rel="prefetch" href="/onedocs/assets/js/47.e450460f.js"><link rel="prefetch" href="/onedocs/assets/js/48.bcc81505.js"><link rel="prefetch" href="/onedocs/assets/js/49.ebc85be0.js"><link rel="prefetch" href="/onedocs/assets/js/5.f8be39f3.js"><link rel="prefetch" href="/onedocs/assets/js/50.5c2d59fd.js"><link rel="prefetch" href="/onedocs/assets/js/51.d597c487.js"><link rel="prefetch" href="/onedocs/assets/js/52.a82b4ac8.js"><link rel="prefetch" href="/onedocs/assets/js/54.fccf7432.js"><link rel="prefetch" href="/onedocs/assets/js/55.9b7443ca.js"><link rel="prefetch" href="/onedocs/assets/js/56.31a4e77b.js"><link rel="prefetch" href="/onedocs/assets/js/57.fcf167c5.js"><link rel="prefetch" href="/onedocs/assets/js/58.345e9c2b.js"><link rel="prefetch" href="/onedocs/assets/js/59.a0fc752a.js"><link rel="prefetch" href="/onedocs/assets/js/6.adb9b803.js"><link rel="prefetch" href="/onedocs/assets/js/60.2368a78a.js"><link rel="prefetch" href="/onedocs/assets/js/61.7572fa6a.js"><link rel="prefetch" href="/onedocs/assets/js/62.05dc54d9.js"><link rel="prefetch" href="/onedocs/assets/js/63.7ef0e47a.js"><link rel="prefetch" href="/onedocs/assets/js/64.6314de2c.js"><link rel="prefetch" href="/onedocs/assets/js/65.d62c7c53.js"><link rel="prefetch" href="/onedocs/assets/js/66.207f0f1c.js"><link rel="prefetch" href="/onedocs/assets/js/67.5c592667.js"><link rel="prefetch" href="/onedocs/assets/js/68.a7708f32.js"><link rel="prefetch" href="/onedocs/assets/js/69.f2dfce99.js"><link rel="prefetch" href="/onedocs/assets/js/7.17a9aabe.js"><link rel="prefetch" href="/onedocs/assets/js/70.432e8b26.js"><link rel="prefetch" href="/onedocs/assets/js/71.2d1f5d9c.js"><link rel="prefetch" href="/onedocs/assets/js/72.e59fee6b.js"><link rel="prefetch" href="/onedocs/assets/js/73.ac854f40.js"><link rel="prefetch" href="/onedocs/assets/js/74.f1adb5bf.js"><link rel="prefetch" href="/onedocs/assets/js/75.81169538.js"><link rel="prefetch" href="/onedocs/assets/js/76.cb1168d8.js"><link rel="prefetch" href="/onedocs/assets/js/77.29592718.js"><link rel="prefetch" href="/onedocs/assets/js/78.bed97e43.js"><link rel="prefetch" href="/onedocs/assets/js/79.b4aa58c7.js"><link rel="prefetch" href="/onedocs/assets/js/8.0a691bde.js"><link rel="prefetch" href="/onedocs/assets/js/80.7117913a.js"><link rel="prefetch" href="/onedocs/assets/js/81.cb9d775c.js"><link rel="prefetch" href="/onedocs/assets/js/82.640fa306.js"><link rel="prefetch" href="/onedocs/assets/js/83.101b5a05.js"><link rel="prefetch" href="/onedocs/assets/js/84.66449154.js"><link rel="prefetch" href="/onedocs/assets/js/85.d0c5c099.js"><link rel="prefetch" href="/onedocs/assets/js/86.4690f476.js"><link rel="prefetch" href="/onedocs/assets/js/87.85a6bfd2.js"><link rel="prefetch" href="/onedocs/assets/js/88.fd7c2a5d.js"><link rel="prefetch" href="/onedocs/assets/js/89.f3fc2bed.js"><link rel="prefetch" href="/onedocs/assets/js/9.b16a8b90.js"><link rel="prefetch" href="/onedocs/assets/js/90.e37e6501.js"><link rel="prefetch" href="/onedocs/assets/js/91.abbe3309.js"><link rel="prefetch" href="/onedocs/assets/js/92.dd4acb93.js"><link rel="prefetch" href="/onedocs/assets/js/93.8f44fecb.js"><link rel="prefetch" href="/onedocs/assets/js/94.fb6cbed1.js"><link rel="prefetch" href="/onedocs/assets/js/95.359a8a37.js"><link rel="prefetch" href="/onedocs/assets/js/96.d4612b15.js"><link rel="prefetch" href="/onedocs/assets/js/97.d946fd32.js"><link rel="prefetch" href="/onedocs/assets/js/98.97949fea.js"><link rel="prefetch" href="/onedocs/assets/js/99.517062b1.js">
+    <link rel="stylesheet" href="/onedocs/assets/css/0.styles.de272f6a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/onedocs/" class="home-link router-link-active"><img src="/onedocs/logo.png" alt="毫末之木" class="logo"> <span class="site-name can-hide">毫末之木</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/onedocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/javaapi/" class="nav-link router-link-active">
+  javaapi
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/mybatis/" class="nav-link">
+  mybatis
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/juc/" class="nav-link">
+  多线程
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Spring系列" class="dropdown-title"><span class="title">Spring系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/spring/" class="nav-link">
+  spring
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springmvc/" class="nav-link">
+  spring-mvc
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springboot/" class="nav-link">
+  spring-boot
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springcloud/" class="nav-link">
+  spring-cloud
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springsecurity/" class="nav-link">
+  spring-security
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Database" class="dropdown-title"><span class="title">Database</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/db/" class="nav-link">
+  db
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/redis/" class="nav-link">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/front/" class="nav-link">
+  前端
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="互联网" class="dropdown-title"><span class="title">互联网</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/mq/" class="nav-link">
+  消息中间件
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/internet/" class="nav-link">
+  互联网
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/interview/" class="nav-link">
+  面试
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具集" class="dropdown-title"><span class="title">工具集</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/web/" class="nav-link">
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/maven/" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/github/" class="nav-link">
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/browser/" class="nav-link">
+  browser
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/idea/" class="nav-link">
+  idea
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/shihe110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/onedocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/javaapi/" class="nav-link router-link-active">
+  javaapi
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/mybatis/" class="nav-link">
+  mybatis
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/juc/" class="nav-link">
+  多线程
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Spring系列" class="dropdown-title"><span class="title">Spring系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/spring/" class="nav-link">
+  spring
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springmvc/" class="nav-link">
+  spring-mvc
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springboot/" class="nav-link">
+  spring-boot
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springcloud/" class="nav-link">
+  spring-cloud
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/springsecurity/" class="nav-link">
+  spring-security
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Database" class="dropdown-title"><span class="title">Database</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/db/" class="nav-link">
+  db
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/redis/" class="nav-link">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/front/" class="nav-link">
+  前端
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="互联网" class="dropdown-title"><span class="title">互联网</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/mq/" class="nav-link">
+  消息中间件
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/internet/" class="nav-link">
+  互联网
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/interview/" class="nav-link">
+  面试
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具集" class="dropdown-title"><span class="title">工具集</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/onedocs/web/" class="nav-link">
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/maven/" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/github/" class="nav-link">
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/browser/" class="nav-link">
+  browser
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/onedocs/idea/" class="nav-link">
+  idea
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/shihe110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>javaapi</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/onedocs/javaapi/JVM入门.html" class="sidebar-link">JVM入门总结</a></li><li><a href="/onedocs/javaapi/JVM内存调优原则和方法.html" class="active sidebar-link">JVM内存调优</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/onedocs/javaapi/JVM内存调优原则和方法.html#jvm内存调优" class="sidebar-link">JVM内存调优</a></li></ul></li><li><a href="/onedocs/javaapi/" aria-current="page" class="sidebar-link">/javaapi/</a></li><li><a href="/onedocs/javaapi/java10关键字var用法.html" class="sidebar-link">java10新增关键字var的用法</a></li><li><a href="/onedocs/javaapi/java中线程的实现方式.html" class="sidebar-link">java多线程实现的两种方式</a></li><li><a href="/onedocs/javaapi/日期和时间.html" class="sidebar-link">java标准库日期和时间API</a></li><li><a href="/onedocs/javaapi/线程本地变量ThreadLocal.html" class="sidebar-link">ThreadLocal线程本地变量</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="jvm内存调优"><a href="#jvm内存调优" class="header-anchor">#</a> JVM内存调优</h2> <ul><li>堆大小设置</li> <li>回收器选择
+<ul><li>在对JVM内存调优的时候不能只看操作系统级别Java进程所占用的内存，这个数值不能准确的反应堆内存的真实占用情况，因为GC过后这个值是不会变化的，因此内存调优的时候要更多的使用JDK提供的内存查看工具，比如JConsole和JavaVisualVM。</li> <li>对JVM内存的系统级的调优主要的目的是减少GC的频率和Full GC的次数，过多的GC和Full GC是会占用很多的系统资源（主要是CPU），影响系统的吞吐量。特别要关注Full GC，因为它会对整个堆进行整理，导致Full GC一般由于以下几种情况：</li></ul></li></ul> <h3 id="_1、导致full-gc的几种情况："><a href="#_1、导致full-gc的几种情况：" class="header-anchor">#</a> 1、导致Full GC的几种情况：</h3> <ul><li>新生代空间不足
+<ul><li>尽量让对象在新生代YGC时被回收</li> <li>让对象在新生代多活一段时间</li> <li>不要创建过大的对象及数组，避免新生代放不下，直接在老年代创建对象</li></ul></li> <li>Permanet Generation空间不足（永久代）
+<ul><li>增大Perm Gen空间，避免太多静态对象（JDK8以后就被元空间代替了）</li> <li>统计GC后晋升到老年代的平均大小大于老年代剩余空间</li> <li>控制好新生代和老年代的比例</li></ul></li> <li>System.gc()被显示调用
+<ul><li>垃圾回收尽量依靠JVM自身机制，不做手动回收</li></ul></li></ul> <h3 id="_2、主要的调优手段"><a href="#_2、主要的调优手段" class="header-anchor">#</a> 2、主要的调优手段</h3> <p>调优手段主要是通过控制堆内存的各个部分的比例和GC策略来实现的，内存比例不良设置会导致一些不良后果：</p> <ul><li>新生代设置过小
+<ul><li>导致YGC频繁启动，增大系统消耗</li> <li>导致大对象直接进入老年代，占据老年代剩余空间，诱发Full GC</li></ul></li> <li>新生代设置过大
+<ul><li>堆总量一定地情况下会导致老年代过小，易诱发Full GC</li> <li>YGC的耗时大幅增加</li> <li>【一般来说新生代占1/3比较合适】</li></ul></li> <li>Survivor设置过小
+<ul><li>YGC时s0/s1放不下，导致对象到达老年代，降低在新生代存活时间</li></ul></li> <li>Survivor设置过大
+<ul><li>S区过大，导致Eden区过小，增加了YGC的频率</li> <li>通过-XX:MaxTenuringThreshold=n参数控制新生代存活时间，尽量让对象在新生代被回收</li></ul></li></ul> <h3 id="_3、新生代和老年代gc策略和组合搭配"><a href="#_3、新生代和老年代gc策略和组合搭配" class="header-anchor">#</a> 3、新生代和老年代GC策略和组合搭配</h3> <p>JVM提供了两种较为简单的GC策略设置方式：</p> <ul><li><p>1、吞吐量优先</p> <p>JVM已吞吐量为指标，自行选择相应的GC策略及控制新生代和老年代的大小比例，来达到吞吐量指标。</p> <p>设置参数为：-XX:GCTimeRatio=n</p></li> <li><p>2、暂停时间优先</p> <p>JVM以暂停时间为指标，自行选择相应的GC策略及控制新生代和老年代的大小比例，尽量保证每次GC造成的应用停止时间都在指定的数值范围内完成。</p> <p>设置参数为：-XX:MaxGCPauseRatio=n</p></li></ul> <h3 id="_4、几种常见的jvm配置原则"><a href="#_4、几种常见的jvm配置原则" class="header-anchor">#</a> 4、几种常见的JVM配置原则</h3> <h4 id="_1、堆设置"><a href="#_1、堆设置" class="header-anchor">#</a> 1、堆设置</h4> <div class="language- extra-class"><pre class="language-text"><code>-Xms # 初始堆大小 如：-Xms512m
+
+-Xmx # 最大堆大小
+
+-XX:NewSize=n # 设置新生代大小
+
+-XX:NewRatio=n # 设置新生代和老年代的比值。 如：为3，表示新生代与老年代比值为1：3，年轻代占整个堆的1/4
+
+-XX:SurvivorRation=n # 新生代中Eden取和两个Survivor区（S0、S1区）的比值。如3，表示Eden区是3份，两个S区是2份，一个s区占新生代的1/5
+
+-XX:MaxPermSize=n # 设置永久代大小 JDK8后设置该参数不会报错，会提示
+</code></pre></div><h4 id="_2、收集器设置"><a href="#_2、收集器设置" class="header-anchor">#</a> 2、收集器设置</h4> <div class="language- extra-class"><pre class="language-text"><code>-XX:+UseSerialGC # 设置串行收集器
+
+-XX:+UseParallelGC # 设置并行收集器
+
+-XX:+UseParalleldOldGC # 设置老年代并行收集器
+
+-XX:+UseConcMarkSweepGC # 设置并发收集器
+</code></pre></div><h4 id="_3、垃圾回收统计信息"><a href="#_3、垃圾回收统计信息" class="header-anchor">#</a> 3、垃圾回收统计信息</h4> <div class="language- extra-class"><pre class="language-text"><code>-XX:+PrintGC
+-XX:+PrintGCDetails
+-XX:+PrintGCTimeStamps
+-Xloggc:filename  # 配置垃圾回收日志
+</code></pre></div><h4 id="_4、并行收集器设置"><a href="#_4、并行收集器设置" class="header-anchor">#</a> 4、并行收集器设置</h4> <div class="language- extra-class"><pre class="language-text"><code>-XX:ParallelGCThreads=n # 设置并行收集器收集时使用的CPU核心数。并行收集线程数。
+
+-XX:MaxGCPauseMillis=n # 设置并行收集最大暂停时间
+
+-XX:GCTimeRatio=n # 设置垃圾回收时间占程序运行时间的百分比。公式为1/(1+n)
+</code></pre></div><h4 id="_5、并发收集器设置"><a href="#_5、并发收集器设置" class="header-anchor">#</a> 5、并发收集器设置</h4> <div class="language- extra-class"><pre class="language-text"><code>-XX:+CMSIncrementalMode  # 设置为增量模式。使用于单CPU情况。
+
+-XX:ParallelGCThreads=n # 设置并发收集器年轻代收集方式为并行收集时，使用的CPU数。并行收集线程数。
+</code></pre></div><p>资料地址：https://www.cnblogs.com/diegodu/p/9849611.html</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/onedocs/javaapi/JVM入门.html" class="prev">
+        JVM入门总结
+      </a></span> <span class="next"><a href="/onedocs/javaapi/" class="router-link-active">
+        /javaapi/
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/onedocs/assets/js/app.e0504603.js" defer></script><script src="/onedocs/assets/js/2.2038ef08.js" defer></script><script src="/onedocs/assets/js/53.7e846a18.js" defer></script>
+  </body>
+</html>
